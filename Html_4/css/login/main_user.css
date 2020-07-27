@@ -1,0 +1,51 @@
+@charset "utf-8";
+@import url(reset_user.css);
+@import url(header_user.css);
+@import url(footer_user.css);
+
+.red_color{color:red;}
+
+.contents{width:100%;  min-width: 1900px;} /*전체wrap*/
+.main_Box{width:1200px; margin: 0 auto; } /*그안을 감사는 wrpa*/
+.sub_menu{float:left; width:220px; } /*왼쪽 서브메뉴*/
+.sub_menu h3{font-size:32px; border-bottom:3px solid black; padding: 20px;}
+.sub_menu ul{font-size: 18px; padding:20px;}
+.sub_menu .on{background:url(../../images/map_gallery/icon_color_country_1.png) no-repeat 160px center;}
+.sub_menu li{background:url(../../images/map_gallery/icon_white_country_1.png)no-repeat 160px center; line-height:70px; border-bottom:3px solid #d9d9d9; padding-left:20px;}
+
+.main_contents{float:left; width:830px; margin-left:60px} /*메인 컨텐츠*/
+.visual{position:relative;} /*메인 컨텐츠 안의 비주얼 부분*/
+.visual > h3{font-size: 32px;border-bottom:3px solid black; padding: 20px; text-align:center; } /*메인 컨텐츠 안의 비주얼 부분*/
+.membership{width:830px;  }/*전체사이즈*/
+.membership_ing{ width:830px; height:20px; margin-top: 15px;}
+.membership_ing ul li{ background:url(../../images/user/imgs_subfunc.png) no-repeat 0 0; float:left; background-position:0px -147px; padding-left:30px; margin-left:20px;}
+.membership_ing ul li:first-child{background: none; margin-left: 0px; padding-left: 0px;}
+
+
+.membership p{font-size:18px; margin-top:15px;}
+.login_frm{width:830px; border-top:3px solid #d9d9d9; border-bottom:1px solid #d9d9d9; height:200px; margin-top:15px;}
+.login_wrap{width:480px;margin:70px auto;}
+.login_img{width:64px; height:64px;background:url(../../images/login/bg_login.gif) no-repeat 0 0; float:left;}
+.login_txt label{font-size:16px; margin-left:30px; float:left;}
+.user_id_pw{margin-top:17px;}
+.user_id_div [type=text]{height:20px; margin-left:30px;}
+.user_id_pw [type=text]{height:20px;margin-left:15px;}
+
+.login_txt{float:left;}
+.login_btn{ margin-left: 15px; float:left;}
+
+
+.button{width:400px; height:30px; margin: 40px auto; }
+
+.button ul li{float:left;}
+.button ul li a{display:inline-block;width:100px; height: 30px; font-size:14px; text-align: center; line-height:30px;}
+.button .join_btn{background-color:#fff; border:2px solid #555; font-weight: 600;}
+.button .find_id{ margin-left:5px; border:2px solid #3099f1; background-color:#fff;  }
+.button .find_pw{ margin-left:5px; border:2px solid #3099f1; background-color:#fff;  }
+
+
+.user_lg{margin-top:60px; line-height: 1.9;}
+.user_lg li:first-child{padding-left:12px; background:url(../../images/login/bg_list_tit.gif) no-repeat 0px 18px;}
+.user_lg li{padding-left:10px; background:url(../../images/login/bg_list.png) no-repeat 0px 8px;}
+.user_lg p{color:#ba8440;}
+.user_lg p a{color:#ba8440;}
