@@ -1,0 +1,7 @@
+$('.menu_list a').on('click',function(e){
+            e.preventDefault()
+            $('.container_2_contents > div').hide()
+            $('.container_2_contents > div').eq($(this).index()).show()
+            $('.menu_list a').removeClass('on')
+            $(this).addClass('on')
+        })

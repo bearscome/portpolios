@@ -1,0 +1,25 @@
+@charset "utf-8";
+.footer{width: 100%; background-color: #383a4a; color: #d5d5d5; padding: 30px 5%; position: relative;}
+.footer_add{}
+.footer_add ul{}
+.footer_add ul li{float: left; width:33%; margin-top:10px;}
+.footer_add ul li.add_color a{color: #b5bbff; }
+.footer_add ul li a{color: #d5d5d5; font-size: 0.88em; text-align: center; display: block;}
+
+.footer_add2{margin:15px 0}
+.footer_add2 ul{}
+.footer_add2 ul li{float: left; margin-left:10px;}
+.footer_add2 ul li a{color: #fff;background:url(../images/sp_com.png) no-repeat 0 0; display: block; width: 26px; height: 26px; font-size: 0; background-color: #fff; border-radius:50px;}
+.footer_add2 ul li:nth-of-type(1) a{background-position:3px 2px;}
+.footer_add2 ul li:nth-of-type(2) a{background-position:-21px 2px;}
+.footer_add2 ul li:nth-of-type(3) a{background-position:-44.5px 2px;}
+.footer_add2 ul li:nth-of-type(4) a{background-position:-67px 2px;}
+
+.footer_add3{margin-left:8px;}
+.footer_add3 address{text-decoration: none; font-style: normal;}
+.footer_add3 p:nth-of-type(4){margin-top: 15px;}
+.footer .gotop{width:50px; height: 50px;background: rgb(131,58,180);
+background: linear-gradient(135deg, rgba(131,58,180,1) 40%, rgba(253,29,29,1) 100%); position:absolute; top:-25px; right:20px; text-align: center; padding-top: 25px; font-size:1.2rem; color: #fff;}
+.footer .gotop:before{content: '';width:15px;height:15px; border-top:1px solid #fff; border-left:1px solid #fff; position: absolute; transform:rotate(45deg);left:50%; margin-left:-8px; top:10px}
+
+
