@@ -1,0 +1,45 @@
+@charset "utf-8";
+@media all and (max-width:1200px){
+    .footer .center_wrap{width:100%}
+    .footer .center_wrap ul li a{display: block; font-size: 0.9rem; font-weight: 700;}      
+}  
+@media all and (max-width:768px){
+    .footer .center_wrap{width:90%}
+    .footer .center_wrap ul li:nth-of-type(4){display: none;}
+    .footer .center_wrap ul li:nth-of-type(3){display: none;}
+    .footer .center_wrap ul li{float: left;width:25%;position: relative;}
+    .footer ul li:before{content: ''; width: 1px; height: 100%; background-color: #d9d9d9; position: absolute; top:0; right:0;}
+    .footer ul li:last-child:before{width:0; height:0;}
+    .footer .center_wrap ul li a{display: block; font-size: 0.8rem; font-weight: 700;}
+    
+    .footer .center_wrap .add p.Company_Registration_Numbe{margin-top:30px;  font-size: 0.9rem;  color: #999}
+    .footer .add p.Company_Registration_Numbe span{position: relative;margin-left: 20px;}
+    .footer .add p.Company_Registration_Numbe span:before{content: ''; position: absolute; top:0; left:-10px; width:1px; height: 100%; background-color: #999;}
+    .footer .add address{margin-top: 15px; font-style:normal; font-size: 0.8rem; color:#d3d3d3;font-weight: 700; }
+    .footer .add p{margin-top:10px; font-style:normal; font-size: 0.8rem; color:#d3d3d3;font-weight: 700; }
+    .footer .center_wrap .add .copyright{margin-bottom: 50px; font-size: 0.7rem;}
+    
+    }  
+
+@media all and (max-width:360px){
+    .footer .center_wrap{width:90%}
+    .footer .center_wrap ul li{float: left;width:50%; line-height:30px}
+    .footer .center_wrap ul li:before{display: none;}
+    .footer .center_wrap .add p.Company_Registration_Numbe span{display: block;}
+    .footer .center_wrap .add p.Company_Registration_Numbe span:before{display: none;}
+    .footer .center_wrap ul li a{display: block; font-size: 0.9rem; font-weight: 700;}      
+} 
+
+
+.footer{border-top:1px solid #d9d9d9; text-align: center; margin-top: 50px;}
+.footer ul{margin:50px 0px 25px 0px;}
+.footer ul li{float: left;width:16.5%;position: relative;}
+.footer ul li:before{content: ''; width: 1px; height: 100%; background-color: #d9d9d9; position: absolute; top:0; right:0;}
+.footer ul li:last-child:before{width:0; height:0;}
+.footer ul li a{display: block; font-size: 1rem; font-weight: 700;}
+.footer .add p.Company_Registration_Numbe{margin-top:30px;  font-size: 1rem;  color: #999}
+.footer .add p.Company_Registration_Numbe span{position: relative;margin-left: 20px;}
+.footer .add p.Company_Registration_Numbe span:before{content: ''; position: absolute; top:0; left:-10px; width:1px; height: 100%; background-color: #999;}
+.add address{margin-top: 15px; font-style:normal; font-size: 1rem; color:#d3d3d3;font-weight: 700; }
+.add p{margin-top:10px; font-style:normal; font-size: 0.9rem; color:#d3d3d3;font-weight: 700; }
+.footer .add .copyright{margin-bottom: 50px; font-size: 0.8rem;}

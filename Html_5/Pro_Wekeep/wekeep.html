@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+    <meta  charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>사이트의 제목넣기</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="keywords" content="키워드넣기" />
+    <meta name="description" content="설명넣기"/>
+    <meta name="author" content="저자넣기"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/main.css">      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <script>
+    $(document).ready(function(){
+
+        $('.main_sub >ul >li, .gnb_1 ul li').on('click',function(e){
+                e.preventDefault();
+                var pagenum=$(this).index()
+                var section=$('.container > section:not(:eq(0))').eq(pagenum).offset().top
+                $('html').animate({
+                    scrollTop:section
+                },600,'easeInOutQuint')
+            })
+
+        
+        $(window).scroll(function(){
+            var headeroffset=$('header').offset().top;
+            var scrollPos=$(window).scrollTop();
+            var main_1page=$('.main_1').offset().top; /*0*/
+            var main_2page=$('.main_contents').offset().top;/*1030*/
+            var main_4page=$('.main_4').offset().top; /*2060*/
+            var main_5page=$('.main_5').offset().top; /*3090*/
+            var main_6page=$('.main_6').offset().top; /*4120*/
+            /*console.log(main_5page)*/
+                         
+            if(960<scrollPos){
+                $('header').css({ /*페이지 두 번째*/
+                    backgroundColor:'#fff',
+                    borderBottom:'1px solid #d9d9d9',
+                    boxShadow:'1px 1px 3px 1px #d9d9d9',
+                })
+                $('.gnb_1 ul li a').css({
+                    color:'#333'
+                })
+                                
+                $('.hb_2, .hb_3').css({
+                    backgroundColor:'#333'
+                })
+                
+                $('.logo_img').css({
+                    background:'url(images/header/logo.png)'        
+                })
+                
+                $('.main_sub').css({
+                    display:'block'
+                })
+              
+            }else{
+                $('header').css({/*첫 번째 페이지*/
+                    backgroundColor:'',
+                    borderBottom:'none',
+                    boxShadow:''
+                })
+                $('.gnb_1 ul li a').css({
+                    color:'#fff'
+                })
+                $('.hb_2, .hb_3').css({
+                    backgroundColor:'#fff'
+                })
+                $('.logo_img').css({
+                    background:'url(images/header/logo-white.png)'        
+                })
+                $('.main_sub').css({
+                    display:'none'
+                })
+        
+            }/*window end*/
+            
+            $('.main_sub ul li').css('margin-bottom','0px')
+             if(960<scrollPos){
+               $('.main_sub ul li span.over').removeClass('over');
+                $('.main_sub ul li span').eq(0).addClass('over');
+                setTimeout(line,500,'0') 
+                 $('.main_sub ul li:eq(0)').css('margin-bottom','100px')
+            }
+        
+            if(main_4page-50<scrollPos){
+                $('.main_sub ul li span.over').removeClass('over');
+                $('.main_sub ul li span').eq(1).addClass('over');
+                 setTimeout(line,500,'1')
+                $('.main_sub ul li:eq(0)').css('margin-bottom','0px')
+                $('.main_sub ul li:eq(1)').css('margin-bottom','100px')
+            }
+            
+             if(main_5page-50<scrollPos){
+                $('.main_sub ul li span.over').removeClass('over');
+                $('.main_sub ul li span').eq(2).addClass('over');
+                  setTimeout(line,500,'2')
+                $('.main_sub ul li:eq(1)').css('margin-bottom','0px')
+                $('.main_sub ul li:eq(2)').css('margin-bottom','100px')
+            }
+            
+             if(main_6page-50<scrollPos){
+                $('.main_sub ul li span.over').removeClass('over');
+                $('.main_sub ul li span').eq(3).addClass('over');
+                  setTimeout(line,500,'3')
+                $('.main_sub ul li:eq(2)').css('margin-bottom','0px')
+                $('.main_sub ul li:eq(3)').css('margin-bottom','100px')
+            }
+            
+            function line(line){
+               $('.main_sub ul li span.on').removeClass('on');
+               $('.main_sub ul li span.over').addClass('on');
+            }
+            
+        })
+            /*페이지 스크롤*/
+            var elm = "section";
+            $(elm).each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                $(this).on("mousewheel", function (e) {
+                    e.preventDefault();
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 120;
+                        } 
+                    else if (event.detail)
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+                    var elmSelecter = $(elm).eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).next().offset().top;
+                                $(elmSelecter).next().addClass('move'); //  휠 내렸을시 애니메이션 이벤트
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).prev().offset().top;
+                                
+                            }catch(e){}
+                        }
+                    }
+                     
+                    // 화면 이동 0.8초(800)
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 800, complete: function () {
+                        }
+                    });
+                });
+            });
+       
+        
+        /*햄버거*/
+        $('.hb_1').on('click',function(e){
+            e.preventDefault();
+            $(".gnb_menu_cover").fadeIn(300).removeClass('off')
+            $('.gnb_menu_cover').addClass('on')
+        })
+        
+        $('.gnb_off').on('click',function(e){
+            e.preventDefault()
+            $(".gnb_menu_cover").fadeOut(300).removeClass('on')
+            $('.gnb_menu_cover').addClass('off')
+        })
+      
+        var sid=setInterval(auto,2000)
+        var num=0;
+        function auto(){
+            if(++num>3){
+                num=0;
+            }
+             $('.video_list ul').animate({
+                    left:'-470px'
+               },2000,function(){
+                 $('.video_list ul').append($('.video_list ul li:first'))
+                 $('.video_list ul').css('left','0')
+             })
+           
+        }
+        
+        $('.list_Btn .prev').on('click',function(e){
+            e.preventDefault();
+            clearInterval(sid)
+            if($('.video_list ul').is(':animated')==false){
+                $('.video_list ul').prepend($('.video_list ul li:last'))
+             $('.video_list ul').css('left','-470px')
+             $('.video_list ul').animate({
+                    left:'0'
+               },1000)
+            }
+        })
+        
+        $('.list_Btn .next').on('click',function(e){
+            e.preventDefault();
+            clearInterval(sid)
+            if($('.video_list ul').is(':animated')==false){
+                $('.video_list ul').animate({
+                    left:'-470px'
+               },1000,function(){
+                 $('.video_list ul').append($('.video_list ul li:first'))
+                 $('.video_list ul').css('left','0')
+             })
+            }
+             
+        })
+        
+        $('.list_Btn .play').on('click',function(e){
+            e.preventDefault();
+            clearInterval(sid)
+             sid=setInterval(auto,1000)
+        })
+        
+        $('.list_Btn .stop').on('click',function(e){
+            e.preventDefault();
+            clearInterval(sid)
+        })
+        
+        
+        
+        
+    })
+        
+        
+    </script>
+    
+
+     </head>
+
+<body>
+    <div id="SkipMenu">
+        <a href="#container">본문 바로가기</a>
+        <a href="gnb_1">메뉴 바로가기</a>
+    </div>
+    <div id="wrapper">
+        <header class="clearfix"> <!--100%-->
+                <div class="logo_img skip"><a href="#">위킵로고</a></div>
+                <nav>
+                <div class="gnb_1">
+                    <ul>
+                        <li><a href="#">wekeep</a></li>
+                        <li><a href="#">dropshipping</a></li>
+                        <li><a href="#">team</a></li>
+                        <li><a href="#">partner</a></li>
+                        <li><a href="#" class="hb_1">
+                            <span class="hb_2">1</span>
+                            <span class="hb_3">2</span>
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="gnb_menu_cover off">
+                   <div class="gnb_menu_color"></div>
+                    <div class="gnb_menu">
+                    <a href="#" class="gnb_off"></a>
+                    <div class="gnb_list">
+                    <ul class="gnb_list_link">
+                        <li><a href="#">WKEEP</a></li>
+                        <li><a href="#">DROPSHPPING</a></li>
+                        <li><a href="#">TEMA</a></li>
+                        <li><a href="#">PARTNER</a></li>
+                        <li><a href="#">NEWS</a></li>
+                        <li><a href="#">WE talk</a></li>
+                        <li><a href="#">즉시상담</a></li>
+                    </ul>
+                    </div>
+                    <div class="gnb_sns">
+                        <ul class="gnb_sns_link">
+                            <li><a href="#" class="blog">블로그</a></li>
+                            <li><a href="#" class="youtube">유튜브</a></li>
+                            <li><a href="#" class="facebook">페이스북</a></li>
+                            <li><a href="#" class="instagram">인스타그램</a></li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="container"> 
+        <section class="main_1">
+           <div class="wekeep_video">
+            <iframe width="100%" height="970" src="https://www.youtube.com/embed/ocS1p0SpOgs?amp;autoplay=1&amp;mute=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video_text">
+            <p>E-commerce<br/>LOGIS PLATFORM<br/>WEKEEP</p>
+            </div>
+            </div>
+            <div class="service_box">
+               <div class="sub_box1">
+                   <a href="#" class="sub_box1_a_1">
+                   <span class="box_img_1"></span>
+                   NEWS
+                   </a>
+               </div>
+               <div class=" sub_box1">
+                   <a href="#" class="sub_box1_a_2">
+                   <span class="box_img_2"></span>
+                   WE talk
+                   </a>
+               </div>
+               <div class=" sub_box1">
+                   <a href="#" class="sub_box1_a_3">
+                   <span class="box_img_3"></span>
+                   즉시상담</a>
+               </div>
+            </div>
+        </section>
+        
+        <section class="main_2">
+           <div class="width_1920">
+            <div class=" main_sub">
+                <ul>
+                    <li><span class="on"></span><a href="#">WEKEEP</a></li>
+                    <li><span></span><a href="#">Dropshiping</a></li>
+                    <li><span></span><a href="#">Team</a></li>
+                    <li><span></span><a href="#">Patner</a></li>
+                </ul>
+            </div>
+            <div class="main_contents">
+              
+               <div class="main_box">
+                    <div class="top_contents clearfix">
+                       <div class="top_contents_title">
+                        <p>스마트 물류의 시작,</p>
+                        <p>위킵이 이끌어 갑니다.</p>
+                        </div>
+                        <div class="mome">
+                            <a href="#">더 알아보기</a>
+                            <span class="arrow"></span>
+                        </div>
+                    </div>
+                    <div class="bottom_contents">
+                        <div class="box_1 box_f">
+                            <span>1</span>
+                            <h3>Creative</h3>
+                            <p>새로운 것을 창조하는 일은 어렵습니다.<br/>
+                                기존의 전통 시장에서 스타트업으로<br/>
+                                살아남는 것은 더욱 어렵습니다.<br/>
+                                위킵은 물류를 어떻게 합리적이고 효율적으로<br/>
+                                제공할지 지금도 고민하고 생각합니다.</p>
+                        </div>
+                        <div class="box_2 box_f">
+                            <span>2</span>
+                            <h3>SmartLogis</h3>
+                            <p>물류는 상품을 기반으로 기업과 사람을<br/>
+                                이어주는 가교입니다. 물류가 스마트하지<br/>
+                                않으면 기업이 성장하지 못하고, 사람은<br/>
+                                편하지 않으며 산업이 발전하지 못합니다.</p>
+                        </div>
+                        <div class="box_3 box_f">
+                            <span>3</span>
+                            <h3>Thinking</h3>
+                            <p>고객사의 고민을 작은 아이디어로 해결하고<br/>
+                                크고 작은 실패를 소중하게 여기고<br/>
+                                빠른 시도를 멈추지 않는다면<br/>
+                                위킵의 생각은 더 깊고, 마음은 더 넓고,<br/>
+                                시스템은 점차 개선되어 질 겁니다.</p>
+                        </div>
+                        <div class="box_4 box_f">
+                            <span>4</span>
+                            <h3>Misson</h3>
+                            <p>위킵 임직원 모두는 사명감을 가지고<br/>
+                                물류가 스마트해지는 그날까지 한걸음 나아가며<br/>
+                                최선의 노력을 다하겠습니다.<br/>
+                                그것은 위킵이 한발 앞서 시장을 선도할 수 있는<br/>
+                                이유이기도 합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="main_4">
+          <div class="width_1920">
+           <div class="main_4_right">
+           <div class="main_4_visual clearfix">
+            <div class="left_contents">
+                <h3>Dropshipping</h3>
+                <p>
+                    물류센터에 상품을 보관하면<br/>
+                    온라인 판매 전문가 셀디(Sell’D)와<br/>
+                    리셀러(Reseller)가 판매하고,<br/>
+                    수익금을 선정산 받습니다
+                </p>
+                <div class="more">
+                <a href="#">더 알아보기</a>
+                <span class="arrow"></span>
+                </div>
+            </div>
+            <div class="right_contents">
+                <div>
+                    <span><img src="images/main/main3/newDropPros.png" alt="위킵 업무 시스템"/></span>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        <section class="main_5">
+         <div class="width_1920">
+          <div class="main_5_right">
+           <div class="main_5_visual">
+            <div class="left_contents">
+                <h3>Team</h3>
+                <p>
+                    매니저 전담제 "위킵맨"<br/>
+                    이커머스 물류의 성공은 자동화 이전에<br/>
+                    '사람'에 답이 있습니다<br/>
+                </p>
+            </div>
+            <div class="right_contents">
+                <div class="people">
+                    <a href="#" class="img img_1">
+                        <div class="people_title"><p class="people_txt"><span class="name">조옥환 Manager</span><br/><br/>담당제품 반려동물용품<br/><br/>경력씨유OO, OO연구소 등</p></div></a>
+                    <a href="#" class="img img_2">
+                    <div class="people_title"><p class="people_txt">
+                        <span class="name">이혜진 Manager</span><br/><br/>담당제품 샴푸, 소금<br/><br/>경력블로○, 한우○○ 등 담당</p>
+                    </div></a>
+                    <a href="#" class="img img_3">
+                        <div class="people_title"><p class="people_txt"><span class="name">한근희 Manager</span><br/><br/>담당제품 방수장비, 생활용품<br/><br/>경력드림○○, 아티슨○○ 등 담당</p></div></a>
+                    <a href="#" class="img img_4">
+                    <div class="people_title"><p class="people_txt"><span class="name">정윤성 Manager</span><br/><br/> 담당제품애견용품, 건강기능식품<br/><br/> 경력엠케이○○, SSK홀○○, 가치○ 등</p></div></a>
+                    <a href="#" class="img img_5">
+                    <div class="people_title"><p class="people_txt"><span class="name">조옥환 Manager</span><br/><br/>담당제품 반려동물용품<br/><br/>경력씨유OO, OO연구소 등</p></div></a>
+                    <a href="#" class="img img_6">
+                    <div class="people_title"><p class="people_txt"><span class="name">오가나 Manager</span><br/><br/>담당제품 반려동물용품<br/><br/>경력씨유OO, OO연구소 등</p></div></a>
+                    <a href="#" class="img img_7">
+                    <div class="people_title"><p class="people_txt"><span class="name">김현우 Manager</span><br/><br/>담당제품 반려동물용품<br/><br/>경력씨유OO, OO연구소 등</p></div></a>
+                    <a href="#" class="img img_8">
+                    <div class="people_title"><p class="people_txt"><span class="name">이지환 Manager</span><br/><br/>담당제품 반려동물용품<br/><br/>경력씨유OO, OO연구소 등</p></div></a>
+                    <a href="#" class="img img_9">
+                    <div class="people_title"><p class="people_txt"><span class="name">김터보 Manager</span><br/><br/>담당제품 반려동물용품<br/><br/>경력씨유OO, OO연구소 등</p></div></a>
+                    <a href="#" class="img img_10">
+                    <div class="people_title"><p class="people_txt"><span class="name">김엔진 Manager</span><br/><br/>담당제품 반려동물용품<br/><br/>경력씨유OO, OO연구소 등</p></div></a>
+                    <a href="#" class="img img_11">
+                        <div class="people_title"><p class="people_txt"><span class="name">이가나 Manager</span><br/><br/>담당제품 반려동물용품<br/><br/>경력씨유OO, OO연구소 등</p></div></a>
+                    <a href="#" class="img img_12"></a>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        <section class="main_6">
+        <div class="width_1920">
+         <div class="main_6_visual">
+         <div class="main_6_right clearfix">
+          <div class="left_contents">
+                <h3 class="skip tit_img">위킵은 떙땡이다.</h3>
+                <p>
+                    위킵의 다양한 파트너가<br/>
+                    직접 위킵을 말합니다.<br/>
+                </p>
+                <div class="more">
+                <a href="#">파트너 더 보기</a>
+                <span class="arrow"></span>
+                </div>
+            </div>
+            <div class="right_contents">
+                <div class="video_list clearfix">
+                    <ul>
+                        <li class="on"><a href="https://s3.ap-northeast-2.amazonaws.com/storage.wekeep/partner/1awesomevod.mp4">
+                        <img src="images/main/main5/video_1.png" alt="위킵파트너사가 생각하는 위킵동영상"/></a></li>
+                        <li><a href="https://s3.ap-northeast-2.amazonaws.com/storage.wekeep/partner/2urimvod.mp4"><img src="images/main/main5/video_4.png" alt="위킵파트너사가 생각하는 위킵동영상"/></a></li>
+                        <li><a href="https://s3.ap-northeast-2.amazonaws.com/storage.wekeep/partner/2urimvod.mp4"><img src="images/main/main5/video_1.png" alt="위킵파트너사가 생각하는 위킵동영상"/></a></li>
+                        <li><a href="https://s3.ap-northeast-2.amazonaws.com/storage.wekeep/partner/2urimvod.mp4"><img src="images/main/main5/video_4.png" alt="위킵파트너사가 생각하는 위킵동영상"/></a></li>
+                    </ul>
+                </div>
+                    <div class="list_Btn">
+                     <a href="#" class="prev"><i class="fas fa-chevron-left"></i><span>이전</span></a>
+                      <a href="#" class="next"><i class="fas fa-chevron-right"></i><span>이후</span></a>
+                      <a href="#" class="play"><i class="fas fa-play"></i><span>시작</span></a>
+                      <a href="#" class="stop"><i class="fas fa-pause"></i><span>정지</span></a>
+                </div>
+            </div>  
+            </div>
+            </div>
+            </div>
+        </section>
+        </div>
+    </div>
+</body>
+
+</html>

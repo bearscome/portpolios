@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+/*mobile*/
+@media all and (max-width:1200px){
+    header{width:100%; height:100%;border-bottom:1px solid #333;}
+    header .center_header{width:100%; height:100%; position: relative;}
+    header .gnb_logo{background:url(../images/logo.png) no-repeat center center /80px 55px; display:inline-block; width: 80px; height:100px;font-size:0; line-height:100px; float: left;margin-left:20px; margin-right: 20px;}
+    header .web_gnb > li{float:left; height:100px; line-height:100px;display: block;text-align:center;font-size:1.2rem; font-weight:600; width:100px; }
+    header .web_gnb .deth_2 > li > a{ display: block; font-size:0.75rem; }
+    .m_button{display: none;}
+    header .user_menu{display: block;}
+    
+}
+
+@media all and (max-width:968px){
+    header .user_menu{display: none;}
+}
+
+@media all and (max-width:768px){
+    
+    body header{width:100%; height:60px;border-bottom:1px solid #333;}
+    header .gnb_logo{background:url(../images/logo.png) no-repeat center center /100px 55px; display:inline-block; width: 100px; height:60px;font-size:0; line-height:100px; float: left;margin-left:20px; margin-right: 20px;}
+    
+    header .web_gnb > li{display: none;}
+    header .user_menu{display: none;}
+    
+    header .m_button{position: absolute;  display:block; top:14px ;right:10px; width: 50px; height: 50px; }
+    header .m_button span{display: block; text-align: center;font-size:0; width:30px; height: 3px;  background-color:#000; }
+    header .m_button span:nth-of-type(1){margin:7px auto;}
+    header .m_button span:nth-of-type(2){margin:7px auto;}
+    header .m_button span:nth-of-type(3){margin:7px auto;}
+}
+
+@media all and (max-width:320px){
+    body header .gnb_logo{background:url(../images/logo.png) no-repeat center center /90px 40px; display:inline-block; width: 100px; height:60px;font-size:0; line-height:100px; float: left;margin-left:20px; margin-right: 20px;}
+    
+    body header .m_button{position: absolute;  display:block; top:14px ;right:10px; width: 30px; height: 30px; }
+    header .m_button span{display: block; text-align: center;font-size:0; width:30px; height: 2px;  background-color:#000; }
+}
+
+
+header{width:100%; height:100px;border-bottom:1px solid #333;}
+.center_header{width:1200px; margin:0 auto; position: relative;}
+.gnb_logo{background:url(../images/logo.png) no-repeat center center; display:inline-block; width: 120px; height:100px;font-size:0; line-height:100px; float: left;margin-right:60px;}
+.web_gnb{width:100%;margin:0 auto;position:relative; }
+.web_gnb a:hover{color:#07c}
+.web_gnb > li{float:left; height:100px; line-height:100px;display: block;text-align:center;font-size:1.4rem; font-weight:600; width:130px; }
+.web_gnb > li > a{display: block;}
+.web_gnb .deth_2{height:500px; position: relative; z-index: 99999;display: none;}
+.web_gnb .deth_2 > li{height:50px; line-height:50px; font-size:1.0rem; text-align: left; margin-left:20px; letter-spacing:-0.7px; }
+.web_gnb .deth_2 > li > a{ display: block; font-size:0.8rem; }
+.web_gnb .deth_2 .onlineMeeting{border: 1px solid #07c; border-radius:20px; font-size:1rem; font-weight:700; margin-top:10px; margin-left: 0; text-align: center;}
+.web_gnb .deth_2 .onlineMeeting:hover{background-color:#07c; color:#fff;}
+.fas{margin-left:10px;}
+
+.user_menu{float: right; padding-right: 20px; text-align: right; height:100px; line-height:100px;  font-weight:900; display: block; }
+.user_menu a{color: #999; margin-left:10px;}
+.user_menu a:hover{color: #07c}
+.user_menu li{float: left;width:60px;}
+.user_menu .ENG{display: inline; border: 1px solid #999;border-radius:50px; padding:5px; font-size:1rem;letter-spacing:0.5px; margin-left: 20px;}
+
+/*m_gnb_button*/
+.m_button{position: absolute;  display:none; top:20px ;right:0; width: 50px; height: 50px; z-index: 9999; }
+.m_button span{display: block; text-align: center;font-size:0; width:40px; height: 3px;  background-color:#000; }
+.m_button span:nth-of-type(1){margin:10px auto;}
+.m_button span:nth-of-type(2){margin:10px auto;}
+.m_button span:nth-of-type(3){margin:10px auto;}
+
+/*m_gnb*/
+.m_gnb{position: absolute; top:0; bottom: 0; right:0; width:300px;height:100%; z-index: 9998; display: none;}
+.gnb_header{width:100%; height:60px; border-bottom: 1px solid #333; padding:0px 5px; background-color: #fff;}
+.gnb_header > .m_logo{background:url(../images/logo.png) no-repeat 0 0/120px 40px; display: inline-block; font-size:0; width:60%; height: 50px; line-height: 50px;}
+.gnb_header a:nth-of-type(2),.gnb_header a:nth-of-type(3){display: inline-block;width:15%; height:50px; line-height:60px; text-align:center; position: relative; font-weight:700}
+.gnb_header a:nth-of-type(2):before{position: absolute; content: ''; width:1px; height:10px; background-color: black; top:50%; right: 0px;}
+.gnb_header a.on{color: #07c;}
+.m_gnb .m_gnb_contents{font-size:1.2rem; background-color: #fff; height:85%;}
+.m_gnb_contents .deth_1{}
+.m_gnb_contents .deth_1 > li{border-bottom: 1px solid #999;display: block;}
+.m_gnb_contents .deth_1 > li > a{padding-left:20px;font-weight:500; font-size:1.1rem; display: block; height:50px; line-height: 50px;position: relative; }
+.m_gnb_contents .deth_1 > li > a.on:before{background:url(../images/arr_2.png) no-repeat 0 0 / 16px 8px; content: ''; position: absolute; top:50%; right:10px; width:16px; height:8px; margin-top:-4px}
+.m_gnb_contents .deth_1 > li > a:before{background:url(../images/arr.png) no-repeat 0 0 / 16px 8px; content: ''; position: absolute; top:50%; right:10px; width:16px; height:8px; margin-top:-4px}
+.m_gnb_contents .deth_2{background-color: #f9f9f9;}
+.m_gnb_contents .deth_2 > li{height:30px; line-height:30px;}
+.m_gnb_contents .deth_2 > li > a{display: block; padding-left:30px;font-size:0.9rem; font-weight: 500; color: #a3a3a3}
+.m_gnb .m_gng_footer{}
+.m_gng_footer ul{}
+.m_gng_footer ul li{float: left; width: 33.3333%; text-align: center;background-color: #07c;height:50px; line-height:50px;}
+.m_gng_footer ul li a{color: #ddd; font-weight:500;}
+
+
+
+
+
+/*script*/
+.bg_gnb{width:100%; height:500px; position: absolute; top:100px; border-bottom: 1px solid #333; background-color: #fff; z-index: 99998}
+.m_bg_gnb{width:100%; height:100%; position: absolute; top:0; right:0; bottom: 0; left: 0; background-color:rgba(0,0,0,0.5)}
+.on{display: block; z-index: 100}

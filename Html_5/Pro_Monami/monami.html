@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+    <meta  charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>사이트의 제목넣기</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="keywords" content="키워드넣기" />
+    <meta name="description" content="설명넣기"/>
+    <meta name="author" content="저자넣기"/>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script  type="text/javascript">
+            $(document).ready(function(){
+                //setInterval(auto,2000)
+                $('.leng ul li:last').hide()
+                $('.leng ul').on('click',function(e){
+                    e.preventDefault()
+                    $('.leng ul').toggleClass('on')
+                    if($(this).hasClass('on')){
+                        $(this).animate({
+                        height:'40px'
+                    },500,function(){
+                            $(this).css('background','url(images/lang_arr2.gif) no-repeat 90% 8px')
+                        })
+                    }else{
+                        $(this).animate({
+                        height:'20px'
+                    },500,function(){
+                            $(this).css('background','url(images/lang_arr.gif) no-repeat 90% 8px')
+                        })
+                    }
+                    $('.leng ul li:last').slideToggle()
+                 })
+
+                
+                    $('.gnb_title').on({
+                        mouseenter:function(){
+                           $(this).next().stop().slideDown(500)
+                        },
+                        mouseleave:function(){
+                           $(this).next().stop().slideUp(500)
+                      }
+                    })
+                
+                    $('.deth_1').on({
+                            mouseenter:function(){
+                                $(this).stop().slideDown(500)
+                            },
+                            mouseleave:function(){
+                               $(this).stop().slideUp(500)
+                          }
+                        })
+                /*BEST PRODUCT*/
+                $('.pens_list_1 > div').not(':first').hide()
+                $('.pen_title_list ul li').on('click',function(e){
+                    e.preventDefault();
+                    $('.pen_title_list ul li a').removeClass('on')
+                    $(this).children('a').addClass('on')
+                    var list=$(this).index()
+                    $(this).each(function(){
+                        $('.pens_list_1 > div').hide()
+                        $('.pens_list_1 > div').eq(list).show()
+                    })
+                    
+                })
+                
+                $('.pen_div ul li').on('click',function(e){
+                    e.preventDefault();
+                    var list=$(this).index()+1
+                    console.log(list)
+                    $('.pen_div').animate({
+                        left:'-275'*list
+                    })
+                    num=list
+                })
+                var num;
+               /* function auto(){
+                    i=0
+                    if(i<num, i++){
+                        i=0;
+                    }
+                    $('.pen_div').animate({
+                        left:'-275'*i
+                    },2000,function(){
+                        $('.pen_div ul').append($('.pen_div ul li:first'))
+                    })
+                }*/
+
+               /* $('.ic a').on({
+                    mouseenter:function(){
+                        $(this).css({
+                            'background-color':'#c40f39',
+                            'color':'#fff',
+                            'font-weight':'600',
+                            'border':'none'
+                            
+                        })
+                    },
+                    mouseleave:function(){
+                        $(this).css({
+                            'background-color':'',
+                            'color':'#c40f39',
+                            'font-weight':'500',
+                            'border':'2px solid #c40f39'
+                            
+                        })
+                        
+                        $(this).animate({
+                            'background-color':'',
+                            'color':'#c40f39',
+                            'font-weight':'500',
+                            'border':'2px solid #c40f39'
+                        })
+                    }*/
+
+                
+                
+                /*mouse, drag*/
+                /*$('.pen_div ul li').on('click',function(e){
+                    e.preventDefault()
+                    
+                    $('.pen_div ul').append($('.pen_div ul li:last'))
+                })*/
+            })
+        </script>
+    </head>
+
+<body>
+    <div id="SkipMenu">
+        <a  href="#container">본문 바로가기</a>
+        <a  href="#gnb">메뉴 바로가기</a>
+    </div>
+    <header class="header"> <!--100%;-->
+         <div class="header_line"> <!--100%-->
+          <aside class="header_aside clearfix"> <!--1400px;-->
+              <div class="leng_sns clearfix">
+                  <div class="leng">
+                      <ul>
+                          <li class="kr"><a href="#">kor</a></li>
+                          <li class="en"><a href="#">en</a></li>
+                      </ul>
+                  </div>
+                  <div class="sns">
+                      <a href="#" class="facebook">페이스북</a>
+                      <a href="#" class="instagram">인스타그램</a>
+                  </div>
+              </div> <!--leng_sns e-->
+              <div class="site_map">
+                  <ul>
+                      <li><a href="#">HOME</a></li>
+                      <li><a href="#">SITE MAP</a></li>
+                      <li><a href="#">CONTACT US</a></li>
+                  </ul>
+              </div>
+        </aside> 
+    </div>
+          <div class="header_Menu"> <!--100%-->
+             <div class="header_list"><!--1400-->
+              <div>
+              <h3 class="skip">모나미</h3>
+                  <a href="#" class="logo_img">logo</a>
+              </div>
+              <nav class="gnb clearfix" id="gnb">
+                 <ul>
+                      <li>
+                          <a href="#" class="gnb_title gnb_hover_1">모나미소개</a>
+                          <ul class="deth_1">
+                              <li><a>CEO메세지</a></li>
+                              <li><a>회사정보</a></li>
+                              <li><a>회사연혁</a></li>
+                              <li><a>투자정보</a></li>
+                              <li><a>CI</a></li>
+                              <li><a>채용정보</a></li>
+                              <li><a>찾아오시는 길</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="#" class="gnb_title gnb_hover_2">모나미제품</a>
+                          <ul class="deth_1">
+                              <li><a>펜</a></li>
+                              <li><a>마카</a></li>
+                              <li><a>형광펜</a></li>
+                              <li><a>미술용품</a></li>
+                              <li><a>기타</a></li>
+                              <li><a>카탈로그</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="#" class="gnb_title gnb_hover_3">문구박물관</a>
+                          <ul class="deth_1">
+                              <li><a>문구박물관</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="#" class="gnb_title gnb_hover_4">NEWS &amp; VIDEO</a>
+                          <ul class="deth_1">
+                              <li><a>보도자료</a></li>
+                              <li><a>동영상자료</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="#" class="gnb_title gnb_hover_5">고객지원</a>
+                          <ul class="deth_1">
+                              <li><a>자주묻는질문</a></li>
+                              <li><a>문의하기</a></li>
+                              <li><a>이벤트</a></li>
+                              <li><a>모나미 패밀리샵 찾기</a></li>
+                              <li><a>기업 및 단체 구매</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="#" class="gnb_title">기업 및 단체구매</a></li>
+                  </ul>
+              </nav>
+              <div class="gnb_rg">
+                  <a href="#" class="glass_btn">
+                      <span>돋보기버튼</span>
+                  </a>
+                  <a href="#" class="gnb_nav">
+                      <span class="skip">메뉴 열기</span>
+                      <span class="hamberger">
+                          <span class="hb_1">1</span>
+                          <span class="hb_2">2</span>
+                          <span class="hb_3">3</span>
+                      </span>
+                  </a>
+              </div>
+              </div> <!--header_list e-->
+          </div> <!--header_Menu e-->
+        </header>
+    <div id="wrapper">
+     <section class="container" id="container"> <!--1400-->
+        <section class="mainpage_1">
+            <span class="main_img">배경 이미지</span>
+            <div class="main_title">
+                <p class="main_text">어쩌면 삶은<br/>인생이라는 종이 위에<br/>써 내려가는<br/>펜의 기록 같습니다.</p>
+                <p class="sub_text_1">그중에서도 지우고 싶지 않은 기록이 있습니다.</p>
+                <p class="sub_text_2">모나미는 언제나 당신의 행복한 기록과 함께 합니다.</p>
+            </div>
+        </section>
+        <section class="mainpage_2">
+            <div class="pen_list clearfix">
+                <div class="pen_list_1 clearfix">
+                    <div class="pen_list_left"> <!--div-->
+                       <div class="pen_list_text">
+                       <div class="new_after">
+                        <p>NEW<br/>ARRIVALS</p>
+                        </div>
+                        <p class="first_text">가장 먼저 만나는 설레는 기다림</p>
+                        </div> 
+                        <div class="new_box_2">
+                            <a href="#" class="pen_img"></a>
+                            <a class="text_2">
+                                <p>FOUNTAIN PEN</p>
+                                <h3>라인 만년필</h3>
+                                <div class="line_1">1</div>
+                                <div class="line_2">2</div>                                
+                            </a>
+                        </div>
+                        </div> 
+                    <div class="pen_list_right new_box">
+                        <a href="#">60주년 기념 프러스펜30000 데스크펜</a>
+                        <div class="text">
+                            <p>DESK PEN</p>
+                            <h3>60주년 기념 프러스펜30000 데스크펜</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="pen_list_2">
+                    <a href="#" class="pen_box1">
+                        <div class="pen_box_bg">
+                        <p>BRUSH PEN</p>
+                        <h3>컬러 리얼 브러쉬</h3>
+                        <div class="line_1">1</div>
+                        <div class="line_2">2</div>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="pen_box2">
+                        <div class="pen_box_bg">
+                        <p>WATER BASED PEN</p>
+                        <h3>60주년 기념 프러스펜 3000 60색 세트</h3>
+                        <div class="line_1">1</div>
+                        <div class="line_2">2</div>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="pen_box3">
+                        <div class="pen_box_bg">
+                        <p>FOUNTAIN PEN</p>
+                        <h3>153 네오 만년필 EF</h3>
+                        <div class="line_1">1</div>
+                        <div class="line_2">2</div>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="best_product_bg">
+          <div class="best_product">
+           <div class="best_product_tit">
+            <h3>BEST PRODUCT</h3>
+            <p>언제 어디서나 생활 속에 함께하는 모나미</p>
+            </div>
+            <div class="pen_menu clearfix">
+               <div class="pen_title_list">
+                   <ul>
+                       <li><a href="#" class="on">펜</a></li>
+                       <li><a href="#">마카</a></li>
+                       <li><a href="#">형광펜</a></li>
+                       <li><a href="#">미술용품</a></li>
+                   </ul>
+               </div>
+               <div class="pen_img_list">
+                  <div class="pens_list_1">
+                      <div class="pen_div clearfix pen_link_1 ">
+                          <ul>
+                              <li>
+                                  <a href="#">
+                                    <img src="images/pen_1.jpg" alt="유성볼펜 153아로마" />
+                                    <div class="pen_text_1">
+                                        <p>유성볼펜</p>
+                                        <p>153아로마 첫번째</p>
+                                    </div>
+                                  </a>
+                               </li>
+                              
+                               <li><a href="#"><img src="images/pen_2.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>프리미엄펜</p>
+                           <p>60주년 기념 플러스펜 3000 데스크펜</p>
+                           </div>
+                       </a></li>
+                               <li><a href="#"><img src="images/pen_3.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>만년필</p>
+                           <p>153 네오 만년필 EF</p>
+                           </div>
+                       </a></li>
+                               <li><a href="#"><img src="images/pen_4.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>유성볼펜</p>
+                           <p>플립3</p>
+                                   </div></a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                         <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                          </ul>
+                      </div>
+                      <div class="pen_div clearfix pen_link_2">
+                          <ul>
+                              <li><a href="#">
+                              <img src="images/pen_1.jpg" alt="유성볼펜 153아로마"/>
+                               <div class="pen_text_1">
+                               <p>유성볼펜</p>
+                               <p>153아로마 2번째</p>
+                               </div>
+                               </a>
+                               </li>
+                               
+                               <li><a href="#"><img src="images/pen_2.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>프리미엄펜</p>
+                           <p>60주년 기념 플러스펜 3000 데스크펜</p>
+                           </div>
+                       </a></li>
+                               <li><a href="#"><img src="images/pen_3.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>만년필</p>
+                           <p>153 네오 만년필 EF</p>
+                           </div>
+                       </a></li>
+                               <li><a href="#"><img src="images/pen_4.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>유성볼펜</p>
+                           <p>플립3</p>
+                                   </div></a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                         <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                          </ul>
+                      </div>
+                      <div class="pen_div clearfix pen_link_3">
+                          <ul>
+                              <li><a href="#">
+                              <img src="images/pen_1.jpg" alt="유성볼펜 153아로마"/>
+                               <div class="pen_text_1">
+                               <p>유성볼펜</p>
+                               <p>153아로마 3번째</p>
+                               </div>
+                               </a>
+                               </li>
+                               
+                               <li><a href="#"><img src="images/pen_2.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>프리미엄펜</p>
+                           <p>60주년 기념 플러스펜 3000 데스크펜</p>
+                           </div>
+                       </a></li>
+                               <li><a href="#"><img src="images/pen_3.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>만년필</p>
+                           <p>153 네오 만년필 EF</p>
+                           </div>
+                       </a></li>
+                               <li><a href="#"><img src="images/pen_4.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>유성볼펜</p>
+                           <p>플립3</p>
+                                   </div></a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                         <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                         <li><a href="#"><img src="images/pen_1.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                          </ul>
+                      </div>
+                      <div class="pen_div clearfix pen_link_4">
+                          <ul>
+                              <li><a href="#">
+                              <img src="images/pen_1.jpg" alt="유성볼펜 153아로마"/>
+                               <div class="pen_text_1">
+                               <p>유성볼펜</p>
+                               <p>153아로마 왜 4번째</p>
+                               </div>
+                               </a>
+                               </li>
+                               
+                               <li><a href="#"><img src="images/pen_2.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>프리미엄펜</p>
+                           <p>60주년 기념 플러스펜 3000 데스크펜</p>
+                           </div>
+                       </a></li>
+                               <li><a href="#"><img src="images/pen_3.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>만년필</p>
+                           <p>153 네오 만년필 EF</p>
+                           </div>
+                       </a></li>
+                               <li><a href="#"><img src="images/pen_4.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>유성볼펜</p>
+                           <p>플립3</p>
+                                   </div></a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                                   <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                         <li><a href="#"><img src="images/pen_5.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                         <li><a href="#"><img src="images/pen_1.jpg" alt="유성볼펜 153아로마"/>
+                           <div class="pen_text_1">
+                           <p>스마트펜</p>
+                           <p>153 스마트펜</p>
+                           </div>
+                       </a></li>
+                          </ul>
+                      </div>
+                   </div>
+           
+                </div>
+            <div class="drag_scroll">
+                <span class="right_arw">1</span>
+                <span class="drag">2</span>
+                <span class="left_arw">3</span>
+            </div>
+                <p class="DOM">드래그 및 마우스로 좌우를 움직여 주세요</p>
+            </div>
+            </div>
+        </section>
+        
+        <section class="video">
+            <video src="http://dfrkkcv2hg1jc.cloudfront.net/data/video/monami_brand_web_60.mp4" controls autoplay loop width="100%" height="1072"></video>
+        </section>   
+        <section>
+            <article class="monami_article_bg clearfix">
+              <div class="monami_article">
+               <div class="monamo_news">
+                <h2>MONAMI NEWS</h2>
+                <div class="manami_news_1 clearfix">
+                <div class="manami_news_1_img">
+                <a href="#"><img src="images/b_file_158796889950rmnzecoa.jpg" alt="모나미 볼펜"/></a>
+                </div>
+                <div class="monami_news_1_text">
+                    <a href="#">
+                        <h3>모나미, 가정의 달 맞아 스폐셜 기프트 기획..</h3>
+                        <p>모나미, 가정의 달 맞아 스페셜 기프트
+                        기획전 진행 - 모나미 만년필 구입 시 병...</p>
+                        <span class="date">2020-04-27</span>
+                    </a>
+                </div>
+                </div>
+                <div class="monami_news_2">
+                   <ul>
+                       <li><a href="#" class="news_list">- 모나미, 취미생활 카트 '마이 하비 이즈 시리즈 출시</a><span>2020-04-23</span></li>
+                       <li><a href="#" class="news_list">- 모나미, 신제품 '컬러 리얼 브러쉬' 출시</a><span>2020-04-13</span></li>
+                       <li><a href="#" class="news_list">- 모나미, 창립 60주년 기념'프러스펜 아트 콘테스트' 개최</a><span>2020-03-23</span></li>
+                    </ul>
+                </div>
+                <a href="#" class="more">MORE</a>
+                </div>
+                <aside class="monami_aside clearfix">
+                    <div class="ic ic_1">
+                        <span class="ic_icon1">1</span>
+                        <h3>INQUIRY</h3>
+                        <p>언제나 소중한 의견에 귀 기울이겠습니다.<br/> 궁금한 사항은 문의하세요.</p>
+                        <a href="#">INQUIRY NOW</a>
+                    </div>
+                    <div class="ic ic_2">
+                        <span class="ic_icon2">1</span>
+                        <h3>FAMILY SHOP</h3>
+                        <p>패밀리샵은 모나미와 함께 협력하는 문구<br/> 소매 매장입니다. 주변 패밀리샵을 찾아보세요.</p>
+                        <a href="#">FAMILY SHOP</a>
+                    </div> 
+                </aside> 
+                </div>
+            </article>
+            
+            <aside class="banner clearfix">
+                <ul>
+                    <li><a href="#"><img src="images/fam_img1.jpg" alt="모나미 몰"/></a></li>
+                    <li><a href="#"><img src="images/fam_img2.jpg" alt="모나미 환경사랑 미술대회"/></a></li>
+                    <li><a href="#"><img src="images/fam_img5.jpg" alt="모나미 스테이션"/></a></li>
+                    <li><a href="#"><img src="images/fam_img6.jpg" alt="모나미 르떼"/></a></li>
+                </ul>
+            </aside>
+        </section>    
+     </section>      
+    </div>
+    <footer class="footer"> <!--100%;-->
+            <section class="footer_wrap"> <!--1400-->
+                <div class="logo_sitemap clearfix">
+                    <h3 class="footer_logo">1</h3>
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">개인정보 처리방침</a></li>
+                        <li><a href="#">이메일무단수집거부 </a></li>
+                    </ul>
+                </div>
+                <div class="add clearfix">
+                   <div class="add_1">
+                    <h3 class="add_info">INFO</h3>
+                    <address>
+                        <p>ADDRESS:경기도 용인시 수지구 손곡로17 <span></span>  TEL:031-216-0153 <span></span> FAX:031-270-5154</p>
+                        <p>COPYRIGHT(C) 2017 MONAMI.CO.,LTD. ALL RIGHTS RESERVED.</p>
+                    </address>
+                    </div>
+                    <div class="add_2">
+                        <h3>CUSTOMER CENTER</h3>
+                        <p>080-022-0153</p>
+                    </div>
+                    <div class="add_3">
+                        <ul>
+                            <li><a href="#">FAMILY SITE</a></li>
+                            <li><a href="#">모나미</a></li>
+                            <li><a href="#">모나르뗴</a></li>
+                            <li><a href="#">모나미 컨셉스토어</a></li>
+                            <li><a href="#">주식회사 향소</a></li>
+                            <li><a href="#">모나미 스테이션</a></li>
+                            <li><a href="#">환경사랑 미술대회</a></li>
+                            <li><a href="#">모나미 기업서비스</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </footer>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+ <html lang="ko">
+ <head>
+ <meta  charset="utf-8"/>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <title>이효성의 포트폴리오</title>
+ <meta name="robots" content="noindex, nofollow" />
+ <meta name="keywords" content="키워드넣기" />
+ <meta name="description" content="설명넣기"/>
+ <meta name="author" content="저자넣기"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta property="og:title" content="이효성의 포트폴리오" />
+ <meta property="og:type" content="website" />
+ <meta property="og:url" content="http://lhshost.dothome.co.kr" />
+ <meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13" />
+ <!--css-->
+ <link type="text/css" rel="stylesheet" href="css/main.css"/>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+        var browse = navigator.userAgent.toLowerCase();
+        //userAgent:브라우저 식별  toLowerCase():해당문자열 모두 소문자로 변경
+        //mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/84.0.4147.89 safari/537.36
+        if((navigator.appName == 'Netscape' && browse.indexOf('trident') != -1) || (browse.indexOf("msie") != -1))
+        //navigator:현재 사용하고 있는 웹브라우저에 관한 정보.
+        //appNAme:웹브라우저 이름,
+        {
+             $('#chrome').show()
+             alert("포트폴리오는 크롬버전에 최적화되어있습니다.\n크롬브라우저를 이용 부탁드립니다.");
+        }
+
+
+        setTimeout(function(){
+            $('.cover').removeClass('none')
+            $('.name').removeClass('none')
+        })
+        setTimeout(function(){
+            $('#coverpage').animate({
+                'left':'-8000px'
+            },6000)
+        },5500)
+    })  
+  </script>
+ </head>
+
+<body>
+  <section id="chrome">
+      <p>크롬브라우저로 접속 부탁드립니다.</p>
+  </section>
+  <section id="coverpage">
+      <ul class="cover none">
+       <li>안</li>
+       <li>녕</li>
+       <li>하</li>
+       <li>세</li>
+       <li>요.</li>
+      </ul>
+       <svg viewbox="0 0 1350 600">
+           <text x="50%" y="65%" fill="transparent" text-anchor="middle">
+               지원자 이효성 입니다.
+           </text>
+       </svg>
+   </section>
+    <section>
+        <section class="contents_1">
+            <nav>
+                <ul class="informations">
+                    <li><a href="#"><h3>Who I am</h3></a>
+                        <ul>
+                            <li>Info</li>
+                            <li>Name</li>
+                            <li>phone</li>
+                            <li>Email</li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><h3>PortFolios</h3></a>
+                        <ul class="portpolios">
+                            <li><a href="#">Html4</a>
+                                <ul class="contents">
+                                    <li><a href="PF_1/main.html">HTML4_Main</a></li>
+                                    <li><a href="PF_1/user.html">HTML4_User</a></li>
+                                    <li><a href="PF_1/login.html">HTML4_Login</a></li>
+                                    <li><a href="PF_1/map.html">HTML4_Map</a></li>
+                                    <li><a href="PF_1/notice.html">HTML4_Notice</a></li>
+                                    </ul>
+                            </li>
+                            <li><a href="#">Html5</a>
+                                <ul class="contents">
+                                    <li><a href="PF_2/wekeep.html">Wekeep</a></li>
+                                    <li><a href="PF_3/monami.html">Monami</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="mobile_2/dokdo.html"></a>Mobile</li>
+                            <li><a href="Responsive_Web/kcsnet.html"></a>Responsive</li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><h3>Skills</h3></a>
+                        <ul>
+                            <li>Html</li>
+                            <li>Css</li>
+                            <li>Javascript</li>
+                            <li>Photoshop</li>
+                            <li>Illustrator</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <section class="contents_2"></section>
+        <section class="contents_3"></section>
+    </section>
+    <footer></footer>
+</body>
+
+</html>

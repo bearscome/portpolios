@@ -1,0 +1,1427 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>대한화학회</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="keywords" content="키워드넣기" />
+    <meta name="description" content="설명넣기" />
+    <meta name="author" content="저자넣기" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.css"/>
+    
+    <script>
+        $(document).ready(function(){
+            
+            $('.m_button').on('click',function(e){
+                var bg=$('<div class="m_bg_gnb"></div>')
+                e.preventDefault()
+                $('.m_gnb').show()
+                $('.m_button').hide()
+                $('body').after(bg)
+                $('.m_gnb_contents > .deth_1 > li > ul').hide()
+                $('body').css('overflow-Y','hidden')
+            })
+            
+            $('.m_gnb').on({
+                mouseenter:function(){
+                    $('.m_gnb').show()
+                },
+                mouseleave:function(){
+                    $('.m_gnb').hide()
+                    $('.m_bg_gnb').remove()
+                    $('.m_button').show()
+                    $('body').css('overflow-Y','')
+                }
+            })
+            
+            $('.m_gnb_contents > .deth_1 > li > a').on('click',function(e){
+                e.preventDefault()
+                $('.m_gnb_contents > .deth_1 > li > ul').hide()
+                $('.m_gnb_contents .deth_1 > li > a').removeClass('on')
+                $(this).addClass('on')
+                $(this).next().slideDown()
+            })
+            
+            
+            /*web_gnb*/
+            var bg=$('<div class="bg_gnb"><div>')
+           
+            $('.web_gnb > li > a').on({
+                mouseenter:function(){
+                    $('.header').after(bg)
+                    $('.web_gnb .deth_2').stop().fadeIn(50)
+                    
+                },
+                mouseleave:function(){
+                    $('.web_gnb .deth_2').stop().fadeOut(50)
+                    $(bg).remove();
+                }
+            })
+            
+            $('.web_gnb .deth_2').on({
+                mouseenter:function(){
+                    $('.header').after(bg)
+                    $('.web_gnb .deth_2').stop().fadeIn(50)
+                    
+                },
+                mouseleave:function(){
+                    $('.web_gnb .deth_2').stop().fadeOut(50)
+                    $(bg).remove()
+                }
+            })
+            
+            
+            $('.cotnents_2 .btn_right').on('click',function(e){
+                e.preventDefault()
+                var Atomic_number=$('.swiper-slide-next').find('.Atomic_number')
+                var Kr=$('.swiper-slide-next').find('.img_tit_kr')
+                $('.Atomic_number').animate({
+                    'opacity':0
+                },100)
+                $('.img_tit_kr').animate({
+                    'opacity':0
+                },100)
+                Atomic_number.animate({
+                    'opacity':1
+                },700)
+                Kr.animate({
+                    'opacity':1
+                },700)
+                
+            })
+            $('.cotnents_2 .btn_left').on('click',function(e){
+                e.preventDefault()
+                var Atomic_number=$('.swiper-slide-prev').find('.Atomic_number')
+                var Kr=$('.swiper-slide-next').find('.img_tit_kr')
+                $('.Atomic_number').animate({
+                    'opacity':0
+                },100)
+                $('.img_tit_kr').animate({
+                    'opacity':0
+                },100)
+                Atomic_number.animate({
+                    'opacity':1
+                },700)
+                Kr.animate({
+                    'opacity':1
+                },700)
+            })
+            
+            $('.swiper-container').mousedown(function(){
+                console.log('a')
+               $('.Atomic_number').css('opacity','0')
+            })
+
+            
+            $('.tab ul').not(':first').hide()
+            $('.tab > a').on('click',function(e){
+                e.preventDefault()
+                $('.tab > a.on').removeClass('on')
+                $(this).addClass('on')
+                $('.tab ul').hide()
+                $(this).next().show()
+            })
+                $('.cotnents_5 .contents_wrap ul li ul').not(':first').hide()
+                $('.cotnents_5 .contents_wrap ul > li > a.tit').on('click',function(e){
+                    e.preventDefault()
+                    $('.cotnents_5 a.tit').removeClass('on')
+                    $(this).addClass('on')
+                    $('.cotnents_5 a.tit').next().hide()
+                    $(this).next().show()
+                })
+
+            
+            
+            /*bx_slider*/
+            $('.bxslider').bxSlider({
+                pager: true,
+                auto: true
+            });
+            
+               var mySwiper_1 = new Swiper('.swiper_1', {
+                     navigation : {
+                     nextEl : '.swiper-button-next', 
+                     prevEl : '.swiper-button-prev', 
+                     },
+                     slidesPerView: 6,
+                     pagination: '.swiper-pagination',
+                     paginationClickable: true,
+                     loop: false,
+                     centeredSlides:true,
+                     spaceBetween:100,
+                    disableTouchControl: true,
+                       breakpoints: {
+                            1200: {
+                              touchRatio: 0,
+                              slidesPerView: 6,
+                              spaceBetween: 100,
+                            },
+                           770: {
+                              touchRatio: 0,
+                              slidesPerView:3,
+                              spaceBetween:120,
+                            },
+                            320: {
+                              slidesPerView:1,
+                              spaceBetween: 0,
+                              loop:true
+                            }
+                          }
+                    });
+            
+                var mySwiper_2 = new Swiper ('.swiper_2', {
+                    navigation : {
+                     nextEl : '.swiper-button-next', 
+                     prevEl : '.swiper-button-prev', 
+                     },
+                    slidesPerView: 5,
+                        pagination: '.swiper-pagination',
+                        paginationClickable: true,
+                        loop: false,
+                        centeredSlides:true,
+                        spaceBetween:0,
+                        breakpoints: {
+                                1200: {
+                                  slidesPerView: 4,
+                                  spaceBetween:200,
+                                },
+                               768: {
+                                  slidesPerView:4,
+                                  spaceBetween:220,
+                                },
+                                400: {
+                                  slidesPerView:2,
+                                  spaceBetween: 200,
+                                },
+                                200: {
+                                  slidesPerView:1,
+                                  spaceBetween:60,
+                                }
+                              }
+                })
+                
+                var num_1=0;
+                var num_2=0;
+                var num_3=0;
+                var width_2=window.outerWidth;
+                if(width_2>1200){
+                    console.log('a')
+                    $('.cotnents_3_btn .prev').on('click',function(e){
+                            e.preventDefault()
+                            var width=$('.tab ul li').width()
+                            var number=60
+                            var add=width+number
+                            num_2--
+                            if(num_2<0)
+                                num_2=2
+                            if($('.tab_2 > ul').is(':animated')==false){
+                                 $('.tab_2 > ul').animate({
+                                'left':(-add * num_2)+'px',
+                                 })
+                            }
+                        })
+                        $('.cotnents_3_btn .next').on('click',function(e){
+                            e.preventDefault()
+                            var width=$('.tab ul li').width()
+                            var number=60
+                            var add=width+number
+                            num_2++
+                            if(num_2>2)
+                                num_2=0
+                            if($('.tab_2 > ul').is(':animated')==false){
+                                 $('.tab_2 > ul').animate({
+                                'left':(-add* num_2)+'px',
+                                 })
+                            }
+                        })
+                }else if(width_2>=768){
+                    console.log('768')
+                    $('.cotnents_3_btn .prev').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        num_1--
+                        if(num_1<0)
+                            num_1=3
+                        if($('.tab > ul').is(':animated')==false){
+                             $('.tab_1 > ul').animate({
+                            'left':(-add * num_1)+'px',
+                             })
+                            $('.tab_2 > ul').animate({
+                            'left':(-add * num_1)+'px',
+                             })
+                        }
+                    })
+                    $('.cotnents_3_btn .next').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        num_1++
+                        if(num_1>3)
+                            num_1=0
+                        if($('.tab > ul').is(':animated')==false){
+                             $('.tab_1 > ul').animate({
+                            'left':(-add* num_1)+'px',
+                             })
+                            $('.tab_2 > ul').animate({
+                            'left':(-add* num_1)+'px',
+                             })
+                        }
+                    })
+                }else if(width_2>=520){
+                    console.log('520')
+                     $('.cotnents_3_btn .prev').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        num_2--
+                        num_1--
+                        if(num_1<0)
+                            num_1=3
+                        if(num_2<0)
+                            num_2=4
+                        if($('.tab > ul').is(':animated')==false){
+                            $('.tab_1 > ul').animate({
+                            'left':(-add* num_1)+'px',
+                             })
+                             $('.tab_2 > ul').animate({
+                            'left':(-add * num_2)+'px',
+                             })
+                        }
+                    })
+                    $('.cotnents_3_btn .next').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        num_2++
+                        num_1++
+                        if(num_1>3)
+                            num_1=0
+                        if(num_2>4)
+                            num_2=0
+                        if($('.tab > ul').is(':animated')==false){
+                            $('.tab_1 > ul').animate({
+                            'left':(-add* num_1)+'px',
+                             })
+                             $('.tab_2 > ul').animate({
+                            'left':(-add* num_2)+'px',
+                             })
+                        }
+                    })
+                }else if(width_2>=200){
+                    console.log('200')
+                    $('.cotnents_3_btn .prev').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        num_3--
+                        num_2--
+                        num_1--
+                        if(num_3<0)
+                            num_3=1
+                        if(num_2<0)
+                            num_2=3
+                        if(num_1<0)
+                            num_1=5
+                        if($('.tab > ul').is(':animated')==false){
+                            $('.tab_3 > ul').animate({
+                            'left':(-add * num_3)+'px',
+                             })
+                            $('.tab_2 > ul').animate({
+                            'left':(-add * num_1)+'px',
+                             })
+                            $('.tab_1 > ul').animate({
+                            'left':(-add * num_2)+'px',
+                             })
+                             
+                        }
+                    })
+                    $('.cotnents_3_btn .next').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        num_3++
+                        num_2++
+                        num_1++
+                        if(num_3>1)
+                            num_3=0
+                        if(num_2>3)
+                            num_2=0
+                        if(num_1>5)
+                            num_1=0
+                        if($('.tab > ul').is(':animated')==false){
+                            $('.tab_1 > ul').animate({
+                            'left':(-add* num_2)+'px',
+                             })
+                             $('.tab_2 > ul').animate({
+                            'left':(-add* num_1)+'px',
+                             })
+                            $('.tab_3 > ul').animate({
+                            'left':(-add* num_3)+'px',
+                             })
+                        }
+                    })  
+                }
+            
+            /*반응형 스크립트*/
+              /* var id;
+                $(window).resize(function(){
+                    clearTimeout(id);
+                    id = setTimeout(doneResizing, 150);
+                });*/
+            
+               /* function doneResizing(){
+                    var width=window.outerWidth;
+                    var num=0
+                    var nums=0
+                    if(width>=1200){
+                          
+                       $('.cotnents_3_btn .prev').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        num--
+                        if(num<0)
+                            num=2
+                        if($('.tab_2 > ul').is(':animated')==false){
+                             $('.tab_2 > ul').animate({
+                            'left':(-add * num)+'px',
+                             })
+                        }
+                    })
+                    $('.cotnents_3_btn .next').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        num++
+                        if(num>2)
+                            num=0
+                        if($('.tab_2 > ul').is(':animated')==false){
+                             $('.tab_2 > ul').animate({
+                            'left':(-add* num)+'px',
+                             })
+                        }
+                    })
+                        
+                    }
+                    else if(width>=768){
+                        $('.cotnents_3_btn .prev').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        num--
+                        if(num<0)
+                            num=3
+                        if($('.tab > ul').is(':animated')==false){
+                             $('.tab_1 > ul').animate({
+                            'left':(-add * num)+'px',
+                             })
+                            $('.tab_2 > ul').animate({
+                            'left':(-add * num)+'px',
+                             })
+                        }
+                    })
+                    $('.cotnents_3_btn .next').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        num++
+                        if(num>3)
+                            num=0
+                        if($('.tab > ul').is(':animated')==false){
+                             $('.tab_1 > ul').animate({
+                            'left':(-add* num)+'px',
+                             })
+                            $('.tab_2 > ul').animate({
+                            'left':(-add* num)+'px',
+                             })
+                        }
+                    })
+                        
+                    }
+                    else if(width>=520){
+                        $('.cotnents_3_btn .prev').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        nums--
+                        num--
+                        if(nums<0)
+                            nums=3
+                        if(num<0)
+                            num=4
+                        if($('.tab > ul').is(':animated')==false){
+                            $('.tab_1 > ul').animate({
+                            'left':(-add* nums)+'px',
+                             })
+                             $('.tab_2 > ul').animate({
+                            'left':(-add * num)+'px',
+                             })
+                        }
+                    })
+                    $('.cotnents_3_btn .next').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        nums++
+                        num++
+                        if(nums>3)
+                            nums=0
+                        if(num>4)
+                            num=0
+                        if($('.tab > ul').is(':animated')==false){
+                            $('.tab_1 > ul').animate({
+                            'left':(-add* nums)+'px',
+                             })
+                             $('.tab_2 > ul').animate({
+                            'left':(-add* num)+'px',
+                             })
+                        }
+                    })
+                    }
+                    else if(width>=200){
+                       $('.cotnents_3_btn .prev').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        nums--
+                        num--
+                        if(nums<0)
+                            nums=3
+                        if(num<0)
+                            num=5
+                        if($('.tab > ul').is(':animated')==false){
+                            $('.tab_1 > ul').animate({
+                            'left':(-add* nums)+'px',
+                             })
+                             $('.tab_2 > ul').animate({
+                            'left':(-add * num)+'px',
+                             })
+                        }
+                    })
+                    $('.cotnents_3_btn .next').on('click',function(e){
+                        e.preventDefault()
+                        var width=$('.tab ul li').width()
+                        var number=60
+                        var add=width+number
+                        nums++
+                        num++
+                        if(nums>3)
+                            nums=0
+                        if(num>5)
+                            num=0
+                        if($('.tab > ul').is(':animated')==false){
+                            $('.tab_1 > ul').animate({
+                            'left':(-add* nums)+'px',
+                             })
+                             $('.tab_2 > ul').animate({
+                            'left':(-add* num)+'px',
+                             })
+                        }
+                    })      
+                    }
+
+                }*/
+
+                
+      
+            
+                    
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="SkipMenu">
+        <a href="header" id="go_gnb">메뉴바로가기</a>
+        <a href="conteiner" id="go_conteiner">본문바로가기</a>
+    </div>
+    <header class="header">
+        <nav class="center_header clearfix">
+            <a href="#" class="gnb_logo">로고</a>
+            <ul class="web_gnb">
+                <li><a href="#">학술발표회</a>
+                    <ul class="deth_2">
+                      <li><a href="#">상세안내</a></li>
+                      <li><a href="#">초록보기</a></li>
+                      <li><a href="#">초록통계</a></li>
+                      <li><a href="#">초록집 모음</a></li>
+                      <li><a href="#">초록등록</a></li>
+                      <li><a href="#">학회관련상</a></li>
+                      <li><a href="#" class="gnb_more">기기전시회 안내<i class="fas fa-info-circle"></i></a></li>
+                      <li><a href="#" class="onlineMeeting">Online Meeting</a></li>
+                     </ul>
+                </li>
+                <li><a href="#">화학이야기</a>
+                    <ul class="deth_2">
+                      <li><a href="#">주기율표</a></li>
+                      <li><a href="#">화학술어</a></li>
+                      <li><a href="#">화합물 명명법</a></li>
+                      <li><a href="#">연구윤리 정보</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">발행지</a>
+                    <ul class="deth_2">
+                        <li><a href="#">저널</a></li>
+                        <li><a href="#">화학세계</a></li>
+                        <li><a href="#">화학교육</a></li>
+                     </ul>
+                </li>
+                <li><a href="#">학회소식</a>
+                    <ul class="deth_2">
+                       <li><a href="#">학회소식/공지사항</a></li>
+                       <li><a href="#">학술행사/정보마당</a></li>
+                       <li><a href="#">언론에 비친 KCS</a></li>
+                       <li><a href="#">구인/구직</a></li>
+                       <li><a href="#">회원동정<i class="fas fa-info-circle"></i></a></li>
+                       <li><a href="#">화학올림피아드</a></li>
+                       <li><a href="#">후원사 혜택 안내</a></li>
+                       <li><a href="#">지면 광고 안내<i class="fas fa-info-circle"></i></a></li>
+                    </ul>
+                </li>
+                <li><a href="#">학회소개</a>
+                    <ul class="deth_2">
+                        <li><a href="#">정관/세칙</a></li>
+                        <li><a href="#">소개 및 활동/사업</a></li>
+                        <li><a href="#">현 임원<i class="fas fa-info-circle"></i></a></li>
+                        <li><a href="#">역대임원</a></li>
+                        <li><a href="#">연혁</a></li>
+                        <li><a href="#">분과회/지부</a></li>
+                        <li><a href="#">학회자료실</a></li>
+                        <li><a href="#">단체회원</a></li>
+                        <li><a href="#">전자회원</a></li>
+                        <li><a href="#">사무국/오시는길</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="user_menu">
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+                <a href="#">회원안내</a>
+                <a href="#" class="ENG">English</a>
+            </div>
+            <a href="#" class="m_button">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+            </a>
+        </nav>
+            <div class="m_gnb">
+                <div class="gnb_header">
+                    <a href="#" class="m_logo">모바일로고</a>
+                    <a href="#" class="on">KR</a>
+                    <a href="#">EN</a>
+                </div>
+                <div class="m_gnb_contents">
+                    <ul class="deth_1">
+                        <li><a href="#">학술발표회</a>
+                            <ul class="deth_2">
+                                <li><a href="#">상세안내</a></li>
+                                <li><a href="#">초록보기</a></li>
+                                <li><a href="#">초록통계</a></li>
+                                <li><a href="#">초록집 모음</a></li>
+                                <li><a href="#">초록등록</a></li>
+                                <li><a href="#">학회관련상</a></li>
+                                <li><a href="#">기기전시회 안내<i class="fas fa-info-circle"></i></a></li>
+                                <li><a href="#">Online Meeting</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">화학이야기</a>
+                            <ul class="deth_2">
+                                <li><a href="#">주기율표</a></li>
+                                <li><a href="#">화학술어</a></li>
+                                <li><a href="#">화합물 명명법</a></li>
+                                <li><a href="#">연구실험실 안전정보</a></li>
+                                <li><a href="#">연구윤리 정보</a></li>
+                                <li><a href="#">화학올림피아드</a></li>
+                                <li><a href="#">화학포스터 시화대회</a></li>
+                                <li><a href="#">Online Meeting<i class="fas fa-info-circle"></i></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">발행지</a>
+                            <ul class="deth_2">
+                                <li><a href="#">저널</a></li>
+                                <li><a href="#">화학세계</a></li>
+                                <li><a href="#">화학교육</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">학회소식</a>
+                            <ul class="deth_2">
+                                <li><a href="#">학회소식/공지사항</a></li>
+                                <li><a href="#">학술행사/정보마당</a></li>
+                                <li><a href="#">언론에 비친 KCS</a></li>
+                                <li><a href="#">구인/구직</a></li>
+                                <li><a href="#">회원동정<i class="fas fa-info-circle"></i></a></li>
+                                <li><a href="#">화학올림피아드</a></li>
+                                <li><a href="#">후원사 혜택 안내</a></li>
+                                <li><a href="#">지면 광고 안내<i class="fas fa-info-circle"></i></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">학회소개</a>
+                            <ul class="deth_2">
+                                <li><a href="#">정관/세칙</a></li>
+                                <li><a href="#">소개 및 활동/사업</a></li>
+                                <li><a href="#">현임원<i class="fas fa-info-circle"></i></a></li>
+                                <li><a href="#">역대임원</a></li>
+                                <li><a href="#">연혁</a></li>
+                                <li><a href="#">분과회/지부</a></li>
+                                <li><a href="#">학회자료실</a></li>
+                                <li><a href="#">단체회원</a></li>
+                                <li><a href="#">전자회원</a></li>
+                                <li><a href="#">사무국/오시는길</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m_gng_footer">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">회원안내</a></li>
+                    </ul>
+                </div>
+            </div>
+    </header>
+    
+    <!--중앙부분은 1200px;-->
+    <div id="wrap">
+        <section class="cotnents_1">
+            <ul class="bxslider" >
+                <li>
+                    <a href="#" class="main_img">
+                        <img src="images/web_bg_1_t.png" alt="125th General Meeting 제125회 학술발표회,총회 온라인 학술대회 2020.07(월) ~ 7.7(화) Online Meeting" class="main_img_img none"/>
+                        <a href="#" class="all_schedule">e-초록집</a>
+                        <a href="#" class="color_Blue">Online Meeting 접속</a>
+                    </a>
+                     <a href="#" class="m_bg">
+                           <img src="images/m_bg_1.png" alt="125th General Meeting 제125회 학술발표회,총회 온라인 학술대회 2020.07(월) ~ 7.7(화) Online Meeting" class="m_main_img_img"/>
+                            <a href="#" class="all_schedule">e-초록집</a>
+                            <a href="#" class="color_Blue">Online Meeting 접속</a>
+                        </a>
+                        
+                </li>
+                <li>
+                    <a href="#" class="main_img_2">
+                       <img src="images/web_bg_3_t.png" alt="주기율표와 원소 150년의 이야기 주기율표와 현재까지 발견돈 118개의 원소의 특징과 발견되기까지의 숨은 이야기, 그리고 우리의 일상 생활에서 어떻게 활용되고 있는지의 이야기를 쉽고 간결하게 전해드립니다." class="main_img_img none"/>
+                    </a>
+                    <a href="#" class="m_bg">
+                        <img src="images/m_bg_2.jpg" alt="주기율표와 원소 150년의 이야기"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="main_img_3">
+                        <img src="images/web_bg_2_t.png" alt="Green CheMistry Clean Woreld 화학이 지구를 더 푸르게" class="main_img_img none"/>
+                    </a>
+                    <a href="#" class="m_bg">
+                        <img src="images/m_bg_3.png" alt="Green CheMistry Clean Woreld 화학이 지구를 더 푸르게"/>
+                    </a>
+                </li>
+            </ul>
+            <div class="slogan"><img src="images/slogan2.png" alt="화학이 지구를 더 푸르게"/></div>
+        </section>
+        
+        
+        <section class="cotnents_2">
+            <p>주기율표와 원소</p>
+            <h3>150년의 이야기</h3>
+            <p><img src="images/navertv.jpg" alt="네이버TV"/>와 함께합니다.</p>
+            <p class="notice"></p>
+            <div class="swiper-container swiper_1">
+            <ul class="swiper-wrapper" id="contents_1">
+                <li class="swiper-slide">
+                    <a href="#">
+                        <img src="images/Zn_1.jpg" alt="Zn 아연"/>
+                        <div class="map_tit">
+                            <p class="img_tit_en">Zn</p>
+                            <p class="img_tit_kr on">아연</p>
+                        </div>
+                        <p class="img_txt">비바람으로부터 철을, 병원균으로부터 인체를 지키는 원소</p>
+                        <div class="Atomic_number on">
+                            <p class="num">30</p>
+                            <p class="num_kr">원자번호</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">
+                        <img src="images/AL_2.png" alt="AI 알루미늄"/>
+                        <div class="map_tit">
+                            <p class="img_tit_en">Al</p>
+                            <p class="img_tit_kr off">알루미늄</p>
+                        </div>
+                        <p class="img_txt">현대 문명에 필수적인 비철금속</p>
+                        <div class="Atomic_number off">
+                            <p class="num">13</p>
+                            <p class="num_kr">원자번호</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">
+                        <img src="images/mg_1.jpg" alt="Mg 마그네슘"/>
+                        <div class="map_tit">
+                            <p class="img_tit_en">Mg</p>
+                            <p class="img_tit_kr off">마그네슘</p>
+                        </div>
+                        <p class="img_txt">화학, 산업, 생명의 핵심 원소</p>
+                        <div class="Atomic_number off">
+                            <p class="num">12</p>
+                            <p class="num_kr">원자번호</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">
+                        <img src="images/he_1.jpg" alt="Zn 아연"/>
+                        <div class="map_tit">
+                            <p class="img_tit_en">Zn</p>
+                            <p class="img_tit_kr off">아연</p>
+                        </div>
+                        <p class="img_txt">비바람으로부터 철을, 병원균으로부터 인체를 지키는 원소</p>
+                        <div class="Atomic_number off">
+                            <p class="num">30</p>
+                            <p class="num_kr">원자번호</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">
+                        <img src="images/O_1.jpg" alt="O 산소"/>
+                        <div class="map_tit">
+                            <p class="img_tit_en">O</p>
+                            <p class="img_tit_kr off">산소</p>
+                        </div>
+                        <p class="img_txt">생명 유지의 필수 원소</p>
+                        <div class="Atomic_number off">
+                            <p class="num">08</p>
+                            <p class="num_kr">원자번호</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">
+                        <img src="images/Mn_1.jpg" alt="Mn 망가니즈"/>
+                        <div class="map_tit">
+                            <p class="img_tit_en">Mn</p>
+                            <p class="img_tit_kr off">망가니즈</p>
+                        </div>
+                        <p class="img_txt">효소와 광합성</p>
+                        <div class="Atomic_number off">
+                            <p class="num">25</p>
+                            <p class="num_kr">원자번호</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">
+                        <img src="images/Be_1.jpg" alt=""/>
+                        <div class="map_tit">
+                            <p class="img_tit_en">Be</p>
+                            <p class="img_tit_kr off">베릴륨</p>
+                        </div>
+                        <p class="img_txt">산업 분야에서 필수적인 금속 원소</p>
+                        <div class="Atomic_number off">
+                            <p class="num">04</p>
+                            <p class="num_kr">원자번호</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">
+                        <img src="images/CI_1.jpg" alt=""/>
+                        <div class="map_tit">
+                            <p class="img_tit_en">Ci</p>
+                            <p class="img_tit_kr off">염소</p>
+                        </div>
+                        <p class="img_txt">독가스로부터 소독약까지</p>
+                        <div class="Atomic_number off">
+                            <p class="num">17</p>
+                            <p class="num_kr">원자번호</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">
+                        <img src="images/p_1.jpg" alt=""/>
+                        <div class="map_tit">
+                            <p class="img_tit_en">P</p>
+                            <p class="img_tit_kr off">인</p>
+                        </div>
+                        <p class="img_txt">연금술사들의 꿈으로부터 현대 산업과 생명 유지의 핵심으로</p>
+                        <div class="Atomic_number off">
+                            <p class="num">15</p>
+                            <p class="num_kr">원자번호</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">
+                        <img src="images/K_1.jpg" alt=""/>
+                        <div class="map_tit">
+                            <p class="img_tit_en">K</p>
+                            <p class="img_tit_kr off">포타슘</p>
+                        </div>
+                        <p class="img_txt">생리작용의 열쇠</p>
+                        <div class="Atomic_number off">
+                            <p class="num">19</p>
+                            <p class="num_kr">원자번호</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="swiper-button-next btn_right"></div>
+            <div class="swiper-button-prev btn_left"></div>
+            </div>
+            <a href="#" class="more more_1">더보기</a>
+        </section>
+        
+        <section class="cotnents_3">
+            <div class="center_wrap">
+            <h3>SCHEDULE</h3>
+            <p class="tit_1">KOREAN CHEMICAL SOCIETY SCHEDULE</p>
+            <div class="content_wrap">
+                <p class="year">2020</p>
+                <div >
+                    <ul class="deth_1">
+                    <li class="tab tab_1 on"><a href="#" class="on">1</a>
+                    <ul>
+                        <li>
+                            <p class="tit_date">6<span class="day">일</span></p>
+                            <strong>제125회 학술발표회<br/>초록접수</strong>
+                            <p class="date">2020.1.6 ~ 5.20</p>
+                        </li>
+                         <li>
+                            <p class="tit_date">6<span class="day">일</span></p>
+                             <strong>제125회 학술발표회<br/>기기전시 신청</strong>
+                             <p class="date">2020.1.6 ~ 5.28</p>
+                        </li>
+                         <li>
+                            <p class="tit_date">6<span class="day">일</span></p>
+                            <strong>제125회 학술발표회<br/>사전 등록</strong>
+                            <p class="date">2020.1.6 ~ 5.28</p>
+                        </li>
+                         <li>
+                            <p class="tit_date">13<span class="day">일</span></p>
+                            <strong>제125회 학술발표회<br/>합동 동계 심포지엄</strong>
+                            <p class="date">2020.1.15</p>
+                            <p class="place">서울대학교 관악캠퍼스 26동 B101</p>
+                        </li>
+                    </ul>
+                </li>
+                    <li class="tab tab_2"><a href="#">2</a>
+                    <ul class="">
+                        <li class="">
+                            <p class="tit_date">5<span class="day">일</span></p>
+                            <strong>환경에너지분과<br/>동계심포지엄</strong>
+                            <p class="date">2020.2.5 ~ 2.7</p>
+                            <p class="place">홍천 비발디파크 석류홀</p>
+                        </li>
+                         <li class="">
+                            <p class="tit_date">6<span class="day">일</span></p>
+                             <strong>고분자화학분과회<br/>동계심포지엄</strong>
+                             <p class="date">2020.2.6 ~ 2.7</p>
+                             <p class="place">한양대 자연과학관 B116호</p>
+                        </li>
+                         <li class="">
+                            <p class="tit_date">7<span class="day">일</span></p>
+                            <strong>물리화학분과회<br/>심포지엄</strong>
+                            <p class="date">2020.2.7</p>
+                            <p class="place">숙명여자대학교 백주년기념관 601호</p>
+                        </li>
+                         <li class="">
+                            <p class="tit_date">13<span class="day">일</span></p>
+                            <strong>재료화학분과회<br/>동계심포지엄</strong>
+                            <p class="date">2020.2.13</p>
+                            <p class="place">아주대학교 에너지센터 101호</p>
+                        </li>
+                        <li class="">
+                            <p class="tit_date">15<span class="day">일</span></p>
+                            <strong>화학교육분과회<br/>세미나 및 총회</strong>
+                            <p class="date">2020.2.15</p>
+                            <p class="place">한국교원대학교</p>
+                        </li>
+                        <li class="">
+                            <p class="tit_date">20<span class="day">일</span></p>
+                            <strong>유기화학분과회<br/>심포지억</strong>
+                            <p class="date">2020.2.20</p>
+                            <p class="place">대전 학국화학연구회</p>
+                        </li>
+                    </ul>
+                </li>
+                    <li class="tab tab_3"><a href="#" >7</a>
+                    <ul>
+                        <li>
+                            <p class="tit_date">6<span class="day">일</span></p>
+                            <strong>제125회 학술발표회, 총회</strong>
+                            <p class="date">2020.7.6 ~ 7</p>
+                            <p class="place">Online Meeting</p>
+                        </li>
+                        <li>
+                            <p class="tit_date">6<span class="day">일</span></p>
+                            <strong>제125회 학술발표회, 총회</strong>
+                            <p class="date">2020.7.6 ~ 7</p>
+                            <p class="place">Online Meeting</p>
+                        </li> 
+                    </ul>
+                </li>
+                </ul>
+                </div>
+                <div class="cotnents_3_btn">
+                    <a href="#" class="prev"><i class="far fa-arrow-alt-circle-left"></i></a>
+                    <a href="#" class="next"><i class="far fa-arrow-alt-circle-right"></i></a>
+                </div>
+                <a href="#" class="more more_2">더보기</a>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="cotnents_4">
+            <div class="center_wrap">
+            <h3>PUBLICATIONS</h3>
+            <p class="tit_1">KOREAN CHEMICAL SOCIETY PUBLICATIONS</p>
+            <div class="swiper-container swiper_2">
+                <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <a href="#" class="books">
+                        <img src="images/pub.png" alt="화학세계"/>
+                        <p>화학세계</p>
+                        <p>Jul 1,2020 <br/>Volume 60,No 6</p>
+                        <p href="#" class="new_more">최신호 더보기</p>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#" class="books">
+                        <img src="images/pub0.jpg" alt="Bulletin of the Korean Chemical Society"/>
+                        <p>Bulletin of the Korean Chemical Society</p>
+                        <p>Jun 20,2020 <br/>Volume 41,Issue 6</p>
+                        <p href="#" class="new_more">최신호 더보기</p>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#" class="books">
+                        <img src="images/pub2.png" alt="Journal of the Korean Chemical Society"/>
+                        <p>Journal of the Korean Chemical Society</p>
+                        <p>Jun 20,2020 <br/>Volume 64,Issue 3</p>
+                        <p href="#" class="new_more">최신호 더보기</p>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#" class="books">
+                        <img src="images/pub3.jpg" alt="Chemistry, an Asian Jounal"/>
+                        <p>Chemistry, an Asian Jounal</p>
+                        <p>Volume 15 (2020)</p>
+                        <p href="#" class="new_more">최신호 더보기</p>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#" class="books">
+                        <img src="images/pub4.jpg" alt="Asian Journal of Organic Chemistry"/>
+                        <p>Physical Chemistry Chemical Physics</p>
+                        <p>Volume 22 (2020)</p>
+                        <p href="#" class="new_more">최신호 더보기</p>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#" class="books">
+                        <img src="images/pub5.jpg" alt="Physical Chemistry Chemical Physics"/>
+                        <p>Physical Chemistry Chemical Physics</p>
+                        <p>Volume 22 (2020)</p>
+                        <p href="#" class="new_more">최신호 더보기</p>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#" class="books">
+                        <img src="images/pub6.jpg" alt="ChemNanoMat"/>
+                        <p>ChemNanoMat</p>
+                        <p>Volume 6 (2020)</p>
+                        <p href="#" class="new_more">최신호 더보기</p>
+                    </a>
+                </li>
+            </ul>
+            <div class="swiper-button-next btn_right"></div>
+            <div class="swiper-button-prev btn_left"></div>
+            </div>
+            </div>
+        </section>
+        
+        
+        <section class="cotnents_5">
+            <div class="center_wrap clearfix">
+                <h3>NEWS</h3>
+                <p class="tit_1">KOREAN CHEMICAL SOCIETY NEWS</p>
+                <div class="contents_wrap">
+                    <ul class="clearfix">
+                    <li><a href="#" class="tit on">공지사항</a>
+                        <ul class="other_style">
+                            <li>
+                                <a href="#">
+                                    <img src="images/news_1.jpg" alt="125th General Meeting of the Korean Chemical Society July6-7,2020 On-lineProgran">
+                                    <h3>제125회 학술발표회 - 온라인개최 주요안내</h3>
+                                    <p class="content_txt">Pacifichem 2020 행사가 COVID-19로 2021년으로 변경되었으며 상세한 내용은 아래 링크에서 확인하여 주십...</p>
+                                    <p class="news_date">2020-06-24</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>[설문조사] 화학 분야 블록 펀딩 2차 설문조사</h3>
+                                    <p class="content_txt">화학 분야 블록 펀딩 2차 설문 조사 설문조사 바로가기 대한화학회 회원님들께, 대한화학회는 한국연구재단</p>
+                                    <p class="news_date">2020-06-22</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>제 125회 학술발표회 - 포스터 발표 안내</h3>
+                                    <p class="content_txt">화학 분야 블록 펀딩 2차 설문 조사 설문조사 바로가기 대한화학회 회원님들께, 대한화학회는 한국연구재단</p>
+                                    <p class="news_date">2020-06-25</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>제 125회 학술발표회 - 포스터 발표 안내</h3>
+                                    <p class="content_txt">화학 분야 블록 펀딩 2차 설문 조사 설문조사 바로가기 대한화학회 회원님들께, 대한화학회는 한국연구재단</p>
+                                    <p class="news_date">2020-06-16</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="tit">학술행사</a>
+                        <ul class="other_style ">
+                            <li>
+                                <a href="#">
+                                    <img src="images/news_2.jpg" alt="공모분야 불소계 소지 전자기 특성 부여 기술 개발">
+                                    <h3>[한국화학연구원]반도체&#46;디스플레이용 불소화학소재개발 과제 공모</h3>
+                                    <p class="news_date">2020-06-24</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>[포스코청암재단] 포스코사이언스펠로십 12기(2021년) 선발 안내</h3>
+                                    <p class="content_txt">화학 분야 블록 펀딩 2차 설문 조사 설문조사 바로가기 대한화학회 회원님들께, 대한화학회는 한국연구재단</p>
+                                    <p class="news_date">2020-06-05</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>2020년 한국화학관련학회연합회 심포지움: 반도체 연구의 현재와 미래 (7월 6일, 수원...)</h3>
+                                    <p class="news_date">2020-06-04</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>Highlights from the ACES journals (May 2020)</h3>
+                                    <p class="content_txt">ACES News of the Month Supplier: Asian Chemical Editorial Society (ACES) Author: Asian Chemical Edito...</p>
+                                    <p class="news_date">2020-05-20</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="tit">구인/구직</a>
+                        <ul class="">
+                            <li>
+                                <a href="#">
+                                    <h3>EcoMundo 화학물질관리 소프트웨어 세일즈 담당</h3>
+                                    <p class="content_txt">비밀글 입니다.</p>
+                                    <p class="news_date">2020-07-01</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>한국표준과학연구원 2020년 하반기 정규직(연구직, 기술직) 공개채용</h3>
+                                    <p class="content_txt">비밀글 입니다</p>
+                                    <p class="news_date">2020-07-01</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>한양대학교ERICA 약학기술연구소 연구교원 모집</h3>
+                                    <p class="content_txt">한양대학교ERICA 약학대학 약학기술연구소에서 연구교수를 모집합니다. 단백질 미접힘 (Misfolding protein)...</p>
+                                    <p class="news_date">2020-07-01</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>식품의약품안전처에서 의료제품분야 심사관을 모집합니다.</h3>
+                                    <p class="content_txt">안녕하세요. 식품의약품안전처 의약품규격과 하성진입니다. 이번에 의약품규격과를 포함하여 비교적 많은 인...</p>
+                                    <p class="news_date">2020-06-29</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>삼성서울병원 화학분야 석사연구원 및 박사연구원(계약직) 모집</h3>
+                                    <p class="content_txt">성균관대학교 의과대학 삼성서울병원 핵의학과에서는 화학 분야와 의학 분야를 접목한 첨단과학 연구에 관심...</p>
+                                    <p class="news_date">2020-06-29</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>POSTECH(포항공과대학교) 신개념 당화학반응 연구단 박사후연구원 채용 공고</h3>
+                                    <p class="content_txt">POSTECH(포항공과대학교) 신개념 당화학반응 연구단 박사후연구원 채용 공고 POSTECH(포항공과대학교) 신개...</p>
+                                    <p class="news_date">2020-06-24</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="tit">회원동정</a>
+                        <ul class="">
+                            <li>
+                                <a href="#">
+                                    <h3>[부고] 신승훈(한양대학교 화학과) 회원 부친상</h3>
+                                    <p class="content_txt">한양대학교 화학과 신승훈 교수의 부친께서 별세하였음을 알려드립니다. 삼가 고인의 명복을 빕니다. 1. 빈...</p>
+                                    <p class="news_date">2020-06-25</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>[부고] 금교창(한국과학기술연구원) 회원 모친상</h3>
+                                    <p class="content_txt">한국과학기술연구원 금교창 박사의 모친(설미자님)께서 2020년 6월 24일 별세하였음을 알려드립니다. 삼가 ...</p>
+                                    <p class="news_date">2020-06-24</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>[부고] 신승훈(한양대학교 화학과) 회원 모친상</h3>
+                                    <p class="content_txt">한양대학교 화학과 신승훈 교수의 모친께서 별세하였음을 알려드립니다. 삼가 고인의 명복을 빕니다. 1. 빈...</p>
+                                    <p class="news_date">2020-06-13</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>[부고] 유태수(충북대학교 화학과) 회원 빙부상</h3>
+                                    <p class="content_txt">충북대학교 화학과 유태수 교수의 장인께서 별세하였음을 알려드립니다. 삼가 고인의 명복을 빕니다. 1. 빈...</p>
+                                    <p class="news_date">2020-06-11</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>[부고] 최범석(경희대학교 응용화학과) 회원 별세</h3>
+                                    <p class="content_txt">경희대학교 응용화학과 최범석 명예교수께서 별세하였음을 알려드립니다. 삼가 고인의 명복을 빕니다. 1. 빈...</p>
+                                    <p class="news_date">2020-06-11</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>[부고] 이영일(울산대학교 화학과) 회원 빙부상</h3>
+                                    <p class="content_txt">울산대학교 화학과 이영일 교수의 빙부께서 2020년 6월 8일 별세하였음을 알려드립니다. 삼가 고인의 명복을...</p>
+                                    <p class="news_date">2020-06-09</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="tit">분과회소식</a>
+                        <ul class="">
+                            <li>
+                                <a href="#">
+                                    <h3>제132차 대한화학회 물리화학분과회 심포지엄</h3>
+                                    <p></p>
+                                    <p class="news_date">2020-06-25</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>[재료화학과] 하계심포지움 변경 공지</h3>
+                                    <p class="content_txt">재료화학분과 회원들께,   안녕하세요? 총무간사 신현석입니다.   코로나 바이러스 감염병 때문에 저희 삶의...</p>
+                                    <p class="news_date">2020-06-09</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>[재료화학분과] 제 1회 최진호 학술상 및 제 18회 젊은 재료화학자상 추천 공고</h3>
+                                    <p class="content_txt">재료화학분과 회원님들께,   안녕하세요?  총무간사를 맡고 있는 UNIST 신현석입니다.   아래와 같이 제 1회...</p>
+                                    <p class="news_date">2020-06-09</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>2020 대한화학회 재료화학분과 Newsletter 제1호</h3>
+                                    <p class="content_txt">2020년 재료화학분과 Newsletter 제1호를 게재합니다. 자세한 내용은 첨부 파일을 참조하여 주시기를 바랍니...</p>
+                                    <p class="news_date">2020-03-17</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>제17회 심상철 학술상 수상후보자 공모</h3>
+                                    <p class="content_txt">유기화학분과회 제 17회 심상철 학술상 수상자 공모 수상자격: 대한화학회 유기화학 분과회 회원으로 유기화...</p>
+                                    <p class="news_date">2020-01-16</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>2020 대한화학회 화학교육분과회 세미나 및 총회</h3>
+                                    <p class="content_txt">유기화학분과회 제 17회 심상철 학술상 수상자 공모 수상자격: 대한화학회 유기화학 분과회 회원으로 유기화...</p>
+                                    <p class="news_date">2020-01-16</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="tit">지부소식</a>
+                        <ul class="none">
+                            <li>
+                                <a href="#">
+                                    <h3>2020년도 대구경북지부 이사회</h3>
+                                    <p class="content_txt">대구경북지부회 행사명 : 대구경북지부 이사회 행사일자 : 2020년 2월 3일(월) 오후 6시 개최장소 : 대구 시...</p>
+                                    <p class="news_date">2020-01-16</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>대한화학회 광주전남지부 추계 학술 세미나</h3>
+                                    <p class="content_txt">광주전남지부 행사명 : 대한화학회 광주전남지부 추계 학술 세미나 행사일자 : 2019년 11월 22일(금) 개최장...</p>
+                                    <p class="news_date">2019-10-29</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>2019년 대한화학회 경기지부 추계 심포지엄</h3>
+                                    <p class="content_txt">경기지부 행사명 : 경기지부 추계 심포지움 행사일자 : 2019년 11월 21일(목) 개최장소 : 한양대학교 ERICA...</p>
+                                    <p class="news_date">2020-06-09</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>대한화학회 강원지부 20주년 학술대회</h3>
+                                    <p class="content_txt">강원지부 행사명 : 대한화학회 강원지부 20주년 학술대회 행사일자 : 2019년 11월 22일(금) 개최장소 : 강릉...</p>
+                                    <p class="news_date">2019-10-25</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>2019년도 대한화학회 대전·충남·세종지부 학술대회</h3>
+                                    <p class="content_txt">대전·충남·세종 지부 행사명 : 대한화학회 대전·충남·세종 지부 학술대회 행사...</p>
+                                    <p class="news_date">2019-08-19</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h3>2019 영남지역 공동학술대회</h3>
+                                    <p class="content_txt">부산지부 행사명 : 2019 영남지역 공동학술대회 행사일자 : 2019년 8월 21일(수)-22일(목) 개최장소 : 동아...</p>
+                                    <p class="news_date">2020-07-17</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+                <a href="#" class="more more_3">더보기</a>
+            </div>
+        </section>
+        
+        <section class="cotnents_6">
+           <div class="center_wrap">
+            <h3>PARTNER &amp; COMMERCIALS</h3>
+            <p class="tit_1">KOREAN CHEMICAL SOCIETY</p>
+            <h4>Official Partner</h4>
+            <div class="Official_Partner">
+                <a href="#" class="Official_Partner_1">
+                <img src="images/partner_TCI(eng).png" alt="TCI SEJIN CI"/>
+                <span>TCI&#8226;세진시아이</span>
+            </a>
+                <a href="#" class="Official_Partner_2">
+                <img src="images/partner2.png" alt="DONGWOOFINE_CHEM"/>
+                <span>동우화인켐</span>
+            </a>
+            </div>
+            <h4>Commercials</h4>
+            <div class="Commercials">
+                <a href="#">
+                   <img src="images/sponsor13.jpg" alt="수림교역"/>
+                    <p>수림교역</p>
+                </a>
+                <a href="#">
+                   <img src="images/sponsor4.jpg" alt="바이오켐스"/>
+                    <p>바이오켐스</p>
+                </a>
+                <a href="#">
+                   <img src="images/sponsor7.jpg" alt="써모 피셔 사이언티픽"/>
+                    <p>써모 피셔 사이언티픽</p>
+                </a>
+                <a href="#">
+                   <img src="images/20200515_eworldediting.jpg" alt="이월드 에디팅"/>
+                    <p>이월드 에디팅</p>
+                </a>
+                <a href="#">
+                   <img src="images/20200129_KoreaSpectraProducts.jpg" alt="코리아스펙트랄프로덕츠(주)"/>
+                    <p>코리아스펙트랄프로덕츠</p>
+                </a>
+                <a href="#">
+                   <img src="images/sponsor5.jpg" alt="K-MOOC"/>
+                    <p>K-MOOC</p>
+                </a>
+                <a href="#">
+                   <img src="images/sponsor6.jpg" alt="IYPT2019"/>
+                    <p>IYPT2019</p>
+                </a>
+                <a href="#">
+                   <img src="images/sponsor10.jpg" alt="한국화학관련학회연합회"/>
+                    <p>KUCST</p>
+                </a>
+                <a href="#">
+                   <img src="images/sponsor8.jpg" alt="Wiley"/>
+                    <p>Wiley</p>
+                </a>
+                <a href="#">
+                   <img src="images/sponsor12.jpg" alt="Bulletin 무료 접속"/>
+                    <p>Bulletin 무료 접속</p>
+                </a>
+                <a href="#">
+                   <img src="images/sponsor11.jpg" alt="ACES"/>
+                    <p>ACES</p>
+                </a>
+                <a href="#">
+                   <img src="images/sponsor14.png" alt="Pacificehm 2020"/>
+                    <p>Pacificehm 2020</p>
+                </a>
+            </div>
+            </div>
+        </section>
+    </div>
+    
+    
+    <footer class="footer">
+        <div class="center_wrap">
+            <ul class="clearfix">
+                <li><a href="#">학회소개</a></li>
+                <li><a href="#">사무국/오시는 길</a></li>
+                <li><a href="#">정관/세칙</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">관련기관</a></li>
+                <li><a href="#"><strong>개인정보취급장침</strong></a></li>
+            </ul>
+            <div class="add">
+                <p class="Company_Registration_Numbe"><strong>사업자등록번호 : 220-8200314</strong><span><strong>대표자 : 정옥상</strong></span></p>
+                <address>(우 02856) 서울시 안암로 119 (안암동 5가 한국화학회관 4층)</address>
+                <p>Tel : 02-953-2095<span>Fax : 02-953-2093</span></p>
+                <p>E-mail : offcie@kcsnet.or.kr</p>
+                <p class="copyright">&copy;2020 대한화학회 (Korean Chemical Society). All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
+

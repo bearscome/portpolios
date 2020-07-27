@@ -1,0 +1,46 @@
+@charset "uft-8";
+#wrapper{width:100%; min-width:1400px; position: relative; box-sizing: border-box; margin: 0 auto; position: relative;}
+#wrapper .header{width:100%; height:158px; position: relative; border-bottom:1px solid #d9d9d9; position:fixed; top:0; right: 0; z-index: 999; background-color:#fff; }
+.header_line{width:100%; height:49px; border-bottom:1px solid #d9d9d9;  }
+.header .header_aside{width:1400px; height:30px; margin:15px auto;}
+
+.leng_sns{float: left;}
+.header_aside .leng_sns .leng{width:86px; height:40px; display: block; float: left; line-height:20px; margin-top: 5px} 
+.leng ul{width:86px; height:20px; background:url(../images/lang_arr.gif) no-repeat 90% 8px; border: 1px solid #d9d9d9; border-radius:10px;} 
+.leng .kr{background:url(../images/lang_kor.gif) no-repeat 15px 5px;}
+.leng .en{background:url(../images/lang_eng.gif) no-repeat 15px 5px; }
+.leng li a{display: block;padding-left:35px; font-size:12px;}
+.leng_sns .sns{width:80px; height:30px;display: block; float:left;}
+.leng_sns .sns a{font-size:0; width:30px; height:30px; display:block; float:left; margin-left:10px; }
+.sns .facebook{background: url(../images/sns_facebook.gif) no-repeat 0 0; }
+.sns .instagram{background: url(../images/sns_insta.gif) no-repeat 0 0;}
+
+.header_aside .site_map{float: right; margin-top: 10px}
+.header_aside .site_map ul li{float:left; background:url(../images/tm_bar.gif) no-repeat 10px 6px; }
+.header_aside .site_map ul li a{padding-left:20px; font-size:12px; color:#d9d9d9;  font-weight:600;}
+.site_map ul li:first-child{background: none;}
+
+
+.header_Menu{width:100%;}
+.header_list{width:1400px; margin:0 auto; position: relative; }
+.logo_img{float:left; background:url(../images/logo.jpg) no-repeat 0 0; width:200px; height:89px; display:block; font-size:0;float:left; }
+.gnb{width:900px; margin:0 auto;}
+.gnb > ul > li{float:left; width:150px; background-color:#fff}
+.gnb ul li .gnb_title{display:inline-block;font-size:17px;height:93px; line-height:93px; font-weight:600; width:150px; text-align: center;}
+.gnb ul li:hover a{color:red;}
+.deth_1{display: none; position: absolute;}
+.gnb ul li ul.deth_1 li{width:150px; height:49px; line-height:49px; text-align: center;position: relative; z-index: 1; border-bottom: 1px dotted #6e6e6e; background-color: #fff;}
+.gnb ul li ul.deth_1 li a{color: #6e6e6e; display: block; cursor: pointer;font-size:14px; }
+.gnb ul li ul.deth_1 li:hover a{color:red;}
+
+.gnb_rg{width:250px; height:95px; position: absolute; top:0; right:0;}
+.glass_btn{background:url(../images/btn_search.gif) no-repeat 0 0; display: inline-block; font-size:0; width:20px;height:20px; margin: 15% 0 0 60%;}
+
+.gnb_nav .hamberger{position: absolute; top:40%; right:40px; width:10px; height:24px;}
+.gnb_nav .hamberger span{width:20px; height:3px; background-color: #333; display:inline-block; font-size:0;position: absolute; }
+.gnb_nav .hamberger .hb_1{top:0; left:0; } /*햄버거 가로 선*/
+.gnb_nav .hamberger .hb_2{top:6px; left:0}
+.gnb_nav .hamberger .hb_3{top:12px; left:0;}
+
+
+
