@@ -62,8 +62,150 @@
             },3000)
             
         })
+        /*화면 동적 구현*/ 
+        /*$('.visual_contents div').hide()*/
+        $('.Html_4_1 dt img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-84.5%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'
+               },1000)
+          }
+        })
         
+        $('.html_4_2 dt img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-88.5%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'
+               },1000)
+          }
+        })
+        $('.Html_5_1 dt img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-85.5%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'
+               },1000)
+          }
+        })
+        $('.Html_5_2 dt img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-84.5%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        })
+        $('.mobile dt img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-92.5%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        })
+        $('.mobile dt img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-92.5%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        })
+        $('.response_web dt img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-87.5%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        })
+        $('.RP_TB dt img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-95.5%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        })
+        $('.RP_MB dt img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-95.5%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        })
+        /*function move(top,bottom){
+            mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-92.5%'
+               },7000)
+           },mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        }*/
+        /*currentNum=Num*/
+        var View=$('.visual_contents .layout')
+        var View_num;
+        var Num=$('.main_full img')
+        var currentNum;
+        /*$('.layout').not(':first').hide()*/
         
+        $(View).on('click',function(){
+            var View_index=$(this).index()
+            View_num=View_index;
+            
+        })
+        $(Num).on('click',function(){
+            var index = $(this).index()
+            /*currentNum=index;*/
+            var i=0;
+            i++
+            console.log(i)
+        })
+        View_num=currentNum;
+       
+       
     })  
   </script>
  </head>
@@ -117,42 +259,105 @@
             </nav>
         </section>
         <section class="contents_2">
-            <div class="">
-                <div class="bg">
-                    <div class="visual_contents">
-                        <p><img src="images/"/></p>
+            <div class="visual">
+                <div class="visual_contents">
+                  <!--start-->
+                   <div class="layout Html_4_1">
+                       <h3>HTML4</h3>
+                        <dl>
+                            <dt>
+                                <img src="images/Html4_main_full.png"  alt="html4_main"/>
+                            </dt>
+                            <dd>Html4로 작성하여 크로스브라우징까지 완료하였습니다.</dd>
+                        </dl>
+                        <a href="#" class="More H4M">Html_4 Main</a>
                     </div>
-                    <dov class="contents_Explanation"></dov>
+                    <!--end-->
+                    <!--start-->
+                    <div class="layout html_4_2 none">
+                       <h3>HTML4</h3>
+                        <dl>
+                            <dt><img src="images/Html4_sub_full.png" alt="html4_main"/></dt>
+                            <dd>Html4로 작성하여 크로스브라우징까지 완료하였습니다.</dd>
+                        </dl>
+                        <a href="#" class="More H4S">Html_4 Sub</a>
+                    </div>
+                    <!--end-->
+                    <!--start-->
+                    <div class="layout Html_5_1 none">
+                       <h3>HTML5</h3>
+                        <dl>
+                            <dt><img src="images/html5_1_full.png" alt="html5_main"/></dt>
+                            <dd>Html5로 작성하여 크로스브라우징까지 완료하였습니다.</dd>
+                        </dl>
+                        <a href="#" class="More H51">Html_5_1</a>
+                    </div>
+                    <!--end-->
+                    <!--start-->
+                    <div class="layout Html_5_2 none">
+                       <h3>HTML5</h3>
+                        <dl>
+                            <dt><img src="images/html5_2_full.png" alt="html5_main"/></dt>
+                            <dd>Html4_sub 작성하여 크로스브라우징까지 완료하였습니다.</dd>
+                        </dl>
+                        <a href="#" class="More H52">Html_5_2</a>
+                    </div>
+                    <!--end-->
+                    <!--start-->
+                    <div class="layout mobile none">
+                       <h3>Mobile</h3>
+                        <dl>
+                            <dt><img src="images/mobile_425px.png" alt="html5_main"/></dt>
+                            <dd>Mobile 기준으로 작성하였습니다. 425px 기준입니다.</dd>
+                        </dl>
+                        <a href="#" class="More MB">Mobile</a>
+                    </div>
+                    <!--end-->
+                    <!--start-->
+                    <div class="layout Response ">
+                      <div class="response_web none">
+                           <h3>Response</h3>
+                            <dl class="RP_web">
+                                <dt><img src="images/Responsive_Web.png" alt="response"/></dt>
+                                <dd>웹 1920px 기준으로 작성하였습니다. 425px 기준입니다.</dd>
+                            </dl>
+                            <a href="#" class="More RP">Web</a>
+                        </div>
+                        <div class="response_TB none">
+                            <dl class="RP_TB">
+                                <dt><img src="images/Responsive_tablet.png" alt="response"/></dt>
+                                <dd>태블릿 1024px 기준으로 작성하였습니다. </dd>
+                            </dl>
+                            <a href="#" class="More RP">tablet</a>
+                        </div>
+                        <div class="response_MB">
+                            <dl class="RP_MB">
+                                <dt><img src="images/Responsive_mobile.png" alt="response"/></dt>
+                                <dd>모바일 426px 기준으로 작성하였습니다.
+                                </dd>
+                            </dl>
+                            <a href="#" class="More RP">tablet</a>
+                        </div>
+                    </div>
                 </div>
+                <div class="contents_Explanation"></div>
                 <div class="record">
                     <span class="recording"></span>
                     <span class="film"></span>
                 </div>
             </div>
+            <div class="view_record">
+                <img class="camera" src="images/camera.png" alt="camera"/>
+                <div class="main_full">
+                    <img src="images/Html4_main.png" alt="Html4 메인이미지"/>
+                    <img src="images/Html4_sub.png" alt="Html4 서브이미지"/>
+                    <img src="images/Html5_1.png" alt="Html 메인이미지1번"/>
+                    <img src="images/Html5_2.png" alt="Html 메인이미지2번"/>
+                    <img src="images/Mobile.png" alt="모바일 버전 이미지"/>
+                    <img src="images/Responsive.png" alt="반응형버전 이미지"/>
+                </div>
+            </div>
         </section>
-        <section class="contents_3"></section>
     </section>
-    <footer></footer>
 </body>
-<!--<li><a href="#"><h3>PortFolios</h3></a>
-                        <ul class="info_contents portpolios">
-                            <li><a href="#">Html4</a>
-                                <ul class="contents">
-                                    <li><a href="PF_1/main.html">HTML4_Main</a></li>
-                                    <li><a href="PF_1/user.html">HTML4_User</a></li>
-                                    <li><a href="PF_1/login.html">HTML4_Login</a></li>
-                                    <li><a href="PF_1/map.html">HTML4_Map</a></li>
-                                    <li><a href="PF_1/notice.html">HTML4_Notice</a></li>
-                                    </ul>
-                            </li>
-                            <li><a href="#">Html5</a>
-                                <ul class="contents">
-                                    <li><a href="PF_2/wekeep.html">Wekeep</a></li>
-                                    <li><a href="PF_3/monami.html">Monami</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="mobile_2/dokdo.html">Mobile</a></li>
-                            <li><a href="Responsive_Web/kcsnet.html">Responsive</a></li>
-                        </ul>
-                    </li>-->
 </html>
