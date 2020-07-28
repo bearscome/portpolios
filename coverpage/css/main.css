@@ -2,24 +2,88 @@
 @import url(reset.css);
 @import url(others.css);
 
-.contents_1{background:url(../images/background.jpg); background-size: cover;}
-.contents_1 .informations{position: absolute; top:15%; left:10%;}
-.contents_1 .informations li{}
-.contents_1 .informations li a{}
-.contents_1 .informations li a h3{font-size: 3rem;}
+.contents_1{}
+.contents_1 .door{display: flex; flex-wrap: nowrap; width: 100%; height: 100vh; position: relative;}
+.contents_1 .door_1, .contents_1 .door_2{position: relative; width: 50%; height: 100vh; background:url(../images/background.jpg); background-size: cover;}
+.contents_1 nav{position: absolute; top:15%; left:10%; width: 80%; height:70%;  /*background-color: #fff;*/}
+
+/*Who i am title*/
+.contents_1 .informations{}
+.contents_1 .informations > li{margin-top: 5%}
+.contents_1 .informations > li:nth-of-type(1){margin-top:0;}
+.contents_1 .informations > li > a{}
+.contents_1 .informations > li > a > h3{width:30%;font-size: 3vw; text-align: center;}
+.contents_1 .informations .info_contents{position: absolute ;top:0; right:0; width: 70%; height: 100%;}
 .contents_1 .portpolios{}
 .contents_1 .portpolios li{}
 .contents_1 .portpolios li a{}
 .portpolios .contents li{}
 .portpolios .contents li a{}
+.none{display: none;}
+
+/*Who I am contents*/
+.contents_1 .Info{/*background-color:rgba(255,255,155,0.2)*/}
+.contents_1 .Info li{font-size:1.2vw; text-align: center; margin-top: 3%;}
+.contents_1 .Info li:nth-of-type(1){margin-top:0;}
+.contents_1 .Info li:nth-of-type(2){margin-top:20px;}
+.contents_1 .Info li h4{font-size:3vw; text-align: center;}
+
+/*Skills*/
+.contents_1 .skills{/*background-color:rgba(255,255,155,0.2)*/}
+.contents_1 .skills li{position: relative;font-size:1.2vw; text-align: left; margin-top: 3%;}
+.contents_1 .skills li:nth-of-type(1){margin-top:0;}
+.contents_1 .skills li:nth-of-type(2){margin-top:20px;}
+.contents_1 .skills li h4{font-size:3vw; padding-left: 7.1%}
+.contents_1 .skills li .fab{font-size:60px; display: block;}
+.contents_1 .skills li .fa-html5{color:rgba(228,77,38)}
+.contents_1 .skills li .fa-css3-alt{color:rgba(0,112,186)}
+.contents_1 .skills li .fa-js{color:rgba(99,168,20)}
+.contents_1 .skills li .fa-adobe{color:rgba(250,15,0)}
+.contents_1 .skills li .Photoshop_icon{width: 60px; height:60px;background:url(../images/adobe.png) no-repeat -17px -21px ;background-size:150px 100px;}
+.contents_1 .skills li .Illustrator_icon{width: 60px;height:60px; background:url(../images/adobe.png) no-repeat -76px -21px ;background-size:150px 100px;}
+.contents_1 .skills li p.bar{position: absolute; top:50%; left:80px; margin-top: -30px; width:45vw;height:40px; background-color:#fff;border-radius: 40px;}
+.contents_1 p.bar span{display: block;width:0%; height: 40px; line-height: 40px; padding:0 10px; font-size:20px; border-radius:40px; text-align: right;}
+.contents_1 p.bar span.graph1{background-color:rgba(228,77,38); animation:bar1 3s forwards;}
+.contents_1 p.bar span.graph2{background-color:rgba(0,112,186); animation: bar1 3s forwards;}
+.contents_1 p.bar span.graph3{background-color:rgba(99,168,20); animation: bar2 3s forwards;}
+.contents_1 p.bar span.graph4{background-color:rgba(37,210,253); animation: bar3 3s forwards;}
+.contents_1 p.bar span.graph5{background-color:rgba(249,182,55); animation: bar4 3s forwards;}
+.contents_1 p.bar_title{color:rgba(255,255,255,0.7); text-align: center; font-size: 1.2rem}
+@keyframes bar1{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 80%;
+    }
+}
+@keyframes bar2{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 40%;
+    }
+}
+@keyframes bar3{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 60%;
+    }
+}
+@keyframes bar4{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 30%;
+    }
+}
 
 
-
-
-
-
-
-
+/*portfolios*/
 
 
 
