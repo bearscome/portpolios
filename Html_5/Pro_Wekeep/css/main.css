@@ -5,8 +5,8 @@
 
 body{overflow-y:hidden;}
 .container{width:100%; position: relative; min-width: 1903px;}
-.main_1{width:1903px; height:970px;}
-.wekeep_video{width:1903px; height:970px; position: relative; }
+.main_1{width:100%; height:970px;}
+.wekeep_video{width:100%; height:970px; position: relative; }
 .wekeep_video .video_text{ position: absolute; top:0; left:0; bottom:100px; right:0;  font-weight:600; line-height:1.5;}
 .wekeep_video .video_text p{font-size: 80px; color: #fff; margin-top:270px; margin-left:100px;}
 .service_box{position: fixed; right:0; top:35%; z-index: 33;}
