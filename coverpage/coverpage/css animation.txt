@@ -1,0 +1,11 @@
+float 했을 때 css에서 수정해야함 jquery에서는 px만 먹음,
+ animation은 px로 작업을 해야함 % 안먹음
+display:inline-block 했을 때도 똑같이 %는 안먹고 px는 먹힘
+하지만 display:flex를 하면 %지 먹음 px먹음
+float 할꺼면 css 에서 px를 쓰고, %는 쓰지말자
+
+
+
+정리글 
+https://heropy.blog/page/2/
+오지고 지리고 야무지고
