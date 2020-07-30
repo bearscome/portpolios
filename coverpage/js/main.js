@@ -35,11 +35,17 @@ $(document).ready(function(){
                 'right':'-100%'
                 },5000)
             setTimeout(function(){
-                $('.door').hide()
+                $('.contents_1').hide()
             },3000)
             
         })
-
+    /*마우스 스크롤 시 Faid In, Faid Out*/
+    $('.layout').not(':first').hide()
+    
+    $('.main_full img').on('click',function(){
+        var num=$(this).index()
+        console.log(num)
+    })    
     
         /*화면 동적 구현*/
         /*수치가 다르면 함수 못만듦.*/
@@ -55,8 +61,8 @@ $(document).ready(function(){
                    top:'0px'
                },1000)
           }
-        })
-        
+        },1000);
+
         $('.Html_4_2_img img').on({
            mouseenter:function(){
                $(this).stop().animate({
@@ -141,38 +147,16 @@ $(document).ready(function(){
                    top:'0%'  
                },1000)
           }
-        })
-        /*function move(top,bottom){
-            mouseenter:function(){
-               $(this).stop().animate({
-                   top:'-92.5%'
-               },7000)
-           },mouseleave:function(){
-              $(this).stop().animate({
-                   top:'0%'  
-               },1000)
-          }
-        }*/
-        /*currentNum=Num*/
-        var View=$('.visual_contents .layout')
-        var View_num;
-        var Num=$('.main_full img')
-        var currentNum;
-        /*$('.layout').not(':first').hide()*/
-        
-        $(View).on('click',function(){
-            var View_index=$(this).index()
-            View_num=View_index;
-            
-        })
-        $(Num).on('click',function(){
-            var index = $(this).index()
-            /*currentNum=index;*/
-            var i=0;
-            i++
-            console.log(i)
-        })
-        View_num=currentNum;
-       
+        });
+    
+    $('.camera').on({
+        mouseenter:function(){
+            console.log('a')
+        },
+        mouseleave:function(){
+             console.log('a')
+        }
+    })
+
        
     })  

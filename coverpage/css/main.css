@@ -91,8 +91,8 @@
 .layout h3{margin-left: 32.5%; margin-bottom: 1%; font-size: 1.8rem}
 .layout .Html{width: 100%; height: 100%; display: flex; }
 .layout .Html .Htmlc{width: 70%}
-.layout .Html .Htmlc img{width: 100%; height: 100%; position: relative;}
-.layout .Html .Htmle{width:29%; margin-left: 1%; background-color: red;}
+.layout .Html .Htmlc img{width: 100%; height:100%; position: relative;}
+.layout .Html .Htmle{width:29%; height: 100%; margin-left: 1%; }
 
 .RP_tablet{position: absolute; top:0;}
 .RP_Mobile{position: absolute; top:0;}
@@ -102,9 +102,12 @@
 
 
 .view_record{position: absolute; bottom:0; left:30%}
+.shadow{display: inline-block; width: 0px; height: 0px; position: absolute; top:-48.6%; left:-12%; background-color: rgba(0,0,0,0.1); border-bottom: none; border-right: 150px solid transparent; border-top: 150px solid rgba(255,255,255,0.2); border-left: 150px solid transparent;}
+.view_record .camera:hover.shadow{border: 1px solid red;}
 .view_record .camera{width: 80%; position: relative;}
-.view_record .camera:before{content: ''; position: absolute; top:10px; left:10px;width: 100%; height: 100%; background-color: red; }
 .view_record .main_full{display: flex; position: absolute; top:10.5%; left:20%; width: 43%; height:30%;}
 .view_record .main_full img{width: 100%; height:100%;}
+.view_record .main_full img:hover{cursor: pointer}
 
 .none{display: none; opacity: 0}
+.hide{opacity: 0;}
