@@ -9,7 +9,10 @@ $(document).ready(function(){
              $('#chrome').show()
              alert("포트폴리오는 크롬버전에 최적화되어있습니다.\n크롬브라우저를 이용 부탁드립니다.");
         }
-
+        $('#coverpage').click(function(){
+            $(this).css('background-color','red')
+            $(this).hide()
+        })
 
         setTimeout(function(){
             $('.cover').removeClass('none')
@@ -148,6 +151,7 @@ $(document).ready(function(){
                },1000)
           }
         })
+    
 /*    $(document).mousewheel(function(e, delta){
 		var count=0;
         var offset=0;
