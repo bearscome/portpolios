@@ -101,13 +101,16 @@
 
 
 
-.view_record{position: absolute; bottom:0; left:30%}
+.view_record{position: absolute; bottom:0; left:30%;}
 .shadow{display: inline-block; width: 0px; height: 0px; position: absolute; top:-48.6%; left:-12%; background-color: rgba(0,0,0,0.1); border-bottom: none; border-right: 150px solid transparent; border-top: 150px solid rgba(255,255,255,0.2); border-left: 150px solid transparent;}
 .view_record .camera:hover.shadow{border: 1px solid red;}
 .view_record .camera{width: 80%; position: relative;}
-.view_record .main_full{display: flex; position: absolute; top:10.5%; left:20%; width: 43%; height:30%;}
-.view_record .main_full img{width: 100%; height:100%;}
-.view_record .main_full img:hover{cursor: pointer}
+.contents_2 .size{position: absolute; top:24px; left:20%; width: 900;}
+.size .main_full{width: 2000px}
+.size .main_full li{float: left; width: 109px; height:82px;}
+.size .main_full li a.on{display: block;border: 2px solid red;}
+.size .main_full img{width: 100%; height:100%;}
+.size .main_full img:hover{cursor: pointer}
 
 .none{display: none; opacity: 0}
 .hide{opacity: 0;}

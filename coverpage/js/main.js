@@ -40,12 +40,12 @@ $(document).ready(function(){
             
         })
     /*마우스 스크롤 시 Faid In, Faid Out*/
-    $('.layout').not(':first').hide()
     
-    $('.main_full img').on('click',function(){
+    
+    /*$('.main_full img').on('click',function(){
         var num=$(this).index()
         console.log(num)
-    })    
+    })   */ 
     
         /*화면 동적 구현*/
         /*수치가 다르면 함수 못만듦.*/
@@ -147,16 +147,47 @@ $(document).ready(function(){
                    top:'0%'  
                },1000)
           }
+        })
+/*    $(document).mousewheel(function(e, delta){
+		var count=0;
+        var offset=0;
+        var total=7;
+        var check=$('.visual_contents .layout').eq(count)*/
+        
+       /*$(window).on('mousewheel',function(e){
+            if(e.originalEvent.wheelDelta < 0){
+                e.preventDefault();
+                //마우스휠 아래로
+                $('.main_full').stop().animate({
+                    left:'-=129'
+                },500);
+                    if(count>total){
+                        count++;
+                        console.log(count)
+                    }
+            } else {
+                //마우스휠 위로
+                
+                $('.main_full').stop().animate({
+                    left:'+=129'
+                },500);
+            }
+            return false;
         });
+	});*/
     
-    $('.camera').on({
-        mouseenter:function(){
-            console.log('a')
-        },
-        mouseleave:function(){
-             console.log('a')
+    $('.visual_contents > div').not(':first').hide()
+    $('.main_full li a').on('click',function(){
+        var num=$(this).parent().index()
+        var currentNum=$('.main_full li img.on').parent().index()
+         $('.visual_contents > div').hide()
+        if(num!=currentNum){
+            $('.main_full li a.on').removeClass('on')
+            $('.main_full li:eq('+num+') a').addClass('on')
+            $('.visual_contents > div:eq('+num+')').show()
+           
         }
     })
-
-       
-    })  
+    
+    
+    })
