@@ -95,10 +95,13 @@
 .layout .Html{width: 100%; height: 100%; display: flex; }
 .layout .Html .Htmlc{width: 70%}
 .layout .Html .Htmlc img{width: 100%; height:100%; position: relative;}
+.layout .Html .Mobile_img img{display: block; margin:0 50% 0 30%; border-radius: 30px; width: 30%; padding:1%;}
 .layout .Html .Htmle{width:29%; height: 100%; margin-left: 1%; }
-.More{display: inline-block; width:8.3vw; height:40px; font-size:1vw; line-height: 40px; margin:34% 30% 0% 34%;  text-align: center; font-weight: 500; border-radius:50px; background-color: rgba(255,255,255,0.3); box-shadow: 0px 5px 8px rgba(255,255,255);transition: all 1s ease; }
+.More{display: inline-block; width:8.3vw; height:40px; font-size:1vw; line-height: 40px; margin:45% 30% 0% 34%;  text-align: center; font-weight: 500; border-radius:50px; background-color: rgba(255,255,255,0.3); box-shadow: 0px 5px 8px rgba(255,255,255);transition: all 1s ease; }
+.Htmle .H42{margin:18% 10px 0 10px; width: 44%;}
+
 .More:hover{box-shadow: 0px 3px 8px rgba(0,0,0); transition: all 1s ease;}
-.Htmle > p{display: inline-block; position: relative;width:8vw; height:100px; line-height: 100px; font-size:0.7rem; margin-top: 5%; background-color: #fff; text-align: center; box-shadow: 0px 5px 16px rgba(255,255,255);  }
+.Htmle > p{display: inline-block; position: relative;width:8vw; height:100px; line-height: 100px; font-size:0.7rem; margin-top: 5%; background-color: #fff; text-align: center; box-shadow: 0px 5px 16px rgba(255,255,255);}
 .Htmle > p:before{content: ''; background-color:#fff; position: absolute; top:0px; right:0px ;bottom: 0px; left:0px; opacity: 0; box-shadow:  0px 5px 15px rgba(0,0,0); transition: all 2s ease;}
 .Htmle > p:nth-of-type(1):before{background: url(../images/ie.png) no-repeat center center; background-size: 10vw 10vh; }
 .Htmle > p:nth-of-type(2):before{background: url(../images/adobe.png
@@ -108,9 +111,9 @@
 .Htmle > p:hover:before{opacity: 1;}
 .RP_tablet{position: absolute; top:0;}
 .RP_Mobile{position: absolute; top:0;}
-.Response_choose{position: absolute; top:0; right:0; width: 20vw;}
-.layout .Response_choose a{}
-
+.Response_choose{position: absolute; top:40%; right:1%; width: 24.7vw;}
+.visual_contents .Response_choose a{display: inline-block;font-size: 8rem; width: 8vw; margin-top: 5%; text-align: center; }
+.visual_contents .Response_choose a.on{background-color: rgba(255,255,255,.0.3); box-shadow: 0px 6px 20px rgba(255,255,255,0.9)}
 
 
 .view_record{position: absolute; bottom:0; left:30%;}

@@ -105,7 +105,7 @@ $(document).ready(function(){
         $('.Mobile_img img').on({
            mouseenter:function(){
                $(this).stop().animate({
-                   top:'-95.3%'
+                   top:'-83.3%'
                },7000)
            },
            mouseleave:function(){
@@ -180,18 +180,23 @@ $(document).ready(function(){
         });
 	});*/
     
-    $('.visual_contents > div').not(':first').hide()
+    $('.visual_contents > .layout').not(':eq(5)').hide()
+    $('.Response_choose').hide()
     $('.main_full li a').on('click',function(){
         var num=$(this).parent().index()
         var currentNum=$('.main_full li img.on').parent().index()
-         $('.visual_contents > div').hide()
+         $('.visual_contents > .layout').hide()
+         $('.Response_choose').hide()
         if(num!=currentNum){
             $('.main_full li a.on').removeClass('on')
             $('.main_full li:eq('+num+') a').addClass('on')
-            $('.visual_contents > div:eq('+num+')').show()
+            $('.visual_contents > .layout:eq('+num+')').show()
            
         }
     })
-    
+
+    $('.main_full li:eq(5)').on('click',function(){
+        $('.Response_choose').show()
+    })
     
     })
