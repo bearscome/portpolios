@@ -180,23 +180,46 @@ $(document).ready(function(){
         });
 	});*/
     
-    $('.visual_contents > .layout').not(':eq(5)').hide()
+    $('.visual_contents > .layout').not(':first').hide()
     $('.Response_choose').hide()
     $('.main_full li a').on('click',function(){
-        var num=$(this).parent().index()
-        var currentNum=$('.main_full li img.on').parent().index()
+        var currentNum=$(this).parent().index()
+        var num=$('.main_full li img.on').parent().index()
          $('.visual_contents > .layout').hide()
          $('.Response_choose').hide()
         if(num!=currentNum){
             $('.main_full li a.on').removeClass('on')
-            $('.main_full li:eq('+num+') a').addClass('on')
-            $('.visual_contents > .layout:eq('+num+')').show()
-           
+            $('.main_full li:eq('+currentNum+') a').addClass('on')
+            $('.visual_contents > .layout:eq('+currentNum+')').fadeIn(1000)
+            console.log(currentNum)
+            $('.contents_2 .size').css({
+            'left':-109*(currentNum+1)+'px'
+          })
+            if(currentNum==5){
+                $('.Response_choose').fadeIn(1000)
+            }
         }
     })
-
-    $('.main_full li:eq(5)').on('click',function(){
-        $('.Response_choose').show()
-    })
+  $('.Response_choose a').on('click',function(){
+      var currentNum=$(this).index()
+      var num=$('.Response_choose a.on').index()
+      $('.Response_choose a').removeClass('on')
+      $(this).addClass('on')
+      if(num!=currentNum){
+          $('.Response_choose a').removeClass('on')
+          $('.Response_choose a:eq('+currentNum+')').addClass('on')
+          if(currentNum==0){
+              $('.visual_contents > .layout').hide()
+              $('.RP_web').fadeIn(1000)
+          }else if(currentNum==1){
+              $('.visual_contents > .layout').hide()
+              $('.RP_tablet').fadeIn(1000)
+          }else if(currentNum==2){
+              $('.visual_contents > .layout').hide()
+              $('.RP_Mobile').fadeIn(1000)
+          }
+      }
+  })
+    
     
     })
