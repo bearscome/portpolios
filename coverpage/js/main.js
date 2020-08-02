@@ -191,13 +191,19 @@ $(document).ready(function(){
             $('.main_full li a.on').removeClass('on')
             $('.main_full li:eq('+currentNum+') a').addClass('on')
             $('.visual_contents > .layout:eq('+currentNum+')').fadeIn(1000)
-            console.log(currentNum)
-            $('.contents_2 .size').css({
-            'left':-109*(currentNum+1)+'px'
-          })
-            if(currentNum==5){
+            
+            var width=$('.contents_2 .size ul li').outerWidth()
+            
+            $('.contents_2 .size ul').animate({
+                left:-width*(currentNum)
+            })
+           if(currentNum==5){
                 $('.Response_choose').fadeIn(1000)
             }
+            
+            
+            
+            
         }
     })
   $('.Response_choose a').on('click',function(){

@@ -2,6 +2,53 @@
 @import url(reset.css);
 @import url(others.css);
 
+
+@media all and (max-width:1024px){
+    .Html .Htmle > p{display: inline-block; position: relative; width:100%; height:60px; line-height: 60px; margin-top: 5%; font-weight: 600; background-color: #fff; text-align: center; box-shadow: 0px 5px 16px rgba(255,255,255);}
+    .Html .Htmle > p:nth-of-type(1):before{background: url(../images/ie.png) no-repeat center center; background-size:50% 100%; }
+    .Html .Htmle > p:nth-of-type(2):before{background: url(../images/adobe.png
+    ) no-repeat center center; background-size: 50% 100%;}
+    .Html .Htmle > p:nth-of-type(3):before{background:url(../images/braket.png) no-repeat center center; background-size:50% 100%;}
+    .layout .Htmle .More{font-size: 1vw; font-weight: 700;}
+    .visual_contents .layout .Htmle .H42{margin:10% 4% 0 0px; width: 44%;}
+    .view_record img.camera{width:70%;}
+    .view_record div.size{position: absolute; top:24px; left:-13%; width: 270px; overflow: hidden;}
+    .view_record .size ul.main_full{width:655px;  margin-left:35%}
+    .size ul.main_full li{float: left; width: 92px; height:65px;}
+    .visual .Response_choose{position: absolute; top:60%; right:0.5%;}
+}
+
+@media all and (max-width:768px){
+    section .contents_2 .visual{bottom:30%;}
+    .visual_contents .layout .Html .Htmle{height:550px;}
+    .visual_contents .layout .Htmle .More{bottom: 0%;}
+    .visual_contents .layout .Html_4_2_contents .Htmle .H42{margin:0% 0% 0 0px; width: 100%;}
+    .visual_contents .layout .Html_4_2_contents .Htmle .H42:nth-of-type(1){bottom:30%; left:0%; }
+    .visual_contents .layout .Html_4_2_contents .Htmle .H42:nth-of-type(2){bottom:20%; left:0%;}
+    .visual_contents .layout .Html_4_2_contents .Htmle .H42:nth-of-type(3){bottom:10%; left:0%;}
+    .visual_contents .layout .Html_4_2_contents .Htmle .H42:nth-of-type(4){bottom:0%; left:0%;}
+    .visual_contents .RP_web  div.Web_elucidation a.More,
+    .visual_contents .RP_tablet div.TB_elucidation a.More,
+    .visual_contents .RP_Mobile  div.MB_elucidation a.More
+    {bottom: 0%;}
+    .visual .visual_contents .Response_choose{position: absolute; top:55%; right:0.5%; width: 30%;}
+    .visual .visual_contents .Response_choose a{display: block; width: 100%; margin-top:5%;} 
+    .visual .visual_contents .Response_choose i{display: block; width: 100%;}
+
+}
+
+@media all and (max-width:426px){
+     .layout .Htmle h3{font-size: 1.5rem}
+     .layout .Htmle h4{font-size: 1rem}
+     .layout .Html .Htmle > p{font-size: 0.7rem}
+     .contents_2 .view_record img.camera{width:60%;}
+     .contents_2 .view_record div.size{position: absolute; top:23px; left:-10%; width: 230px; overflow: hidden;}
+     .view_record .size ul.main_full{width:655px;  margin-left:35%}
+     .size ul.main_full li{float: left; width: 70px; height:55px;}
+     .visual .Response_choose{position: absolute; top:60%; right:0.5%;}
+}
+
+/*door*/
 .contents_1{display: none;}
 .contents_1 .door{display: flex; flex-wrap: nowrap; width: 100%; height: 100vh; position: relative;}
 .contents_1 .door_1, .contents_1 .door_2{position: relative; width: 50%; height: 100vh; background:url(../images/background.jpg); background-size: cover;}
@@ -96,9 +143,13 @@
 .layout .Html .Htmlc{width: 70%}
 .layout .Html .Htmlc img{width: 100%; height:100%; position: relative;}
 .layout .Html .Mobile_img img{display: block; margin:0 50% 0 30%; border-radius: 30px; width: 30%; padding:1%;}
-.layout .Html .Htmle{width:29%; height: 100%; margin-left: 2%; }
-.More{display: inline-block; width:8.3vw; height:40px; font-size:1vw; line-height: 40px; margin:45% 30% 0% 34%;  text-align: center; font-weight: 500; border-radius:50px; background-color: rgba(255,255,255,0.3); box-shadow: 0px 5px 8px rgba(255,255,255); transition: all 1s ease; }
-.Htmle .H42{margin:18% 10px 0 10px; width: 44%;}
+.layout .Html .Htmle{position: relative; ;width:29%; height: 500px; margin-left: 2%; }
+.More{position: absolute; bottom: 5%; left:50%; margin-left:-40%;  width:80%; height:40px; font-size:1vw; line-height: 40px; text-align: center; font-weight: 500; border-radius:50px; background-color: rgba(255,255,255,0.3); box-shadow: 0px 5px 8px rgba(255,255,255); transition: all 1s ease; }
+.Htmle .H42{width: 49%; margin-left:0;}
+.Htmle .H42:nth-of-type(1){bottom:20%; left:-1%; }
+.Htmle .H42:nth-of-type(2){bottom:20%; right:-1%;}
+.Htmle .H42:nth-of-type(3){bottom:6%; left:-1%;}
+.Htmle .H42:nth-of-type(4){bottom:6%; right:-1%;}
 
 .More:hover{box-shadow: 0px 5px 8px rgba(0,0,0); transform: translateY(10%); transition: all 1s ease;}
 .Htmle > p{display: inline-block; position: relative;width:32%; height:100px; line-height: 100px; margin-top: 5%; background-color: #fff; text-align: center; box-shadow: 0px 5px 16px rgba(255,255,255);}
@@ -115,15 +166,15 @@
 .RP_tablet .Html .RP_TB_img img{width: 80%; margin-left: 10%;}
 .RP_Mobile .Html .RP_MB_img img{width: 30%; margin-left: 30%; border-radius: 30px;}
 .visual_contents .Response_choose a{display: inline-block;font-size: 6vw; width: 8vw; margin-top: 5%; text-align: center; }
-.visual_contents .Response_choose a.on{background-color: rgba(255,255,255,.0.3); box-shadow: 0px 6px 20px rgba(255,255,255,0.9)}
+.visual_contents .Response_choose a.on{box-shadow: 0px 6px 20px rgba(255,255,255,0.9)}
 
 
 .view_record{position: absolute; bottom:0; left:30%;}
-.shadow{display: inline-block; width: 0px; height: 0px; position: absolute; top:-48.6%; left:-12%; background-color: rgba(0,0,0,0.1); border-bottom: none; border-right: 150px solid transparent; border-top: 150px solid rgba(255,255,255,0.2); border-left: 150px solid transparent;}
+/*.shadow{display: inline-block; width: 0px; height: 0px; position: absolute; top:-48.6%; left:-12%; background-color: rgba(0,0,0,0.1); border-bottom: none; border-right: 150px solid transparent; border-top: 150px solid rgba(255,255,255,0.2); border-left: 150px solid transparent;}*/
 .view_record .camera:hover.shadow{border: 1px solid red;}
 .view_record .camera{width: 80%; position: relative;}
-.contents_2 .size{position: absolute; top:24px; left:20%; width: 200px; /*overflow: hidden;*/}
-.size .main_full{width: 655px}
+.view_record .size{position: absolute; top:24px; left:20%; width: 200px; /*overflow: hidden;*/}
+.size .main_full{position: relative; width: 655px}
 .size .main_full li{float: left; width: 109px; height:82px;}
 .size .main_full li a.on{display: block;border: 2px solid red;}
 .size .main_full img{width: 100%; height:100%;}
