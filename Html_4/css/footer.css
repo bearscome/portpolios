@@ -1,5 +1,5 @@
 @charset "utf-8";
-.footer{min-width: 1900px; width:100%;border-top:1px solid #3f3f47;background-color:#26262f; border-bottom:1px solid #3f3f47;}
+.footer{min-width: 1900px; width:100%;border-top:1px solid #3f3f47;background-color:#26262f; border-bottom:1px solid #3f3f47; display: none;}
 .footer_sub{width:1620px; height:400px; background-color:#26262f; margin:0 auto; box-sizing:border-box; position:relative;}
 .banner{width:1400px;height:100px; margin: 0 auto; }
 .banner ul{}

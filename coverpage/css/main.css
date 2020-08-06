@@ -9,20 +9,24 @@
     .Html .Htmle > p:nth-of-type(2):before{background: url(../images/adobe.png
     ) no-repeat center center; background-size: 50% 100%;}
     .Html .Htmle > p:nth-of-type(3):before{background:url(../images/braket.png) no-repeat center center; background-size:50% 100%;}
-    .layout .Htmle .More{font-size: 1vw; font-weight: 700;}
+    .layout .Htmle .More{font-size: 1rem; font-weight: 700;}
     .visual_contents .layout .Htmle .H42{margin:10% 4% 0 0px; width: 44%;}
     .view_record img.camera{width:70%;}
     .view_record div.size{position: absolute; top:24px; left:-13%; width: 270px; overflow: hidden;}
     .view_record .size ul.main_full{width:655px;  margin-left:35%}
     .size ul.main_full li{float: left; width: 92px; height:65px;}
-    .visual .Response_choose{position: absolute; top:60%; right:0.5%;}
+    .visual .Response_choose{position: absolute; top:40%; right:0.5%;}
+    .visual_contents .layout .Html .Mobile_img img,
+    .visual_contents .RP_Mobile .Html .RP_MB_img img{margin:0; width:100%;height: 2200px;}
+
+    
 }
 
 @media all and (max-width:768px){
     section .contents_2 .visual{bottom:30%;}
     section .layout{height: 100%;} 
-    .visual_contents .layout .Html .Htmle{height:100%;}
-    .visual_contents .layout .Htmle .More{bottom: 1%;}
+    
+    .visual_contents .layout .Htmle .More{bottom: 1%; font-size: 0.7rem}
     .visual_contents .layout .Html_4_2_contents .Htmle .H42{margin:0% 0% 0 0px; width: 100%;}
     .visual_contents .layout .Html_4_2_contents .Htmle .H42:nth-of-type(1){bottom:31%; left:0%; }
     .visual_contents .layout .Html_4_2_contents .Htmle .H42:nth-of-type(2){bottom:21%; left:0%;}
@@ -43,11 +47,10 @@
      .layout .Htmle h4{font-size: 1rem}
      .layout .Html .Htmle > p{height: 40px; line-height: 40px; font-size: 0.7rem}
      .contents_2 .view_record img.camera{width:60%;}
-    .visual_contents .layout .Html .Htmlc img{height: 700px}
      .visual_contents .RP_tablet .Html .RP_TB_img img{width: 100%; height: 1310px; margin-left: 0;}
-     .visual_contents .layout .Html .Mobile_img img,
-     .visual_contents .RP_Mobile .Html .RP_MB_img img{margin:0; width:100%;height: 2200px; border-radius: 10px}
-     
+     .visual .visual_contents .layout .Html .Mobile_img img,
+     .visual .visual_contents .RP_Mobile .Html .RP_MB_img img{border-radius: 10px;}
+     .visual_contents .layout .Html .Htmle{height:100%;}
     
      .contents_2 .view_record div.size{position: absolute; top:10%; left:-15%; width: 230px; overflow: hidden;}
      .view_record .size ul.main_full{width:655px;  margin-left:35%}
@@ -78,8 +81,8 @@
 /*Who I am contents*/
 .contents_1 .Info{/*background-color:rgba(255,255,155,0.2)*/}
 .contents_1 .Info li{font-size:2vw; text-align: center; margin-top: 3%;}
-.contents_1 .Info li .icons{display: inline-block;width: 2vw; height: 25px; }
-.contents_1 .Info li .icons img{width: 100%; height: 100%; vertical-align: middle;}
+.contents_1 .Info li .icons{display: inline-block;width: 2vw; height: 5vh; margin-right: 1%}
+.contents_1 .Info li .icons img{width: 100%; height: 100%; vertical-align: top;}
 .contents_1 .Info li:nth-of-type(1){margin-top:0;}
 .contents_1 .Info li:nth-of-type(2){margin-top:20px;}
 .contents_1 .Info li h4{font-size:3vw; text-align: center;}
@@ -148,7 +151,7 @@
 .layout h4{text-align: center; font-size: 1.2rem}
 .layout .Html{width: 100%; height: 100%; display: flex; }
 .layout .Html .Htmlc{width: 70%}
-.layout .Html .Htmlc img{width: 100%; height:100%; position: relative;}
+.layout .Html .Htmlc img{width: 100%;position: relative;}
 .layout .Html .Mobile_img img{display: block; margin:0 50% 0 30%; border-radius: 30px; width: 30%; padding:1%;}
 .layout .Html .Htmle{position: relative; ;width:29%; height: 500px; margin-left: 2%; }
 .More{position: absolute; bottom: 5%; left:50%; margin-left:-40%;  width:80%; height:40px; font-size:1vw; line-height: 40px; text-align: center; font-weight: 500; border-radius:50px; background-color: rgba(255,255,255,0.3); box-shadow: 0px 5px 8px rgba(255,255,255); transition: all 1s ease; }

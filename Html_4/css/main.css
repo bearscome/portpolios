@@ -6,10 +6,10 @@ body{/*overflow-x: hidden;*/}
 .display_off{display:none;}
 .display_on{display:block;}
 
-
+.wrap{width:100%; min-width: 1900px; display: none;}
 .visual{width:100%; min-width: 1900px;}
-.contens{position:relative; width:100%; height:738px; margin: 0 auto; /*box-sizing:border-box; */}
-.contens_img{width:100%;height:738px;overflow:hidden; position:relative; }
+.contens{position:relative; width:100%; height:738px; margin: 0 auto;  /*box-sizing:border-box; */}
+.contens_img{width:100%;height:738px;overflow:hidden; position:relative;}
 .img_list{width:7680px;}
 .img_list li{float:left;}
 .prev_btn{position:absolute; top:50%; left:0; margin-top:-22px; margin-left: 20px;}
