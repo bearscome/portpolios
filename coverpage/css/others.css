@@ -3,7 +3,7 @@
 #chrome{background-color: #000;display: none;}
 #chrome p{font-size: 5rem; color: #fff; margin: 0 auto; text-align: center; padding-top: 10%;}
 /*cover_page*/
-#coverpage{position: relative; width:100vw; height: 100vh; background-color: rgba(0,0,0); display: none;}
+#coverpage{position: relative; width:100vw; height: 100vh; background-color: rgba(0,0,0); /*display: none;*/}
 #coverpage ul{display: inline-block; position: absolute; top:40%; left:50%; transform: translateX(-50%)translateY(-50%); font-size:4rem; color:rgba(255,255,255); opacity: 1;}
 #coverpage ul li{display: inline-block; transition: all 1s ease;}
 #coverpage ul.none{opacity: 0}
