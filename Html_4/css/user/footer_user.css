@@ -1,0 +1,27 @@
+@charset "utf-8";
+.footer{ min-width:1900px; margin-top: 100px; width:100%;border-top:1px solid #3f3f47;background-color:#26262f; border-bottom:1px solid #3f3f47; }
+.footer_sub{width:1620px; height:400px; background-color:#26262f; margin:0 auto; box-sizing:border-box; position:relative;}
+.banner{width:1400px;height:100px; margin: 0 auto; }
+.banner ul{}
+.banner ul li{float:left; margin-top:50px;  padding-left:30px; }
+.banner .banner_prev_btn{position:absolute; top:65px; left:90px;}
+.banner .banner_stop_btn{position:absolute; top:65px; right:75px;}
+.banner .banner_next_btn{position:absolute; top:66px; right:100px;}
+
+.others .other_main{ width:1600px; height:130px; box-sizing: border-box;}
+.other_systems{float:left;}
+.other_systems div{display: inline-block; width:165px; height:40px; background-color:#3f3f4b; text-align: center; line-height:40px;  margin-top:50px;  }
+.other_systems div a{color: #fff;width:165px; height:40px}
+.culture_system{margin-left:80px; margin-right:10px;}
+.others_download_link{float:left;margin-top:53px; margin-left:20px;  }
+.others_download{display:inline-block;width:150px;height:35px; background-color:#333333; text-align: center; line-height:45px; background-color:#26262f; border-style: none; }
+
+.footer_user{margin-left: 80px;  height:30px; margin-bottom: 30px;  }
+.user_link li{float:left; padding:0 15px; background:url(../images/banner/go_link_bg.gif) no-repeat 0; border-bottom: 1px solid #666; height:30px; line-height:30px; font-size:14px;}
+.user_link li:first-child{background:none; padding-left:0px; }
+.user_link a{color:white;}
+.user a{color:#cc6666}
+.mark{float:right; margin-right:80px;}
+.mark li{float:left; padding-left:30px;}
+.add address{display: inline-block; margin-left:80px; color:#666666;}
+.add span{margin-left:30px; color:#666666;}

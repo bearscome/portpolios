@@ -1,10 +1,20 @@
 @charset "utf-8";
+@media all and (max-width:1024px){
+    #coverpage ul.cover{font-size:4rem;}
+}
+@media all and (max-width:768px){
+     body #coverpage ul.cover{font-size:3rem;}
+}
+@media all and (max-width:426px){
+     html body #coverpage ul.cover{font-size:1.5rem;}
+}
+
 /*browser for chrome*/
 #chrome{background-color: #000;display: none;}
 #chrome p{font-size: 5rem; color: #fff; margin: 0 auto; text-align: center; padding-top: 10%;}
 /*cover_page*/
-#coverpage{position: relative; width:100vw; height: 100vh; background-color: rgba(0,0,0); /*display: none;*/}
-#coverpage ul{display: inline-block; position: absolute; top:40%; left:50%; transform: translateX(-50%)translateY(-50%); font-size:4rem; color:rgba(255,255,255); opacity: 1;}
+#coverpage{position: relative; width:100vw; height: 100vh; background-color: rgba(0,0,0); display: none;}
+#coverpage ul{display: inline-block; position: absolute; top:40%; left:50%; transform: translateX(-50%)translateY(-50%); font-size:5rem; color:rgba(255,255,255); opacity: 1;}
 #coverpage ul li{display: inline-block; transition: all 1s ease;}
 #coverpage ul.none{opacity: 0}
 #coverpage ul.none li:nth-of-type(1){transform:translateY(-200px)}
@@ -13,13 +23,14 @@
 #coverpage ul.none li:nth-of-type(4){transform:translateY(50px)}
 /*svg section*/
 svg text{
-    stroke:rgba(255,255,255,0.5); font-size:3rem;  stroke-width:2; animation: textanimate 5s ease; font-weight: 700; 
+    stroke:rgba(255,255,255,0.5); font-size:2rem;  stroke-width:2; animation: textanimate 5s ease; font-weight: 700; 
 }
 @keyframes textanimate{
     0%{
-        stroke-dasharray: 0 50%;
-        stroke-dashoffset:20%;
-        transform:translateX(100%)
+        stroke-dasharray: 0 50%; /*선의 간격*/
+        stroke-dashoffset:20%; /*시작하는 장소*/
+        transform:translateX(100%) 
+            
     }
     100%{
         stroke-dasharray: 50% 0%;
@@ -28,7 +39,7 @@ svg text{
     }
 }
 
- 
+
     
     
     
