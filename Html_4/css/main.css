@@ -59,7 +59,7 @@ display: none;}
 
 .right_button{position:absolute; top:1250px; right:30px;}
 .right_button li{margin-top:15px; text-align: center; width:90px;height:30px; line-height: 30px;}
-.right_button_on{background:url(../images/background/bg_right_button.png)no-repeat 0 0;}
+.right_button li a.on{background:url(../images/background/bg_right_button.png)no-repeat 0 0; display: block; color: #fff;}
 .right_button .rihgt_buuon_on_a{color:#ddd;}
 
 

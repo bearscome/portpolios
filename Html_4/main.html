@@ -15,8 +15,9 @@
         $(document).on('ready',function(){
             var num=0;
             var currentnum=0;
-            var sid;
+            var sid, sid2;
             var imgwidth=$('.img_list li a img').outerWidth() 
+            
              function animated(currentnum){
                     $('.contents_page > ul > li > a.on').removeClass('on')
                     $('.contents_page > ul > li > a').children().attr("src","images/icons/icon_country_off.png")
@@ -38,7 +39,8 @@
                         })
                     }
                 }
-            sid=setInterval(FC,3000)
+           
+            
             /*메뉴*/
             $('.gnb_sub > ul > li > a').on({
                 mouseenter:function(){
@@ -73,10 +75,38 @@
                 }
             })
             
+            /*퀵메뉴*/
+            $(window).scroll(function(){
+                var top=$(window).scrollTop()
+                var page1=$('.wrap > div:eq(0)').offset().top;
+                var page2=$('.wrap > div:eq(1)').offset().top;
+                var page3=$('.wrap > div:eq(2)').offset().top;
+                var page4=$('.wrap > div:eq(3)').offset().top;
+                var page5=$('.wrap > div:eq(4)').offset().top;
+                var page6=$('.wrap > div:eq(5)').offset().top;
+                console.log(top)
+                if(top<page2-100){
+                    $('.right_button').hide()
+                }else if(top>page2-200){
+                    $('.right_button').show()
+                }
+                $('.right_button').stop()
+                $('.right_button').animate({
+                    'top':$(document).scrollTop()+300+'px'
+                },500)
+            })
             /*비주얼 메인*/
             
-            
-                     
+            function auto(){
+                $('.next_btn').trigger('click')
+                $('.recommended_items_list_next_btn').trigger('click')
+                
+            }
+            function auto2(){
+                $('.banner_next_btn').trigger('click')
+            }
+              sid=setInterval(auto,3000)
+              sid2=setInterval(auto2,3000)
             $('.contents_page > ul > li > a').on('click',function(e){
                 e.preventDefault()
                 if($('.img_list').is(':animated')==false){
@@ -188,6 +218,33 @@
             })
             
             
+            /*배너*/
+            $('.banner_prev_btn').on('click',function(e){
+                e.preventDefault()
+                $('.banner ul').animate({
+                    left:'-195px'
+                },1000,function(){
+                    $('.banner ul').append($('.banner ul li:first'))
+                    $('.banner ul').css('left','0px')
+                })
+            })
+            
+            $('.banner_next_btn').on('click',function(e){
+                e.preventDefault()
+                
+                $('.banner ul').animate({
+                    left:'195px'
+                },1000,function(){
+                    $('.banner ul').prepend($('.banner ul li:last'))
+                    $('.banner ul').css('left','0px')
+                })
+            })
+            
+            $('.banner_stop_btn').on('click',function(e){
+                e.preventDefault()
+                clearInterval(sid2)
+                
+            })
         })    
     </script>
 <body>                  
@@ -476,7 +533,7 @@
                 <ul>
                     <li ><a href="#"><img src="images/icons/icon_fp-nav-first.png" alt="위로가기"/></a></li>
                     <li><a href="exhibition">전시상황</a></li>
-                    <li class="right_button_on"><a href="#" class="rihgt_buuon_on_a">이용안내</a></li>
+                    <li><a href="#" class="on">이용안내</a></li>
                     <li><a href="#">알림</a></li>
                     <li><a href="#">행사</a></li>
                     <li ><a href="#"><img src="images/icons/icon_fp-nav-last.png" alt="밑으로 가기"/></a></li>
