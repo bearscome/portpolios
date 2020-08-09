@@ -13,21 +13,53 @@
     </head>
     <script>
         $(document).on('ready',function(){
+            var num=0;
+            var currentnum=0;
+            var sid;
+            var imgwidth=$('.img_list li a img').outerWidth() 
+             function animated(currentnum){
+                    $('.contents_page > ul > li > a.on').removeClass('on')
+                    $('.contents_page > ul > li > a').children().attr("src","images/icons/icon_country_off.png")
+                    $('.contents_page > ul > li:eq('+currentnum+') > a').addClass('on')
+                    $('.contents_page > ul > li:eq('+currentnum+') > a.on').children().attr("src","images/icons/icon_country_on.png")
+                    $('.img_list').animate({
+                        'left':(-imgwidth*currentnum)+'px'
+                    })
+                }
+
+            function FC(Number){
+                    if($('.recommended_items_list_ul').is(':animated')==false){
+                        $('.event_photo_page ul li a.on').removeClass('on')
+                        $('.event_photo_page ul li a img').attr('src','images/icons/icon_country_off.png')
+                        $('.event_photo_page ul li:eq('+Number+') a').addClass('on')
+                        $('.event_photo_page ul li:eq('+Number+') a').children().attr('src','images/icons/icon_country_on.png')
+                        $('.recommended_items_list_ul').animate({
+                            left:-(1280*Number)+'px'
+                        })
+                    }
+                }
+            sid=setInterval(FC,3000)
+            /*메뉴*/
             $('.gnb_sub > ul > li > a').on({
                 mouseenter:function(){
+                    $('.gnb').append("<div class='gnbbg'></div>")
                     $('.sub_munu').show()
                     $('.gnb .sub_munu').css('background','#fff')
                     $('.gnb_sub ul > li > a.on').removeClass('on')
                     $(this).addClass('on')
                     $(this).next().css('background-color','#d9d9d9')
                     
+                    
                 },
                 mouseleave:function(){
+                    $('.gnbbg').remove()
                     $('.sub_munu').hide()
+                    $('.gnb_sub ul > li > a').removeClass('on')
                 }
             })
             $('.sub_munu').on({
                 mouseenter:function(){
+                    $('.gnb').append("<div class='gnbbg'></div>")
                     $('.sub_munu').show()
                     $('.gnb_sub ul > li > a').removeClass('on')
                     $(this).prev().addClass('on')
@@ -35,9 +67,127 @@
                     $(this).css('background-color','#d9d9d9')
                 },
                 mouseleave:function(){
+                    $('.gnbbg').remove()
                     $('.sub_munu').hide()
+                    $('.gnb_sub ul > li > a').removeClass('on')
                 }
             })
+            
+            /*비주얼 메인*/
+            
+            
+                     
+            $('.contents_page > ul > li > a').on('click',function(e){
+                e.preventDefault()
+                if($('.img_list').is(':animated')==false){
+                    var currentN=$(this).parent().index()
+                    var imgwidth=$('.img_list li a img').outerWidth()
+                    $('.contents_page > ul > li > a.on').removeClass('on')
+                    $('.contents_page > ul > li > a').children().attr("src","images/icons/icon_country_off.png")
+                    $(this).addClass('on')
+                    $(this).children().attr('src','images/icons/icon_country_on.png')
+                    $('.img_list').animate({
+                        'left':(-imgwidth*currentN)+'px'
+                    })
+                currentnum=currentN
+                }
+            })
+            
+            
+            $('.next_btn').on('click',function(e){
+                e.preventDefault()
+                if($('.img_list').is(':animated')==false){
+                    currentnum++
+                    if(currentnum>3){
+                        currentnum=0
+                    }
+                    animated(currentnum)
+                }
+            })
+             $('.prev_btn').on('click',function(e){
+                e.preventDefault()
+                 if($('.img_list').is(':animated')==false){
+                    currentnum--
+                    if(currentnum<0){
+                        currentnum=3
+                    }
+                    animated(currentnum)
+                 }
+            })
+            
+           
+            
+            /*전시사항*/
+            
+            $('.in_exhibition_contents .deth_2').not(':first').hide()
+            $('.in_exhibition_contents .deth_1 > li > a').on('click',function(e){
+                e.preventDefault()
+                $('.in_exhibition_contents .deth_1 > li > a.on').removeClass('on')
+                $(this).addClass('on')
+                $('.in_exhibition_contents .deth_2').hide()
+                $(this).next().show()
+            })
+            
+            /*알림*/
+            
+            $('.news_zone .deth_2').not(':first').hide()
+            $('.news_notice ul > li > a').on('click',function(e){
+                e.preventDefault()
+                $('.news_notice ul > li > a.on').removeClass('on')
+                $(this).addClass('on')
+                $('.news_zone .deth_2').hide()
+                $(this).next().show()
+            })
+            
+            /*팝업존*/
+            $('.news_list li a').not(':first').hide()
+            $('.popup_news_page ul li a').on('click',function(e){
+                e.preventDefault()
+                var currentNum=$(this).parent().index()
+                $('.news_list ul li a.on').removeClass('on')
+                $('.popup_news_page ul li a.on').removeClass('on')
+                $('.popup_news_page ul li a img').attr('src','images/icons/icon_country_off.png')
+                $(this).addClass('on')
+                $(this).children().attr('src','images/icons/icon_country_on.png')
+                $('.news_list li a').hide()
+                $('.news_list li:eq('+currentNum+') a').show()
+            })
+            $('.news_list li a').on('click',function(e){
+                e.preventDefault()
+            })
+            
+        /*추천 소장품*/
+            var Number=0;
+            $('.event_photo_page ul li a').on('click',function(e){
+                e.preventDefault();
+                var currentN=$(this).parent().index()
+                $('.event_photo_page ul li a.on').removeClass('on')
+                $('.event_photo_page ul li a img').attr('src','images/icons/icon_country_off.png')
+                $(this).addClass('on')
+                $(this).children().attr('src','images/icons/icon_country_on.png')
+                $('.recommended_items_list_ul').animate({
+                        left:-(1280*currentN)+'px'
+                    })
+            })
+            $('.recommended_items_list_next_btn').on('click',function(e){
+                e.preventDefault()
+                Number++
+                if(Number>1){
+                    Number=0;
+                }
+                FC(Number)
+            })
+            
+            $('.recommended_items_list_prev_btn').on('click',function(e){
+                e.preventDefault()
+                Number--
+                if(Number<0){
+                    Number=1;
+                }
+                FC(Number)
+            })
+            
+            
         })    
     </script>
 <body>                  
@@ -175,7 +325,7 @@
                 <div class="gnb clearfix" id="gnb">
                     <div class="gnb_sub">
                         <ul>
-                            <li><a href="#"  class="on">관람정보</a>
+                            <li><a href="#">관람정보</a>
                                 <ul class="sub_munu">
                                     <li><a href="#">전시관람</a></li>
                                     <li><a href="#">전시해설</a></li>
@@ -270,54 +420,58 @@
                     
                   <div class="contents_page clearfix">  
                     <ul>
-                        <li><a href="#"><img src="images/icons/icon_color_country_1.png" alt="현재페이지"/></a></li>
-                        <li><a href="#"><img src="images/icons/icon_white_country_1.png" alt="다음페이지"/></a></li>
-                        <li><a href="#"><img src="images/icons/icon_white_country_1.png" alt="다음페이지"/></a></li>
-                        <li><a href="#"><img src="images/icons/icon_white_country_1.png" alt="다음페이지"/></a></li>
+                        <li><a href="#" class="on"><img src="images/icons/icon_country_on.png" alt="1번 째 이미지"/></a></li>
+                        <li><a href="#"><img src="images/icons/icon_country_off.png" alt="2번 째 이미지"/></a></li>
+                        <li><a href="#"><img src="images/icons/icon_country_off.png" alt="3번 째 이미지"/></a></li>
+                        <li><a href="#"><img src="images/icons/icon_country_off.png" alt="4번 째 이미지"/></a></li>
                     </ul>
                 </div>
                 </div>  
             </div>
-  
-           
         <div class="in_exhibition clearfix">
                 <h2 class="name_ex">전시사항</h2>
                 <div class="in_exhibition_contents">
-                    <div class="in_exhibition_contents_name">
-                    <a href="#" class="now_exhibition on">현재전시</a>
-                    <a href="#" class="will_exhibition">예정전시</a>
-                    <a href="#" class="ago_exhibition">과거전시</a>
-                    </div>                       
-                    <div class="in_exhibition_contents_img clearfix">
-                        <div class="in_exhibition_contents_img_now">
-                        <img src="images/exhibition/ing.jpg" alt="핀란드 디자인 1000년"/>
-                        </div>
-                        
-                        <div class=" in_exhibition_contents_img_now_text">
-                        <p class="now_exhibition">현재전시</p><br/>
-                        <h3><a href="#">인간, 물질 그리고 변형 - 핀란드</a></h3><br/>
-                        <p class="img_contents_text">전시기간 : 2019-12-24 ~ 2020-06-21</p><br/>
-                        <p class="img_contents_text">전시장소 : 상설전시관 1층 특별 전시실</p><br/>
-                        <p>우리는 '과거-현재-미래'처럼 단선적으로 생각하는 것에 익숙합니다. 만약 이러한 단순한 사고에서 벗어나, 새로운 관점에서 세계를 바라보면 어떠할까요? </p>
-                        </div>
-                    </div>
-                    
-                    <div class="in_exhibition_contents_img_will clearfix">
-                        <div class="in_exhibition_contents_img_now">
-                        <img src="images/exhibition/ing_2.jpg" alt="빡빡이 황금마스크"/>
-                        </div>
-                        
-                        <div class=" in_exhibition_contents_img_now_text">
-                        <p class="now_exhibition">예정전시</p><br/>
-                            <h3><a href="#">신과 인간의 만남 - 중국쓰촨</a></h3><br/>
-                        <p class="img_contents_text">전시기간 : 2020-11-10 ~ 2021-01-31</p><br/>
-                        <p class="img_contents_text">전시장소 : 기획전시시실</p><br/>
-                        </div>
-                    </div>
-
+                    <ul class="deth_1 clearfix">
+                        <li><a href="#" class="on">현재전시</a>
+                            <ul class="deth_2">
+                                <li>
+                                    <div class="ing both clearfix">
+                                        <img src="images/exhibition/ing.jpg" alt="핀란드 디자인 1000년"/>
+                                        <div class="info">
+                                            <p class="now_exhibition">현재전시</p>
+                                            <h3 class="">인간, 물질 그리고 변형 - 핀란드</h3>
+                                            <p class="img_contents_text">전시기간 : 2019-12-24 ~ 2020-06-21</p>
+                                            <p class="img_contents_text">전시장소 : 상설전시관 1층 특별 전시실</p>
+                                            <p class="text_info">우리는 '과거-현재-미래'처럼 단선적으로 생각하는 것에 익숙합니다. 만약 이러한 단순한 사고에서 벗어나, 새로운 관점에서 세계를 바라보면 어떠할까요? </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">예정전시</a>
+                            <ul class="deth_2">
+                                <li>
+                                    <div class="will both clearfix">
+                                        <img src="images/exhibition/ing_2.jpg" alt="빡빡이 황금마스크"/>
+                                        <div class="info">
+                                            <p class="now_exhibition">예정전시</p>
+                                            <h3 class="">신과 인간의 만남 - 중국쓰촨</h3>
+                                            <p class="img_contents_text">전시기간 : 2020-11-10 ~ 2021-01-31</p>
+                                            <p class="img_contents_text">전시장소 : 기획전시시실</p>
+                                            <p>우리는 '과거-현재-미래'처럼 단선적으로 생각하는 것에 익숙합니다. 만약 이러한 단순한 사고에서 벗어나, 새로운 관점에서 세계를 바라보면 어떠할까요? </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">과거전시</a>
+                            <ul class="deth_2 ago both">
+                                <li><span class="not_CT">공시가간이 끝났습니다.</span></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-    
-    </div>
+        </div>
         <div class="right_button">
                 <ul>
                     <li ><a href="#"><img src="images/icons/icon_fp-nav-first.png" alt="위로가기"/></a></li>
@@ -328,8 +482,6 @@
                     <li ><a href="#"><img src="images/icons/icon_fp-nav-last.png" alt="밑으로 가기"/></a></li>
             </ul>
         </div>
-        
-           
         <div class="information_use">
            <h3>이용안내</h3>
            <div class="information" >
@@ -384,17 +536,14 @@
            </div>
        <div class="information_more"><a href="#">이용안내 더보기</a></div> 
     </div>
-       
-
-            
         <div class="news">
-                    <h2>알림</h2>
+            <h2>알림</h2>
                 <div class="news_wrap">
                 <div class="news_zone">
                     <div class="news_notice">
-                    <ul>
-                        <li><span class="topic"><a href="#">알림</a></span>
-                            <ul class="display_on">
+                    <ul class="deth_1">
+                        <li><a href="#" class="on">알림</a>
+                            <ul class="deth_2">
                                 <li><span><a href="#">코로나로 인해 박물관을 임시 휴업 합니다.</a></span> <span class="topic_date">2020.02.07</span></li>
                                 <li><span><a href="#">코로나로 인해 박물관을 임시 휴업 합니다.</a></span> <span class="topic_date">2020.02.07</span></li>
                                 <li><span><a href="#">코로나로 인해 박물관을 임시 휴업 합니다.</a></span> <span class="topic_date">2020.02.07</span></li>
@@ -403,8 +552,8 @@
                                 <li><span><a href="#">코로나로 인해 박물관을 임시 휴업 합니다.</a></span> <span class="topic_date">2020.02.07</span></li>
                             </ul>
                         </li>
-                        <li><span class="topic"><a href="#">고시&#8226;공고</a></span>
-                            <ul class="display_off">
+                        <li><a href="#">고시&#8226;공고</a>
+                            <ul class="deth_2">
                                 <li><span><a href="#">코로나로 인해 고시/ 공고가 없습니다.</a></span> <span class="topic_date">2020.02.07</span></li>
                                 <li><span><a href="#">코로나로 인해 고시/ 공고가 없습니다.</a></span> <span class="topic_date">2020.02.07</span></li>
                                 <li><span><a href="#">코로나로 인해 고시/ 공고가 없습니다.</a></span> <span class="topic_date">2020.02.07</span></li>
@@ -413,8 +562,8 @@
                                 <li><span><a href="#">코로나로 인해 고시/ 공고가 없습니다.</a></span> <span class="topic_date">2020.02.07</span></li>             
                             </ul>
                         </li>
-                        <li><span class="topic"><a href="#">채용안내</a></span>
-                            <ul class="display_off"> 
+                        <li><a href="#">채용안내</a>
+                            <ul class="deth_2"> 
                                 <li><span><a href="#">코로나로 인해 채용 안내가 없습니다.</a> </span> <span class="topic_date">2020.02.07</span></li>
                                 <li><span><a href="#">코로나로 인해 채용 안내가 없습니다.</a> </span> <span class="topic_date">2020.02.07</span></li>
                                 <li><span><a href="#">코로나로 인해 채용 안내가 없습니다.</a> </span> <span class="topic_date">2020.02.07</span></li>
@@ -423,8 +572,8 @@
                                 <li><span><a href="#">코로나로 인해 채용 안내가 없습니다.</a> </span> <span class="topic_date">2020.02.07</span></li>      
                             </ul>
                         </li>
-                        <li><span class="topic"><a href="#">보도자료</a></span>
-                            <ul class="display_off">
+                        <li><a href="#">보도자료</a>
+                            <ul class="deth_2">
                                 <li><span><a href="#">코로나로 인해 보도자료가 없습니다.</a></span> <span class="topic_date">2020.02.07</span></li>
                                 <li><span><a href="#">코로나로 인해 보도자료가 없습니다.</a> </span> <span class="topic_date">2020.02.07</span></li>
                                 <li><span><a href="#">코로나로 인해 보도자료가 없습니다.</a> </span> <span class="topic_date">2020.02.07</span></li>
@@ -439,31 +588,31 @@
                 <div class="popup_news">
                     <h3>팝업알림창</h3>
                     <ul class="news_list">
-                        <li><a href="#"><img src="images/popup/121.png" alt="children's museum 어린이 박물관"/></a></li>
-                        <li class="off"><a href="#"><img src="images/popup/526079.jpg" alt="코로나바이러스감염증-19 예방 꼭 기억해야 할 행동수칙, 국민 예방 수칙 1.물과 비누로 꼼꼼히 자주 손싯기, 2.씻지 않은 손으로 눈,코,입 만지지 않기 3.기침할 땐 옷소매로 입과 코를 가리기 4.발열,기침 등 호홉기 증상자와 접촉피하기, 5.사람 많은 곳 방문자제하기 6.특히 노인, 임산부, 만성질환자드은 외출 시 마스크 꼭 착용"/></a></li>
-                        <li class="off"><a href="#"><img src="images/popup/535664.jpg" alt="베트남어 전시안내 국립중앙박물관에서 꼭 봐야 할 명품 30선 "/></a></li>
-                        <li class="off"><a href="#"><img src="images/popup/363741.jpg" alt="스마트폰 모바일 전시안내 무료 서비스, 스마트폰 앱을 다운로드 후, 실행하시면 전시안내 정보를 제공받으실 수 있습니다."/></a></li>
+                        <li><a href="#" class="on"><img src="images/popup/121.png" alt="children's museum 어린이 박물관"/></a></li>
+                        <li><a href="#"><img src="images/popup/526079.jpg" alt="코로나바이러스감염증-19 예방 꼭 기억해야 할 행동수칙, 국민 예방 수칙 1.물과 비누로 꼼꼼히 자주 손싯기, 2.씻지 않은 손으로 눈,코,입 만지지 않기 3.기침할 땐 옷소매로 입과 코를 가리기 4.발열,기침 등 호홉기 증상자와 접촉피하기, 5.사람 많은 곳 방문자제하기 6.특히 노인, 임산부, 만성질환자드은 외출 시 마스크 꼭 착용"/></a></li>
+                        <li><a href="#"><img src="images/popup/535664.jpg" alt="베트남어 전시안내 국립중앙박물관에서 꼭 봐야 할 명품 30선 "/></a></li>
+                        <li><a href="#"><img src="images/popup/363741.jpg" alt="스마트폰 모바일 전시안내 무료 서비스, 스마트폰 앱을 다운로드 후, 실행하시면 전시안내 정보를 제공받으실 수 있습니다."/></a></li>
                      </ul>
                        
                     <div class="popup_news_page">
-                           <span><a href="#"><img src="images/icons/icon_color_country_1.png" alt="첫 번째 페이지"/></a></span> 
-                            <span><a href="#"><img src="images/icons/icon_white_country_1.png" alt="페이지"/></a></span>
-                            <span><a href="#"><img src="images/icons/icon_white_country_1.png" alt="페이지"/></a></span>
-                            <span> <a href="#"><img src="images/icons/icon_white_country_1.png" alt="페이지"/></a></span>
+                          <ul>
+                           <li><a href="#" class="on"><img src="images/icons/icon_country_on.png" alt="1번 째 페이지"/></a></li> 
+                            <li><a href="#"><img src="images/icons/icon_country_off.png" alt="2번 째페이지"/></a></li>
+                            <li><a href="#"><img src="images/icons/icon_country_off.png" alt="3번 째페이지"/></a></li>
+                            <li> <a href="#"><img src="images/icons/icon_country_off.png" alt="4번 째페이지"/></a></li>
+                          </ul>
                         </div>
                  
                 </div> 
             </div>
   </div>
-                        
-                
-        <div class="event clearfix" >
+        <div class="event clearfix" > <!--추천소장품-->
                <h2>추천 소장품</h2>
             <div class="event_wrap clearfix">
              <div class="recommended_items_contents">
               <a href="#" class="recommended_items_list_prev_btn"><img src="images/icons/bg_curator-prev.png" alt="추천소장품 이전으로 가기"></a>
                <div class="recommended_items_list">
-                   <ul class="recommended_items_list">
+                   <ul class="recommended_items_list_ul">
                         <li>
                            <div class="recommended_items_1">
                             <div class="recommended_items_img_1"><img src="images/recommended_items/items_2.jpg" alt="부척님의 부적"/></div>
@@ -494,8 +643,8 @@
                 <a href="#" class="recommended_items_list_next_btn"><img src="images/icons/bg_curator-next.png" alt="추천소장품 다음으로 가기"/></a>
                      <div class="event_photo_page">
                                 <ul>
-                                    <li><a href="#"><img src="images/icons/icon_color_country_1.png" alt="현재페이지"/></a></li>
-                                    <li><a href="#"><img src="images/icons/icon_white_country_1.png" alt="예정된 페이지"/></a></li>
+                                    <li><a href="#" class="on"><img src="images/icons/icon_country_on.png" alt="현재페이지"/></a></li>
+                                    <li><a href="#"><img src="images/icons/icon_country_off.png" alt="예정된 페이지"/></a></li>
                                 </ul>
                     </div>
                     </div>

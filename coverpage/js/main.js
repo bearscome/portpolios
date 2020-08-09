@@ -10,7 +10,6 @@ $(document).ready(function(){
              alert("포트폴리오는 크롬버전에 최적화되어있습니다.\n크롬브라우저를 이용 부탁드립니다.");
         }
         $('#coverpage').click(function(){
-            $(this).css('background-color','red')
             $(this).hide()
         })
 
@@ -130,7 +129,7 @@ $(document).ready(function(){
         $('.RP_TB_img img').on({
            mouseenter:function(){
                $(this).stop().animate({
-                   top:'-93.3%'
+                   top:'-92%'
                },7000)
            },
            mouseleave:function(){
@@ -142,7 +141,7 @@ $(document).ready(function(){
         $('.RP_MB_img img').on({
            mouseenter:function(){
                $(this).stop().animate({
-                   top:'-97.5%'
+                   top:'-92.5%'
                },11000)
            },
            mouseleave:function(){
@@ -151,6 +150,114 @@ $(document).ready(function(){
                },1000)
           }
         })
+    
+    /*window resize*/
+    var width=window.outerWidth;
+    if(width<=1024){
+       $('.Html_4_1_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-54.3%'
+               },7000);
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0px'
+               },1000)
+          }
+        },1000);
+
+        $('.Html_4_2_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-66%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'
+               },1000)
+          }
+        })
+        $('.Html_5_1_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-56%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'
+               },1000)
+          }
+        })
+        $('.Html_5_2_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-54.4%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        })
+        $('.Mobile_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-68.3%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        })
+
+        $('.RP_web_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-63.4%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        })
+        $('.RP_TB_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-73.3%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        })
+        $('.RP_MB_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-68.5%'
+               },11000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                   top:'0%'  
+               },1000)
+          }
+        }) 
+    }    
+    function animationstop(){
+        $(this).stop().animate({
+                   top:'0%'
+               })
+    }
     
 /*    $(document).mousewheel(function(e, delta){
 		var count=0;
