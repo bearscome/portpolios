@@ -2,11 +2,11 @@
 @import url(reset.css);
 @import url(header.css);
 @import url(footer.css);
-body{/*overflow-x: hidden;*/}
+body{/*overflow-x: hidden;*/ position: relative;}
 .display_off{display:none;}
 .display_on{display:block;}
 
-.wrap{width:100%; min-width: 1900px;}
+.wrap{width:100%; min-width: 1900px; position: relative;}
 .visual{width:100%; min-width: 1900px;}
 .contens{position:relative; width:100%; height:738px; margin: 0 auto;  /*box-sizing:border-box; */}
 .contens_img{width:100%;height:738px;overflow:hidden; position:relative;}

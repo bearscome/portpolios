@@ -77,24 +77,81 @@
             
             /*퀵메뉴*/
             $(window).scroll(function(){
-                var top=$(window).scrollTop()
-                var page1=$('.wrap > div:eq(0)').offset().top;
-                var page2=$('.wrap > div:eq(1)').offset().top;
-                var page3=$('.wrap > div:eq(2)').offset().top;
-                var page4=$('.wrap > div:eq(3)').offset().top;
-                var page5=$('.wrap > div:eq(4)').offset().top;
-                var page6=$('.wrap > div:eq(5)').offset().top;
-                console.log(top)
-                if(top<page2-100){
-                    $('.right_button').hide()
-                }else if(top>page2-200){
+                $('.right_button').hide()
+                var scroll=$(window).scrollTop()
+                var page1=$('.wrap > div:eq(1)').offset().top; /*1013*/
+                var page2=$('.wrap > div:eq(2)').offset().top; /*1779*/
+                var page3=$('.wrap > div:eq(3)').offset().top; /*2554*/
+                var page4=$('.wrap > div:eq(4)').offset().top; /*3339*/
+                
+                if(scroll>page1-100){
                     $('.right_button').show()
+                    $('.right_button ul li a.on').removeClass('on')
+                    $('.right_button ul li:eq(1) a').addClass('on')
                 }
+                if(scroll>page2-100){
+                    $('.right_button ul li a.on').removeClass('on')
+                    $('.right_button ul li:eq(2) a').addClass('on')
+                }
+                
+                if(scroll>page3-100){
+                    $('.right_button ul li a.on').removeClass('on')
+                    $('.right_button ul li:eq(3) a').addClass('on')
+                }
+                
+                if(scroll>page4-100){
+                    $('.right_button ul li a.on').removeClass('on')
+                    $('.right_button ul li:eq(4) a').addClass('on')
+                }
+                    
                 $('.right_button').stop()
                 $('.right_button').animate({
-                    'top':$(document).scrollTop()+300+'px'
+                    'top':$(document).scrollTop()+50+'px'
                 },500)
             })
+            
+            $('.right_button ul li a').on('click',function(e){
+                e.preventDefault()
+                if($(this).parent().index()==1){
+                   $('html').animate({
+                       scrollTop:1003
+                   })
+                }
+                if($(this).parent().index()==2){
+                   $('html').animate({
+                       scrollTop:1769
+                   })
+                }
+                if($(this).parent().index()==3){
+                   $('html').animate({
+                       scrollTop:2544
+                   })
+                }
+                if($(this).parent().index()==4){
+                   $('html').animate({
+                       scrollTop:3329
+                   })
+                }
+            })
+            
+            var quickN=1;
+            $('.right_button ul li a.up').on('click',function(){
+                quickN--
+                if(quickN<1){
+                    quickN=4
+                }
+                $('.right_button ul li a').removeClass('on')
+                $('.right_button ul li:eq('+quickN+') a').addClass('on')
+            })
+            $('.right_button ul li a.down').on('click',function(){
+                quickN++
+                if(quickN>4){
+                    quickN=1
+                }
+                $('.right_button ul li a').removeClass('on')
+                $('.right_button ul li:eq('+quickN+') a').addClass('on')
+            })
+            
             /*비주얼 메인*/
             
             function auto(){
@@ -170,21 +227,44 @@
             })
             
             /*팝업존*/
+            var popupZ;
+            var popup_N=0;
             $('.news_list li a').not(':first').hide()
-            $('.popup_news_page ul li a').on('click',function(e){
+            $('.popup_news_page ul li a').on('mouseenter',function(e){
                 e.preventDefault()
-                var currentNum=$(this).parent().index()
-                $('.news_list ul li a.on').removeClass('on')
-                $('.popup_news_page ul li a.on').removeClass('on')
-                $('.popup_news_page ul li a img').attr('src','images/icons/icon_country_off.png')
-                $(this).addClass('on')
-                $(this).children().attr('src','images/icons/icon_country_on.png')
-                $('.news_list li a').hide()
-                $('.news_list li:eq('+currentNum+') a').show()
+                clearInterval(popupZ)
+                if($('.popup_news_page ul li a').is(':animated')==false){
+                    var currentNum=$(this).parent().index()
+                    $('.news_list ul li a.on').removeClass('on')
+                    $('.popup_news_page ul li a.on').removeClass('on')
+                    $('.popup_news_page ul li a img').attr('src','images/icons/icon_country_off.png')
+                    $(this).addClass('on')
+                    $(this).children().attr('src','images/icons/icon_country_on.png')
+                    $('.news_list li a').hide()
+                    $('.news_list li:eq('+currentNum+') a').show()
+                    }
+            })
+            $('.popup_news_page ul li a').on('mouseleave',function(){
+                 popupZ=setInterval(popup,3000)
             })
             $('.news_list li a').on('click',function(e){
                 e.preventDefault()
             })
+            
+            function popup(currentNum){
+                popup_N++
+                if(popup_N>3){
+                    popup_N=0;
+                }
+                $('.news_list ul li a.on').removeClass('on')
+                $('.popup_news_page ul li a.on').removeClass('on')
+                $('.popup_news_page ul li a img').attr('src','images/icons/icon_country_off.png')
+                $('.popup_news_page ul li:eq('+popup_N+') a').addClass('on')
+                $('.popup_news_page ul li:eq('+popup_N+') a').children().attr('src','images/icons/icon_country_on.png')
+                $('.news_list li a').hide()
+                $('.news_list li:eq('+popup_N+') a').show()
+            }
+            popupZ=setInterval(popup,3000)
             
         /*추천 소장품*/
             var Number=0;
@@ -231,12 +311,12 @@
             
             $('.banner_next_btn').on('click',function(e){
                 e.preventDefault()
-                
+                $('.banner ul').css('left','-195px') 
+                $('.banner ul').prepend($('.banner ul li:last'))
                 $('.banner ul').animate({
-                    left:'195px'
+                    left:'0px'
                 },1000,function(){
-                    $('.banner ul').prepend($('.banner ul li:last'))
-                    $('.banner ul').css('left','0px')
+                   
                 })
             })
             
@@ -529,16 +609,6 @@
                     </ul>
                 </div>
         </div>
-        <div class="right_button">
-                <ul>
-                    <li ><a href="#"><img src="images/icons/icon_fp-nav-first.png" alt="위로가기"/></a></li>
-                    <li><a href="exhibition">전시상황</a></li>
-                    <li><a href="#" class="on">이용안내</a></li>
-                    <li><a href="#">알림</a></li>
-                    <li><a href="#">행사</a></li>
-                    <li ><a href="#"><img src="images/icons/icon_fp-nav-last.png" alt="밑으로 가기"/></a></li>
-            </ul>
-        </div>
         <div class="information_use">
            <h3>이용안내</h3>
            <div class="information" >
@@ -707,7 +777,16 @@
                     </div>
                 </div>
            </div>
-             
+        <div class="right_button">
+                <ul>
+                    <li ><a href="#" class="up"><img src="images/icons/icon_fp-nav-first.png" alt="위로가기"/></a></li>
+                    <li><a href="#" class="on">전시상황</a></li>
+                    <li><a href="#">이용안내</a></li>
+                    <li><a href="#">알림</a></li>
+                    <li><a href="#">행사</a></li>
+                    <li ><a href="#" class="down"><img src="images/icons/icon_fp-nav-last.png" alt="밑으로 가기"/></a></li>
+            </ul>
+        </div>
   </div>
               
 <div class="footer">
@@ -721,6 +800,8 @@
                             <li><a href="#"><img src="images/banner/banner_5.png" alt="E-뮤지엄"/></a></li>
                             <li><a href="#"><img src="images/banner/banner_6.png" alt="E-뮤지엄"/></a></li>
                             <li><a href="#"><img src="images/banner/banner_7.png" alt="E-뮤지엄"/></a></li>
+                            <li><a href="#"><img src="images/banner/banner_4.png" alt="E-뮤지엄"/></a></li>
+                            <li><a href="#"><img src="images/banner/banner_2.png" alt="E-뮤지엄"/></a></li>
                         </ul>
                         
                         <span><a href="#" class="banner_prev_btn"><img src="images/icons/bg_banner-prev.png" alt="이전페배너로 이동"/></a></span>
