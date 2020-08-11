@@ -159,7 +159,7 @@
                      loop: false,
                      centeredSlides:true,
                      spaceBetween:100,
-                    disableTouchControl: true,
+                     disableTouchControl: true,
                        breakpoints: {
                             1200: {
                               touchRatio: 0,
@@ -190,6 +190,7 @@
                         loop: false,
                         centeredSlides:true,
                         spaceBetween:0,
+                        disableTouchControl: true,
                         breakpoints: {
                                 1200: {
                                   slidesPerView: 4,
@@ -378,179 +379,7 @@
                         }
                     })  
                 }
-            
-            /*반응형 스크립트*/
-              /* var id;
-                $(window).resize(function(){
-                    clearTimeout(id);
-                    id = setTimeout(doneResizing, 150);
-                });*/
-            
-               /* function doneResizing(){
-                    var width=window.outerWidth;
-                    var num=0
-                    var nums=0
-                    if(width>=1200){
-                          
-                       $('.cotnents_3_btn .prev').on('click',function(e){
-                        e.preventDefault()
-                        var width=$('.tab ul li').width()
-                        var number=60
-                        var add=width+number
-                        num--
-                        if(num<0)
-                            num=2
-                        if($('.tab_2 > ul').is(':animated')==false){
-                             $('.tab_2 > ul').animate({
-                            'left':(-add * num)+'px',
-                             })
-                        }
-                    })
-                    $('.cotnents_3_btn .next').on('click',function(e){
-                        e.preventDefault()
-                        var width=$('.tab ul li').width()
-                        var number=60
-                        var add=width+number
-                        num++
-                        if(num>2)
-                            num=0
-                        if($('.tab_2 > ul').is(':animated')==false){
-                             $('.tab_2 > ul').animate({
-                            'left':(-add* num)+'px',
-                             })
-                        }
-                    })
-                        
-                    }
-                    else if(width>=768){
-                        $('.cotnents_3_btn .prev').on('click',function(e){
-                        e.preventDefault()
-                        var width=$('.tab ul li').width()
-                        var number=60
-                        var add=width+number
-                        num--
-                        if(num<0)
-                            num=3
-                        if($('.tab > ul').is(':animated')==false){
-                             $('.tab_1 > ul').animate({
-                            'left':(-add * num)+'px',
-                             })
-                            $('.tab_2 > ul').animate({
-                            'left':(-add * num)+'px',
-                             })
-                        }
-                    })
-                    $('.cotnents_3_btn .next').on('click',function(e){
-                        e.preventDefault()
-                        var width=$('.tab ul li').width()
-                        var number=60
-                        var add=width+number
-                        num++
-                        if(num>3)
-                            num=0
-                        if($('.tab > ul').is(':animated')==false){
-                             $('.tab_1 > ul').animate({
-                            'left':(-add* num)+'px',
-                             })
-                            $('.tab_2 > ul').animate({
-                            'left':(-add* num)+'px',
-                             })
-                        }
-                    })
-                        
-                    }
-                    else if(width>=520){
-                        $('.cotnents_3_btn .prev').on('click',function(e){
-                        e.preventDefault()
-                        var width=$('.tab ul li').width()
-                        var number=60
-                        var add=width+number
-                        nums--
-                        num--
-                        if(nums<0)
-                            nums=3
-                        if(num<0)
-                            num=4
-                        if($('.tab > ul').is(':animated')==false){
-                            $('.tab_1 > ul').animate({
-                            'left':(-add* nums)+'px',
-                             })
-                             $('.tab_2 > ul').animate({
-                            'left':(-add * num)+'px',
-                             })
-                        }
-                    })
-                    $('.cotnents_3_btn .next').on('click',function(e){
-                        e.preventDefault()
-                        var width=$('.tab ul li').width()
-                        var number=60
-                        var add=width+number
-                        nums++
-                        num++
-                        if(nums>3)
-                            nums=0
-                        if(num>4)
-                            num=0
-                        if($('.tab > ul').is(':animated')==false){
-                            $('.tab_1 > ul').animate({
-                            'left':(-add* nums)+'px',
-                             })
-                             $('.tab_2 > ul').animate({
-                            'left':(-add* num)+'px',
-                             })
-                        }
-                    })
-                    }
-                    else if(width>=200){
-                       $('.cotnents_3_btn .prev').on('click',function(e){
-                        e.preventDefault()
-                        var width=$('.tab ul li').width()
-                        var number=60
-                        var add=width+number
-                        nums--
-                        num--
-                        if(nums<0)
-                            nums=3
-                        if(num<0)
-                            num=5
-                        if($('.tab > ul').is(':animated')==false){
-                            $('.tab_1 > ul').animate({
-                            'left':(-add* nums)+'px',
-                             })
-                             $('.tab_2 > ul').animate({
-                            'left':(-add * num)+'px',
-                             })
-                        }
-                    })
-                    $('.cotnents_3_btn .next').on('click',function(e){
-                        e.preventDefault()
-                        var width=$('.tab ul li').width()
-                        var number=60
-                        var add=width+number
-                        nums++
-                        num++
-                        if(nums>3)
-                            nums=0
-                        if(num>5)
-                            num=0
-                        if($('.tab > ul').is(':animated')==false){
-                            $('.tab_1 > ul').animate({
-                            'left':(-add* nums)+'px',
-                             })
-                             $('.tab_2 > ul').animate({
-                            'left':(-add* num)+'px',
-                             })
-                        }
-                    })      
-                    }
-
-                }*/
-
-                
-      
-            
-                    
-            
+                   
         })
     </script>
 </head>
@@ -713,14 +542,14 @@
                 <li>
                     <a href="#" class="main_img">
                         <img src="images/web_bg_1_t.png" alt="125th General Meeting 제125회 학술발표회,총회 온라인 학술대회 2020.07(월) ~ 7.7(화) Online Meeting" class="main_img_img none"/>
-                        <a href="#" class="all_schedule">e-초록집</a>
-                        <a href="#" class="color_Blue">Online Meeting 접속</a>
                     </a>
-                     <a href="#" class="m_bg">
+                    <a href="#" class="all_schedule">e-초록집</a>
+                    <a href="#" class="color_Blue">Online Meeting 접속</a>
+                    <a href="#" class="m_bg">
                            <img src="images/m_bg_1.png" alt="125th General Meeting 제125회 학술발표회,총회 온라인 학술대회 2020.07(월) ~ 7.7(화) Online Meeting" class="m_main_img_img"/>
-                            <a href="#" class="all_schedule">e-초록집</a>
-                            <a href="#" class="color_Blue">Online Meeting 접속</a>
-                        </a>
+                    </a>
+                    <a href="#" class="all_schedule">e-초록집</a>
+                    <a href="#" class="color_Blue">Online Meeting 접속</a>
                         
                 </li>
                 <li>
@@ -1010,56 +839,56 @@
                         <img src="images/pub.png" alt="화학세계"/>
                         <p>화학세계</p>
                         <p>Jul 1,2020 <br/>Volume 60,No 6</p>
-                        <p href="#" class="new_more">최신호 더보기</p>
                     </a>
+                    <a href="#" class="new_more">최신호 더보기</a>
                 </li>
                 <li class="swiper-slide">
                     <a href="#" class="books">
                         <img src="images/pub0.jpg" alt="Bulletin of the Korean Chemical Society"/>
                         <p>Bulletin of the Korean Chemical Society</p>
                         <p>Jun 20,2020 <br/>Volume 41,Issue 6</p>
-                        <p href="#" class="new_more">최신호 더보기</p>
                     </a>
+                    <a href="#" class="new_more">최신호 더보기</a>
                 </li>
                 <li class="swiper-slide">
                     <a href="#" class="books">
                         <img src="images/pub2.png" alt="Journal of the Korean Chemical Society"/>
                         <p>Journal of the Korean Chemical Society</p>
                         <p>Jun 20,2020 <br/>Volume 64,Issue 3</p>
-                        <p href="#" class="new_more">최신호 더보기</p>
                     </a>
+                    <a href="#" class="new_more">최신호 더보기</a>
                 </li>
                 <li class="swiper-slide">
                     <a href="#" class="books">
                         <img src="images/pub3.jpg" alt="Chemistry, an Asian Jounal"/>
                         <p>Chemistry, an Asian Jounal</p>
                         <p>Volume 15 (2020)</p>
-                        <p href="#" class="new_more">최신호 더보기</p>
                     </a>
+                    <a href="#" class="new_more">최신호 더보기</a>
                 </li>
                 <li class="swiper-slide">
                     <a href="#" class="books">
                         <img src="images/pub4.jpg" alt="Asian Journal of Organic Chemistry"/>
                         <p>Physical Chemistry Chemical Physics</p>
                         <p>Volume 22 (2020)</p>
-                        <p href="#" class="new_more">최신호 더보기</p>
                     </a>
+                    <a href="#" class="new_more">최신호 더보기</a>
                 </li>
                 <li class="swiper-slide">
                     <a href="#" class="books">
                         <img src="images/pub5.jpg" alt="Physical Chemistry Chemical Physics"/>
                         <p>Physical Chemistry Chemical Physics</p>
                         <p>Volume 22 (2020)</p>
-                        <p href="#" class="new_more">최신호 더보기</p>
                     </a>
+                    <a href="#" class="new_more">최신호 더보기</a>
                 </li>
                 <li class="swiper-slide">
                     <a href="#" class="books">
                         <img src="images/pub6.jpg" alt="ChemNanoMat"/>
                         <p>ChemNanoMat</p>
                         <p>Volume 6 (2020)</p>
-                        <p href="#" class="new_more">최신호 더보기</p>
                     </a>
+                    <a href="#" class="new_more">최신호 더보기</a>
                 </li>
             </ul>
             <div class="swiper-button-next btn_right"></div>
