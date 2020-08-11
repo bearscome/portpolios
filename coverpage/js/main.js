@@ -52,16 +52,17 @@ $(document).ready(function(){
         /*화면 동적 구현*/
         /*수치가 다르면 함수 못만듦.*/
         /*$('.visual_contents div').hide()*/
+        /*web*/
         $('.Html_4_1_img img').on({
            mouseenter:function(){
                $(this).stop().animate({
                    top:'-84.3%'
                },7000);
            },
-           mouseleave:function(){
+           mouseleave:function(top){
               $(this).stop().animate({
-                   top:'0px'
-               },1000)
+                    top:'0%'
+                },1000)
           }
         },1000);
 
@@ -73,8 +74,8 @@ $(document).ready(function(){
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
         $('.Html_5_1_img img').on({
@@ -85,8 +86,8 @@ $(document).ready(function(){
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
         $('.Html_5_2_img img').on({
@@ -97,8 +98,8 @@ $(document).ready(function(){
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'  
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
         $('.Mobile_img img').on({
@@ -109,8 +110,8 @@ $(document).ready(function(){
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'  
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
 
@@ -122,8 +123,8 @@ $(document).ready(function(){
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'  
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
         $('.RP_TB_img img').on({
@@ -134,8 +135,8 @@ $(document).ready(function(){
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'  
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
         $('.RP_MB_img img').on({
@@ -146,12 +147,13 @@ $(document).ready(function(){
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'  
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
     
     /*window resize*/
+    /*tablet 1024*/
     var width=window.outerWidth;
     if(width<=1024){
        $('.Html_4_1_img img').on({
@@ -160,10 +162,10 @@ $(document).ready(function(){
                    top:'-54.3%'
                },7000);
            },
-           mouseleave:function(){
-              $(this).stop().animate({
-                   top:'0px'
-               },1000)
+           mouseleave:function(top){
+             $(this).stop().animate({
+                top:'0%'
+            },1000)
           }
         },1000);
 
@@ -175,8 +177,8 @@ $(document).ready(function(){
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
         $('.Html_5_1_img img').on({
@@ -187,8 +189,8 @@ $(document).ready(function(){
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
         $('.Html_5_2_img img').on({
@@ -198,21 +200,21 @@ $(document).ready(function(){
                },7000)
            },
            mouseleave:function(){
-              $(this).stop().animate({
-                   top:'0%'  
-               },1000)
+             $(this).stop().animate({
+                    top:'0%'
+                },1000)
           }
         })
         $('.Mobile_img img').on({
            mouseenter:function(){
                $(this).stop().animate({
-                   top:'-68.3%'
+                   top:'-87.3%'
                },7000)
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'  
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
 
@@ -224,40 +226,137 @@ $(document).ready(function(){
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'  
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
         $('.RP_TB_img img').on({
            mouseenter:function(){
                $(this).stop().animate({
-                   top:'-73.3%'
+                   top:'-75.3%'
                },7000)
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'  
-               },1000)
+                    top:'0%'
+                },1000)
           }
         })
         $('.RP_MB_img img').on({
            mouseenter:function(){
                $(this).stop().animate({
-                   top:'-68.5%'
+                   top:'-93%'
                },11000)
            },
            mouseleave:function(){
               $(this).stop().animate({
-                   top:'0%'  
+                    top:'0%'
+                },1000)
+          }
+        }) 
+    }
+    /*모바일 425px*/
+    if(width<=425){
+       $('.Html_4_1_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-10%'
+               },1000);
+           },
+           mouseleave:function(){
+             $(this).stop().animate({
+                    top:'0%'
+                },1000)
+          }
+        },1000);
+
+        $('.Html_4_2_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-46%'
+               },3000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                    top:'0%'
+                },1000)
+          }
+        })
+        $('.Html_5_1_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-16%'
                },1000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                    top:'0%'
+                },1000)
+          }
+        })
+        $('.Html_5_2_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-12.4%'
+               },1000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                    top:'0%'
+                },1000)
+          }
+        })
+        $('.Mobile_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-285.3%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                    top:'0%'
+                },1000)
+          }
+        })
+
+        $('.RP_web_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-36.4%'
+               },1000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                    top:'0%'
+                },1000)
+          }
+        })
+        $('.RP_TB_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-155.3%'
+               },7000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                    top:'0%'
+                },1000)
+          }
+        })
+        $('.RP_MB_img img').on({
+           mouseenter:function(){
+               $(this).stop().animate({
+                   top:'-605%'
+               },11000)
+           },
+           mouseleave:function(){
+              $(this).stop().animate({
+                    top:'0%'
+                },1000)
           }
         }) 
     }    
-    function animationstop(){
-        $(this).stop().animate({
-                   top:'0%'
-               })
-    }
+    
     
 /*    $(document).mousewheel(function(e, delta){
 		var count=0;

@@ -4,16 +4,18 @@ $(document).on('ready',function(){
             var sid, sid2;
             var imgwidth=$('.img_list li a img').outerWidth() 
             
+            /*메인비주얼*/
              function animated(currentnum){
                     $('.contents_page > ul > li > a.on').removeClass('on')
                     $('.contents_page > ul > li > a').children().attr("src","images/icons/icon_country_off.png")
                     $('.contents_page > ul > li:eq('+currentnum+') > a').addClass('on')
                     $('.contents_page > ul > li:eq('+currentnum+') > a.on').children().attr("src","images/icons/icon_country_on.png")
                     $('.img_list').animate({
-                        'left':(-imgwidth*currentnum)+'px'
+                        'left':(-1920*currentnum)+'px'
                     })
                 }
-
+            
+            /*추천소장품*/
             function FC(Number){
                     if($('.recommended_items_list_ul').is(':animated')==false){
                         $('.event_photo_page ul li a.on').removeClass('on')

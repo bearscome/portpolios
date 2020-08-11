@@ -41,7 +41,7 @@
 .visual table tr{border-bottom: 1px solid black; height:30px;}
 
 
-.notice_file{  background:url(../../images/notice/ico_file_2.png)no-repeat 0 0; background-position: 60px 9px;}
+.notice_file{  background:url(../../images/notice/ico_file_2.png)no-repeat 0 0; background-position: center center}
 
 
 .number_page{ margin-top:20px;width:830px; height:50px; }

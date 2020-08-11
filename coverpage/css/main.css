@@ -17,7 +17,7 @@
     .size ul.main_full li{float: left; width: 92px; height:65px;}
     .visual .Response_choose{position: absolute; top:40%; right:0.5%;}
     .visual_contents .layout .Html .Mobile_img img,
-    .visual_contents .RP_Mobile .Html .RP_MB_img img{margin:0; width:100%;height: 2200px;}
+    .visual_contents .RP_Mobile .Html .RP_MB_img img{margin:0; width:100%;}
 
     
 }
@@ -63,7 +63,7 @@
 }
 
 /*door*/
-.contents_1{display: none;}
+.contents_1{}
 .contents_1 .door{display: flex; flex-wrap: nowrap; width: 100%; height: 100vh; position: relative;}
 .contents_1 .door_1, .contents_1 .door_2{position: relative; width: 50%; height: 100vh; background:url(../images/background.jpg); background-size: cover;}
 .contents_1 nav{position: absolute; top:15%; left:10%; width: 80%; height:70%;  /*background-color: #fff;*/}
