@@ -53,7 +53,7 @@ $(document).ready(function(){
         /*수치가 다르면 함수 못만듦.*/
         /*$('.visual_contents div').hide()*/
         /*web*/
-        $('.Html_4_1_img img').on({
+ /*       $('.Html_4_1_img img').on({
            mouseenter:function(){
                $(this).stop().animate({
                    top:'-84.3%'
@@ -150,11 +150,11 @@ $(document).ready(function(){
                     top:'0%'
                 },1000)
           }
-        })
+        })*/
     
     /*window resize*/
     /*tablet 1024*/
-    var width=window.outerWidth;
+/*    var width=window.outerWidth;
     if(width<=1024){
        $('.Html_4_1_img img').on({
            mouseenter:function(){
@@ -255,7 +255,7 @@ $(document).ready(function(){
           }
         }) 
     }
-    /*모바일 425px*/
+    모바일 425px
     if(width<=425){
        $('.Html_4_1_img img').on({
            mouseenter:function(){
@@ -355,7 +355,7 @@ $(document).ready(function(){
                 },1000)
           }
         }) 
-    }    
+    }  */  
     
     
 /*    $(document).mousewheel(function(e, delta){
@@ -385,6 +385,9 @@ $(document).ready(function(){
             return false;
         });
 	});*/
+    
+
+    
     
     $('.visual_contents > .layout').not(':first').hide()
     $('.Response_choose').hide()
