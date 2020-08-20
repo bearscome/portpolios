@@ -16,8 +16,8 @@
     .view_record .size ul.main_full{width:655px;  margin-left:35%}
     .size ul.main_full li{float: left; width: 92px; height:65px;}
     .visual .Response_choose{position: absolute; top:40%; right:0.5%;}
-    .visual_contents .layout .Html .Mobile_img img,
-    .visual_contents .RP_Mobile .Html .RP_MB_img img{margin:0; width:100%;}
+    .visual_contents .layout .Html .Mobile_img .contents,
+    .visual_contents .RP_Mobile .Html .RP_MB_img .contents{margin:0; width:100%;}
 
     
 }
@@ -54,8 +54,8 @@
     .visual .visual_contents .layout .Html_4_2_contents .Htmle .H42:nth-of-type(2){bottom:23%; left:0%;}
     .visual .visual_contents .layout .Html_4_2_contents .Htmle .H42:nth-of-type(3){bottom:12%; left:0%;}
     .visual .visual_contents .layout .Html_4_2_contents .Htmle .H42:nth-of-type(4){bottom:1%; left:0%;}
-     .visual .visual_contents .layout .Html .Mobile_img img,
-     .visual .visual_contents .RP_Mobile .Html .RP_MB_img img{border-radius: 10px;}
+     .visual .visual_contents .layout .Html .Mobile_img .contents,
+     .visual .visual_contents .RP_Mobile .Html .RP_MB_img .contents{border-radius: 10px;}
      .contents_2 .view_record div.size{position: absolute; top:10%; left:-15%; width: 230px; overflow: hidden;}
      .view_record .size ul.main_full{width:655px;  margin-left:35%}
      .size ul.main_full li{float: left; width: 85px; height:55px;}
@@ -63,7 +63,7 @@
 }
 
 /*door*/
-.contents_1{}
+.contents_1{/*display: none*/}
 .contents_1 .door{display: flex; flex-wrap: nowrap; width: 100%; height: 100vh; position: relative;}
 .contents_1 .door_1, .contents_1 .door_2{position: relative; width: 50%; height: 100vh; background:url(../images/background.jpg); background-size: cover;}
 .contents_1 nav{position: absolute; top:15%; left:10%; width: 80%; height:70%;  /*background-color: #fff;*/}
@@ -150,14 +150,32 @@
 .contents_2{width: 100%; height:100vh; background-color: rgba(0,0,0); position: relative;}
 .contents_2 .visual{position: absolute; top:5%; right:5%; bottom:40%; left:5%;padding:1%;background-color: rgba(255,255,255,0.8); box-shadow: 0px 0px 40px rgba(255,255,255);}
 .visual_contents{width: 100%; height: 100%; position: relative; overflow: hidden;}
-.layout{position: absolute; top:0; width: 100%;}
+.layout{position: absolute; top:0; width: 100%; height: 100%;}
 .layout h3{text-align: center; margin-bottom: 1%; font-size: 1.8rem}
 .layout h4{text-align: center; font-size: 1.2rem}
 .layout .Html{width: 100%; height: 100%; display: flex; }
 .layout .Html .Htmlc{width: 70%}
 .layout .Html .Htmlc img{width: 100%;position: relative;}
-.layout .Html .Mobile_img img{display: block; margin:0 50% 0 30%; border-radius: 30px; width: 30%; padding:1%;}
-.layout .Html .Htmle{position: relative; ;width:29%; height: 500px; margin-left: 2%; }
+.layout .Html .Html_4_1_img .contents{width: 100%; height: 100%; background:url(../images/Html4_main_full.png) no-repeat top left /cover; transition: all 7s ease;} 
+.layout .Html .Html_4_1_img .contents:hover{background-position: bottom left;}
+.layout .Html .Html_4_2_img .contents{width: 100%; height: 100%; background:url(../images/Html4_sub_full.png) no-repeat top left /cover; transition: all 7s ease;}
+.layout .Html .Html_4_2_img .contents:hover{background-position: bottom left;}
+.layout .Html .Html_5_1_img .contents{width: 100%; height: 100%; background:url(../images/html5_1_full.png) no-repeat top left /cover; transition: all 7s ease;}
+.layout .Html .Html_5_1_img .contents:hover{background-position: bottom left;}
+.layout .Html .Html_5_2_img .contents{width: 100%; height: 100%; background:url(../images/html5_2_full.png) no-repeat top left /cover; transition: all 7s ease;}
+.layout .Html .Html_5_2_img .contents:hover{background-position: bottom left;}
+.layout .Html .Mobile_img .contents{width: 100%; height: 100%; background:url(../images/mobile_425px.png) no-repeat top left /cover; transition: all 7s ease; margin:0 50% 0 30%; border-radius: 30px; width: 30%; padding:1%;}
+.layout .Html .Mobile_img .contents:hover{background-position: bottom left;}
+.layout .Html .RP_web_img .contents{width: 100%; height: 100%; background:url(../images/Responsive_Web.png) no-repeat top left /cover; transition: all 7s ease;}
+.layout .Html .RP_web_img .contents:hover{background-position: bottom left;}
+.layout .Html .RP_TB_img .contents{width: 80%; height: 100%; margin-left: 10%;background:url(../images/Responsive_tablet.png) no-repeat top left /cover; transition: all 7s ease;}
+.layout .Html .RP_TB_img .contents:hover{background-position: bottom left;}
+.layout .Html .RP_MB_img .contents{width: 30%; height: 100%; margin-left: 30%; border-radius: 30px; background:url(../images/Responsive_mobile.png) no-repeat top left /cover; transition: all 11s ease;}
+.layout .Html .RP_MB_img .contents:hover{background-position: bottom left;}
+
+
+
+.layout .Html .Htmle{position: relative;width:29%; height: 100%; margin-left: 2%; }
 .More{position: absolute; bottom: 5%; left:50%; margin-left:-40%;  width:80%; height:40px; font-size:1vw; line-height: 40px; text-align: center; font-weight: 500; border-radius:50px; background-color: rgba(255,255,255,0.3); box-shadow: 0px 5px 8px rgba(255,255,255); transition: all 1s ease; }
 .Htmle .H42{width: 49%; margin-left:0;}
 .Htmle .H42:nth-of-type(1){bottom:20%; left:-1%; }
@@ -177,8 +195,6 @@
 .RP_tablet{position: absolute; top:0;}
 .RP_Mobile{position: absolute; top:0;}
 .Response_choose{position: absolute; top:40%; right:0.5%;}
-.RP_tablet .Html .RP_TB_img img{width: 80%; margin-left: 10%;}
-.RP_Mobile .Html .RP_MB_img img{width: 30%; margin-left: 30%; border-radius: 30px;}
 .visual_contents .Response_choose a{display: inline-block;font-size: 6vw; width: 8vw; margin-top: 5%; text-align: center; }
 .visual_contents .Response_choose a.on{box-shadow: 0px 6px 20px rgba(255,255,255,0.9)}
 
