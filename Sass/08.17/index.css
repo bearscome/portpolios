@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/*변수설정*/
+.btn1 { display: block; width: 200px; height: 50px; line-height: 50px; text-align: center; color: #333; background-color: green; position: relative; }
+
+.btn1:hover:before { background-color: #fff; }
+
+.btn1:before { content: ''; position: absolute; top: 0; right: -150px; background-color: red; width: 100px; height: 50px; }
+
+/*선택자*/
+.a { color: red; }
+.a ul { border: 1px solid red; }
+.a ul > li { background-color: pink; /*a.bb안쓰고 바로 .bb써도 됌*/ }
+.a ul > li a { text-decoration: none; }
+.a ul > li a:hover { color: blue; }
+.a ul > li a.bb { font-size: 11px; }
+.a ul > li .bb { background-color: blue; }
+.a ul > li:last-child { border: 1px dotted red; }
+
+/*@mixin, @include*/
+.mixin_div { width: 50px; height: 50px; border: 1px solid red; }
+
+.mixin_p1 { width: 100px; height: 100px; border: 1px solid blue; }
+
+.mixin_p2 { width: 50px; height: 50px; border: 1px solid blue; border: 1px solid #333; }
+
+/*# sourceMappingURL=index.css.map */
