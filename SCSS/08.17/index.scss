@@ -1,6 +1,7 @@
 /*변수설정*/
 $color1:green;
 $color2:#333;
+
 .btn1{display: block; width: 200px; height: 50px; line-height: 50px; text-align: center; color:$color2; background-color: $color1; position: relative;}
 .btn1:hover:before{background-color:#fff;}
 .btn1:before{content: ''; position: absolute; top:0; right:-150px; background-color: red; width: 100px; height: 50px;
@@ -30,5 +31,20 @@ $color2:#333;
 .mixin_p1{@include size(100px, 100px)}
 .mixin_p2{@include size(50px, 50px); border: 1px solid #333;}
 
+/*문자보간*/
+$divbox:box;
+$p_box:p_box;
+@mixin border($position, $N, $color){
+    border-#{$position}:$N solid $color;
+    
+}
+div.#{$divbox}{@include border(bottom, 3px, blue)}
+p.#{$p_box}{@include border(left, 5px, red)}
 
-
+/*For 문*/
+ /*list 갯수가 4개가 있지만 to4는 4미만이라 3까지 적용 그러므로 5까지 써야 5미만임으로 4까지 적용 됌*/
+ /*숫자가 들어가는 class, child, 숫자가 같아야 적용 가능.*/
+@for $i from 1 to 5{
+    .list li.ico#{$i}{background:url(#{$i}.png) no-repeat 0 0; padding-left: 20px;}
+    .list li.ico#{$i}:nth-of-type(#{$i}):before{content:"안녕#($i)";}
+}
