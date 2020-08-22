@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/*작업할 때 @mixin, include는 위에 먼저 작성이 되어있어야함 마치 스크립트 마냥 ㅡㅡ;*/
+/*each 문*/
+/*p1,2,3을 변수 안에 각각 넣음 for문이랑 차이점은 for문은 숫자 123으로 하지만 each는 개인 or 각각 넣을 수 있음*/
+.ico_p1 { background: url("ico_p1.png") no-repeat; background-color: red; }
+
+.ico_p2 { background: url("ico_p2.png") no-repeat; background-color: red; }
+
+.ico_p3 { background: url("ico_p3.png") no-repeat; background-color: red; }
+
+/*변수안에 변수를 넣을 수 있음*/
+background-color { background-color: green; }
+
+p { font-size: 20px; }
+
+/*ele:p, fs:30px를 p_fs안에 적용*/
+/*@extend
+공통된 작업이 필요할 때 사용. {width:1200px; margin:0 auto 이런 공통된 부분이 필요할 때 씀, @mixin과 다른 점은 @mixin은 변수로 수치를 다시 넣을 수 있지만 @extend는 고정 값 수치 유동 값을 줄 수 없음}
+*/
+div.a, div.b, div.c { font-size: 30px; color: blue; }
+
+div.a div, div.b div, div.c div { width: 1200px; height: 100px; margin: 0 auto; background-color: rgba(0, 0, 0, 0.5); }
+
+div.a { font-weight: bold; background-color: red; height: 100px; }
+
+div.b { background-color: purple; height: 100px; }
+
+div.c { background-color: blueviolet; height: 100px; }
+
+/*# sourceMappingURL=index_2.css.map */

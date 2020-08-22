@@ -1,0 +1,55 @@
+/*작업할 때 @mixin, include는 위에 먼저 작성이 되어있어야함 마치 스크립트 마냥 ㅡㅡ;*/
+
+
+/*each 문*/
+/*p1,2,3을 변수 안에 각각 넣음 for문이랑 차이점은 for문은 숫자 123으로 하지만 each는 개인 or 각각 넣을 수 있음*/
+@each $p in p1, p2, p3{
+    .ico_#{$p}{
+        background: url('ico_#{$p}.png') no-repeat;
+        background-color: red;
+    }
+}
+/*변수안에 변수를 넣을 수 있음*/
+$p_fs:(
+    p:20px, 
+);
+$B_s:(
+    background-color:green
+);
+@each $br, $ct in $B_s{
+    #{$br}{
+        background-color:$ct
+        }
+    }
+@each $ele, $fs in $p_fs{
+    #{$ele}{
+        font-size:$fs
+        }
+    }
+/*ele:p, fs:30px를 p_fs안에 적용*/
+
+
+/*@extend
+공통된 작업이 필요할 때 사용. {width:1200px; margin:0 auto 이런 공통된 부분이 필요할 때 씀, @mixin과 다른 점은 @mixin은 변수로 수치를 다시 넣을 수 있지만 @extend는 고정 값 수치 유동 값을 줄 수 없음}
+*/
+%name{font-size: 30px; color: blue;}
+%w12m0auto{width: 1200px; height: 100px;margin: 0 auto;background-color: rgba(0,0,0,0.5); }
+@mixin name($bold, $color){
+    font-weight:$bold; background-color:$color
+}
+
+div.a{@extend %name; @include name(bold, red); height: 100px;
+    div{@extend %w12m0auto;}
+}
+div.b{@extend %name; background-color: purple; height: 100px;
+    div{@extend %w12m0auto;}
+}
+div.c{@extend %name; background-color: blueviolet; height: 100px;
+    div{@extend %w12m0auto;}
+}
+
+@mixin name($blod, $color){
+    font-weight:$bold; background-color:$color
+}
+
+
