@@ -8,6 +8,7 @@ $color2:#333;
 }
 
 /*선택자*/
+/*&은 바로 해당 속성자*/
 .a{ color: red;
     ul{border: 1px solid red;
         > li{ background-color: pink;
@@ -22,6 +23,7 @@ $color2:#333;
 }
 
 /*@mixin, @include*/
+/*사용법은 @mixin 이름{속성} 쓰고 @include 이름{속성 값} 쓰면 됌*/
 @mixin test{width:50px; height: 50px}
 @mixin clearfix{content: ''; display: block; clear: both;}
 @mixin size($W, $H){
@@ -32,6 +34,7 @@ $color2:#333;
 .mixin_p2{@include size(50px, 50px); border: 1px solid #333;}
 
 /*문자보간*/
+///*사용법 $이름:속성이름 적고 #{$이름} 적으면 해당 변수 나옴*/
 $divbox:box;
 $p_box:p_box;
 @mixin border($position, $N, $color){

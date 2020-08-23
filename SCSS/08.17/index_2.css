@@ -2,29 +2,76 @@
 /*작업할 때 @mixin, include는 위에 먼저 작성이 되어있어야함 마치 스크립트 마냥 ㅡㅡ;*/
 /*each 문*/
 /*p1,2,3을 변수 안에 각각 넣음 for문이랑 차이점은 for문은 숫자 123으로 하지만 each는 개인 or 각각 넣을 수 있음*/
-.ico_p1 { background: url("ico_p1.png") no-repeat; background-color: red; }
+.ico_p1 {
+  background: url("ico_p1.png") no-repeat;
+  background-color: red; }
 
-.ico_p2 { background: url("ico_p2.png") no-repeat; background-color: red; }
+.ico_p2 {
+  background: url("ico_p2.png") no-repeat;
+  background-color: red; }
 
-.ico_p3 { background: url("ico_p3.png") no-repeat; background-color: red; }
+.ico_p3 {
+  background: url("ico_p3.png") no-repeat;
+  background-color: red; }
 
 /*변수안에 변수를 넣을 수 있음*/
-background-color { background-color: green; }
+background-color {
+  background-color: green; }
 
-p { font-size: 20px; }
+p {
+  font-size: 20px; }
 
 /*ele:p, fs:30px를 p_fs안에 적용*/
 /*@extend
-공통된 작업이 필요할 때 사용. {width:1200px; margin:0 auto 이런 공통된 부분이 필요할 때 씀, @mixin과 다른 점은 @mixin은 변수로 수치를 다시 넣을 수 있지만 @extend는 고정 값 수치 유동 값을 줄 수 없음}
+공통된 작업이 필요할 때 사용. {width:1200px; margin:0 auto 이런 공통된 부분이 필요할 때 씀, @mixin과 다른 점은 @mixin은 변수로 수치를 다시 넣을 수 있지만 @extend는 고정 값 수치 유동 값을 줄 수 없음} 사용법은 %이름{속성}
 */
-div.a, div.b, div.c { font-size: 30px; color: blue; }
+div.a, div.b, div.c {
+  font-size: 30px;
+  color: blue; }
 
-div.a div, div.b div, div.c div { width: 1200px; height: 100px; margin: 0 auto; background-color: rgba(0, 0, 0, 0.5); }
+div.a div, div.b div, div.c div {
+  width: 1200px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5); }
 
-div.a { font-weight: bold; background-color: red; height: 100px; }
+div.a {
+  font-weight: bold;
+  background-color: red;
+  height: 100px; }
 
-div.b { background-color: purple; height: 100px; }
+div.b {
+  background-color: purple;
+  height: 100px; }
 
-div.c { background-color: blueviolet; height: 100px; }
+div.c {
+  background-color: blueviolet;
+  height: 100px; }
+
+/*조건문 2020-08-24*/
+/*@mixin 에 조건문 적용한 문법, @include 이름 (속성 값), 속성이 true이면 라디우스가 적용되고, false라면 보더에 레드 값을 적용*/
+.btn {
+  padding: 20px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  border-radius: 15px;
+  display: inline-block; }
+
+/*조건문을 만들어서 해당 position에 적용할 수 있음. x가 50% translate X50% 만 y가 50% translate-Y -50%; 이렇게 적용가능 null= 값은 0, 조건문 안에 조건문 넣을 수 있음*/
+.if_1 {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  background-color: rgba(0, 255, 255, 0.5); }
+
+.if {
+  width: 300px;
+  height: 300px;
+  background-color: #07c;
+  position: absolute;
+  z-index: 2; }
 
 /*# sourceMappingURL=index_2.css.map */
