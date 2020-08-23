@@ -1,0 +1,39 @@
+@mixin clearfix{
+    &:after{clear: both; display: block; content: '';}
+}
+.a{border: 1px solid red; background-color: red;  @include clearfix;
+    >div{float: left;}
+}
+
+/*기본 말줄임표*/
+@mixin ellipsis{display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+/*변수를 활용한 말줄임표*/
+@mixin ellipsis_1($w) {width: $w;  display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.ellipsis{@include ellipsis_1(100px);}
+
+/*웹에선 한줄짜리가 가능하지만 여러줄은 힘듬 그래서 모바일 환경에서의 2~3줄 말줄임표 webkit은 IE지원 안됌*/
+@mixin ellipsis_M($line, $w, $h){
+    overflow: hidden; display: -webkit-box; -webkit-line-clamp:$line; width: $w; height: $h; -webkit-box-orient:vertical; text-overflow: ellipsis;
+}
+.ellipsis_M{@include ellipsis_M(3,100px, 66px )}
+
+/*positon 가운데 정렬*/
+@mixin position($x, $y, $z, $w){position: absolute; top:$y; left: $x; width: $w;
+    @if $x==50%{transform: translate(-50% 0%);}
+    @else if $y==50%{transform: translate(0% -50%);}
+    @else if $x==50% and $y==50%{transform: translate(-50% -50%);}
+}
+.position{@include position(50%, 50%, 2 , 300px);border: 1px solid red; height: 300px;}
+
+
+
+
+
+
+
+
+
+
+
+

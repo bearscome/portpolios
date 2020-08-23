@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.a { border: 1px solid red; background-color: red; }
+.a:after { clear: both; display: block; content: ''; }
+.a > div { float: left; }
+
+/*기본 말줄임표*/
+/*변수를 활용한 말줄임표*/
+.ellipsis { width: 100px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/*웹에선 한줄짜리가 가능하지만 여러줄은 힘듬 그래서 모바일 환경에서의 2~3줄 말줄임표 webkit은 IE지원 안됌*/
+.ellipsis_M { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; width: 100px; height: 66px; -webkit-box-orient: vertical; text-overflow: ellipsis; }
+
+/*positon 가운데 정렬*/
+.position { position: absolute; top: 50%; left: 50%; width: 300px; -webkit-transform: translate(-50% 0%); transform: translate(-50% 0%); border: 1px solid red; height: 300px; }
+
+/*# sourceMappingURL=EX.css.map */
