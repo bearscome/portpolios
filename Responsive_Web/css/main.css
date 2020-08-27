@@ -7,7 +7,6 @@
   #wrap{width:100%; position: relative;}
     /*bxslider*/
     .cotnents_1 .bx-wrapper .bx-pager div:nth-of-type(1) a,.cotnents_1 .bx-wrapper .bx-pager div:nth-of-type(2) a,.cotnents_1 .bx-wrapper .bx-pager div:nth-of-type(3) a{width: 100%; background-color: #fff;} 
-    
     .cotnents_1 .bx-wrapper .bx-pager{width:100%; margin: 0 auto; position: absolute;left:0;bottom: 0px; margin-left:0;} 
     #wrap .center_wrap{width:90%;}
     
@@ -132,7 +131,7 @@
 .page_num a:before{content: ''; position: absolute; top:0px; right:0px; width:1px; height:50px; background-color: rgba(0,0,0,0.1); margin-top: 25px}
 .page_num a:last-child:before{display: none;}
 .page_num a span{background:url(../images/paging.png) no-repeat 0 center; width:38px; height:100px;display: inline-block;margin-right: 10px; font-weight:500}
-
+.cotnents_1 .bx-wrapper .bx-pager div:nth-of-type(3) a{margin-left:-1px}
 
 .bxslider li .m_bg{display: none;;}
     
@@ -272,7 +271,7 @@
 
 
 /*bxslider*/
-.bx-wrapper .bx-pager.bx-default-pager a{display: inline-block; width:400px;height:100px;position: relative;}
+.bx-wrapper .bx-pager.bx-default-pager a{display: inline-block; width:100%;height:100px;position: relative;}
 .bx-default-pager a.active{position: relative;}
 .bx-default-pager a.active:after{content: '';  width: 100%; height:5px;position: absolute; top:0px; right:0px; background-color: #07c; z-index: 100;}
 .bx-wrapper .bx-pager {
