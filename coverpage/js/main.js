@@ -154,9 +154,7 @@ $(document).ready(function(){
     
     /*window resize*/
     /*tablet 1024*/
-/*    var width=window.outerWidth;
-    if(width<=1024){
-       $('.Html_4_1_img img').on({
+       /*$('.Html_4_1_img img').on({
            mouseenter:function(){
                $(this).stop().animate({
                    top:'-54.3%'
@@ -391,30 +389,58 @@ $(document).ready(function(){
     
     $('.visual_contents > .layout').not(':first').hide()
     $('.Response_choose').hide()
+    $('.end').hide()
     $('.main_full li a').on('click',function(){
         var currentNum=$(this).parent().index()
         var num=$('.main_full li img.on').parent().index()
          $('.visual_contents > .layout').hide()
+         $('.contents_2 .visual').css({'backgroundColor':'rgba(255,255,255,0.8)'})
+         $('.end').hide()
+         $('.end').css({'marginTop':'500px'})
          $('.Response_choose').hide()
+         $('.contents_2 .visual').css({
+            'box-shadow':'0px 0px 40px rgba(255,255,255)',
+            'backgroundColor':'rgba(255,255,255,0.8)'
+        })
         if(num!=currentNum){
+            var width=$('.contents_2 .size ul li').outerWidth()
             $('.main_full li a.on').removeClass('on')
             $('.main_full li:eq('+currentNum+') a').addClass('on')
             $('.visual_contents > .layout:eq('+currentNum+')').fadeIn(1000)
-            
-            var width=$('.contents_2 .size ul li').outerWidth()
-            
             $('.contents_2 .size ul').animate({
-                left:-width*(currentNum)
+                'left':-width*(currentNum)
             })
            if(currentNum==5){
                 $('.Response_choose').fadeIn(1000)
             }
-            
-            
-            
-            
+             if(currentNum==6){
+                $('.contents_2 .visual').css({
+                    'backgroundColor':'rgba(255,255,255,0.05)',
+                    'box-shadow':'0 0 0 rgba(255,255,255,0.05)'
+                })
+                $('.visual_contents > .layout').hide()
+                $('.end').css({'marginTop':'500px'})
+                $('.end').fadeIn(1000)
+                $('.end').animate({
+                    'marginTop':'0px'
+                 },5000)
+            }   
+        }
+        var width=window.outerWidth;
+        if(width<=1024 || width<=768){
+            $('.end').css({'marginTop':'750px'})
+        }
+        if(width<=425){
+            $('.end').css({'marginTop':'550px'})
+            if(currentNum==6){
+                $('.end').animate({
+                    'marginTop':'0px'
+                 },3000)   
+            }
+
         }
     })
+    
   $('.Response_choose a').on('click',function(){
       var currentNum=$(this).index()
       var num=$('.Response_choose a.on').index()
