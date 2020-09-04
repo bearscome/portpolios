@@ -4,7 +4,7 @@
 .footer_add ul{}
 .footer_add ul li{float: left; width:33%; margin-top:10px;}
 .footer_add ul li.add_color a{color: #b5bbff; }
-.footer_add ul li a{color: #d5d5d5; font-size: 0.88em; text-align: center; display: block;}
+.footer_add ul li a{color: #d5d5d5; font-size: 0.75em; text-align: center; display: block;}
 
 .footer_add2{margin:15px 0}
 .footer_add2 ul{}
@@ -15,7 +15,7 @@
 .footer_add2 ul li:nth-of-type(3) a{background-position:-44.5px 2px;}
 .footer_add2 ul li:nth-of-type(4) a{background-position:-67px 2px;}
 
-.footer_add3{margin-left:8px;}
+.footer_add3{margin-left:8px; font-size: 0.7rem; line-height: 1.4;}
 .footer_add3 address{text-decoration: none; font-style: normal;}
 .footer_add3 p:nth-of-type(4){margin-top: 15px;}
 .footer .gotop{width:50px; height: 50px;background: rgb(131,58,180);

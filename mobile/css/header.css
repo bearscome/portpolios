@@ -28,7 +28,7 @@ background: linear-gradient(135deg, rgba(131,58,180,1) 40%, rgba(253,29,29,1) 79
 .gnb_link{width:100%; height:55px; border-bottom: 1px solid rgba(255,255,255,0.2);}
 .link_left{float: left; width:65%; line-height:55px; text-align: center;height: 55px;}
 .link_left > ul > li{float: left; width:49%;}
-.link_left > ul > li > a{color: #fff;  padding-left: 30px; font-size: 1.3em; position: relative;}
+.link_left > ul > li > a{color: #fff;  padding-left: 30px; font-size: 1.2em; position: relative;}
 .login:after{content: '';display: block; width: 26px; height:26px; position:absolute; left: 0; top:0px; background:url(../images/sp_com.png) no-repeat -196px -41px; }
 .join:after{content: '';display: block; width: 26px; height:26px; position:absolute; left: 0; top:0px; background:url(../images/sp_com.png) no-repeat -224px -41px;}
 
@@ -44,7 +44,7 @@ background: linear-gradient(135deg, rgba(131,58,180,1) 40%, rgba(253,29,29,1) 79
 .gnb_contents > .deth_1 > li > a{font-size:1.2rem;display: block; margin:10px 0;}
 .gnb_contents .deth_2{}
 .gnb_contents .deth_2 > li{text-align: left; line-height:2.5rem;}
-.gnb_contents .deth_2 > li > a{font-size: 0.9rem; display: block; color: #999;}
+.gnb_contents .deth_2 > li > a{font-size: 0.75rem; display: block; color: #999;}
 
 
 
