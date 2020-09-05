@@ -2,16 +2,17 @@ $(document).on('ready',function(){
             var num=0;
             var currentnum=0;
             var sid, sid2;
-            var imgwidth=$('.img_list li a img').outerWidth() 
+            var width=$('.img_list li').outerWidth()
             
             /*메인비주얼*/
              function animated(currentnum){
+                 
                     $('.contents_page > ul > li > a.on').removeClass('on')
                     $('.contents_page > ul > li > a').children().attr("src","images/icons/icon_country_off.png")
                     $('.contents_page > ul > li:eq('+currentnum+') > a').addClass('on')
                     $('.contents_page > ul > li:eq('+currentnum+') > a.on').children().attr("src","images/icons/icon_country_on.png")
-                    $('.img_list').animate({
-                        'left':(-1920*currentnum)+'px'
+                    $('.img_list').stop().animate({
+                        'left':(-width*currentnum)+'px'
                     })
                 }
             
@@ -22,7 +23,7 @@ $(document).on('ready',function(){
                         $('.event_photo_page ul li a img').attr('src','images/icons/icon_country_off.png')
                         $('.event_photo_page ul li:eq('+Number+') a').addClass('on')
                         $('.event_photo_page ul li:eq('+Number+') a').children().attr('src','images/icons/icon_country_on.png')
-                        $('.recommended_items_list_ul').animate({
+                        $('.recommended_items_list_ul').stop().animate({
                             left:-(1280*Number)+'px'
                         })
                     }
@@ -97,7 +98,7 @@ $(document).on('ready',function(){
                 }
                     
                 $('.right_button').stop()
-                $('.right_button').animate({
+                $('.right_button').stop().animate({
                     'top':$(document).scrollTop()+50+'px'
                 },500)
             })
@@ -183,13 +184,12 @@ $(document).on('ready',function(){
                 e.preventDefault()
                 if($('.img_list').is(':animated')==false){
                     var currentN=$(this).parent().index()
-                    var imgwidth=$('.img_list li a img').outerWidth()
                     $('.contents_page > ul > li > a.on').removeClass('on')
                     $('.contents_page > ul > li > a').children().attr("src","images/icons/icon_country_off.png")
                     $(this).addClass('on')
                     $(this).children().attr('src','images/icons/icon_country_on.png')
-                    $('.img_list').animate({
-                        'left':(-imgwidth*currentN)+'px'
+                    $('.img_list').stop().animate({
+                        'left':(-width*currentN)+'px'
                     })
                 currentnum=currentN
                 }
@@ -290,7 +290,7 @@ $(document).on('ready',function(){
                 $('.event_photo_page ul li a img').attr('src','images/icons/icon_country_off.png')
                 $(this).addClass('on')
                 $(this).children().attr('src','images/icons/icon_country_on.png')
-                $('.recommended_items_list_ul').animate({
+                $('.recommended_items_list_ul').stop().animate({
                         left:-(1280*currentN)+'px'
                     })
             })
@@ -316,7 +316,8 @@ $(document).on('ready',function(){
             /*배너*/
             $('.banner_prev_btn').on('click',function(e){
                 e.preventDefault()
-                $('.banner ul').animate({
+                clearInterval(sid2)
+                $('.banner ul').stop().animate({
                     left:'-195px'
                 },1000,function(){
                     $('.banner ul').append($('.banner ul li:first'))
@@ -325,10 +326,11 @@ $(document).on('ready',function(){
             })
             
             $('.banner_next_btn').on('click',function(e){
-                e.preventDefault()
+                e.preventDefault(sid2)
+                clearInterval()
                 $('.banner ul').css('left','-195px') 
                 $('.banner ul').prepend($('.banner ul li:last'))
-                $('.banner ul').animate({
+                $('.banner ul').stop().animate({
                     left:'0px'
                 },1000,function(){
                    

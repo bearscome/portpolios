@@ -10,8 +10,13 @@ body{position: relative;}
 .visual{width:100%; min-width: 1900px;}
 .contens{position:relative; width:100%; height:738px; margin: 0 auto;  /*box-sizing:border-box; */}
 .contens_img{width:100%;height:738px;overflow:hidden; position:relative;}
-.img_list{width:7680px; position: relative;}
-.img_list li{float:left;}
+.img_list{width:10240px; position: relative;}
+.img_list li{float:left; width: 2560px; height: 836px;}
+.img_list li a{display: block; width: 100%; height: 836px;}
+.img_list li:nth-of-type(1) a{background: url(../images/background/main_1.jpg) no-repeat center center / cover;}
+.img_list li:nth-of-type(2) a{background: url(../images/background/main_2.jpg) no-repeat center center / cover;}
+.img_list li:nth-of-type(3) a{background: url(../images/background/main_3.jpg) no-repeat center center / cover;}
+.img_list li:nth-of-type(4) a{background: url(../images/background/main_4.jpg) no-repeat center center / cover;}
 .prev_btn{position:absolute; top:50%; left:0; margin-top:-22px; margin-left: 20px; z-index: 20;}
 .next_btn{position:absolute; top:50%; right:0; margin-top:-22px;margin-right:20px; z-index: 20;}
 .contents_page{position:absolute; top:20px; right:40px;}

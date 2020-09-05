@@ -1,8 +1,10 @@
 @charset "utf-8";
 
 .wrapper{width:100%; height: 215px; min-width: 1900px; margin:0 auto; position:relative;}
-.header{width:100%; min-width: 1900px; height:130px;  /*z-indx로 배경화면 위로 보내기 가능!*/}
-.logo{width:1300px;padding:20px 0; text-align: center; display:inline-block; height:160px; line-height:160px; box-sizing:border-box}
+.header{width:100%; min-width: 1900px; height:auto;  /*z-indx로 배경화면 위로 보내기 가능!*/}
+.logo{width:100%;padding:20px 0; text-align: center; display:inline-block; height:160px; line-height:160px; box-sizing:border-box; position: absolute; top:0;}
+.logo a{display: inline-block;}
+.logo a img{width: 100%; height: auto;}
 .date{ width:250px; font-size:11px; float:left; margin:15px 0 0 15px; height:145px; line-height:15px;}
 table td{text-align:center;}
 .date_head{position:relative; }

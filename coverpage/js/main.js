@@ -17,11 +17,11 @@ $(document).ready(function(){
             $('.cover').removeClass('none')
             $('.name').removeClass('none')
         })
-     /*   setTimeout(function(){
+        setTimeout(function(){
             $('#coverpage').animate({
                 'left':'-8000px'
             },6000)
-        },5500)*/
+        },5500)
         
     
     
