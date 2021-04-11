@@ -1,0 +1,17 @@
+body{
+  background-color: #ecf0f1;
+}
+
+h1{
+  color: #34498e;
+  transition:  all .2s;
+}
+
+.btn{
+  cursor: pointer;
+}
+
+.clicked{
+  color: #7f8c8d;
+  
+}

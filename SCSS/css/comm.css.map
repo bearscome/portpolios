@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAA;EACA,KAAK,EAAC,KAAK;EACX,MAAM,EAAG,KAAK;CAQjB;;AAVD,AAGQ,IAHJ,CAGI,EAAE,CAAA;EACE,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CAIf;;AATT,AAMY,IANR,CAMS,OAAK,CAAA;EACF,gBAAgB,EAAE,GAAG;CACxB",
+    "sources": [
+        "../개개비/comm.scss"
+    ],
+    "names": [],
+    "file": "comm.css"
+}
