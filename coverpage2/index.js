@@ -146,7 +146,8 @@ $(document).ready(function () {
     let mv_scroll = scroll / 4
     const vhHeight = $('.page1').outerHeight()
     const pageHeight = vhHeight * 0.8 //1064 반응형
-    const page2Height = $('.page2 ').position().top
+    const page2Height = $('.page2 ').position().top - 56
+    console.log(page2Height)
 
 
     //header 애니메이션
