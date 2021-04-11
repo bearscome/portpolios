@@ -142,18 +142,20 @@ $(document).ready(function () {
   //scroll
 
   $(window).scroll(function () {
-    var scroll = $(document).scrollTop()
-    var mv_scroll = scroll / 7
-    var scrollSP = $('.stop')
-    const page_3_active = $($('.active') === true)
+    let scroll = $(document).scrollTop()
+    let mv_scroll = scroll / 4
+    const vhHeight = $('.page1').outerHeight()
+    const pageHeight = vhHeight * 0.8 //1064 반응형
+    const page2Height = $('.page2 ').position().top
+
 
     //header 애니메이션
-    if (900 > scroll > 0) {
+    if (pageHeight > scroll) {
       $('.header').removeClass('on')
       $('.header').css({
-        "top": (800 + mv_scroll) + 'px'
+        "top": (pageHeight + mv_scroll) + 'px'
       })
-    } else {
+    } else if(scroll > page2Height){
       $('.header').addClass('on')
       $('.header').css({
         "top": '0'
@@ -193,67 +195,6 @@ $(document).ready(function () {
       $('.header_wrap a').eq(3).addClass('now')
       $('.m_header_wrap .center a').eq(3).addClass('now')
     }
-
-    // page3이동
-    // scrollSP.on('click', function (e) {
-    //   e.preventDefault()
-    //   e.stopPropagation();
-    //   $('html, body').animate({ scrollTop: 1880 });
-    //   return false;
-    // })
-    // // page_3스크롤 막음
-    // var f = true;
-    // if (1800 < scroll && scroll < 2400) {
-    //   if ($('.page3').is(':animated') === false) {
-    //     //scrollSP.trigger('click')
-    //     //if ($('.page3').is(':hover') === true) {
-    //     $('.page3').on('scroll touchmove mousewheel', function (e) {
-    //       $('.page3').on('mousewheel DOMMouseScroll', function (e) {
-    //         var E = e.originalEvent;
-    //         delta = 0;
-    //         if (E.detail) {
-    //           delta = E.detail * -40;
-    //         } else {
-    //           delta = E.wheelDelta;
-    //         };
-    //         if (delta === 120 && page_3_active) {
-    //           if ($(this).is(':animated') === false) {
-    //             setTimeout(() => {
-    //               next.trigger('click')
-    //             }, 1000);
-    //           }
-    //         } else if (delta === -120 && page_3_active) {
-    //           if ($(this).is(':animated') === false) {
-    //             setTimeout(() => {
-    //               prev.trigger('click')
-    //             }, 1000);
-    //           }
-    //         }
-    //         console.log(this)
-    //         //scroll 빠짐
-    //         e.preventDefault();
-    //         e.stopPropagation();
-    //         return false;
-    //       })
-    //     })
-    //   } else {
-    //     $('.page3').off('scroll touchmove mousewheel');
-    //   }
-    //   //}
-    // }
-
-
-    // $('.submit').on('click', function (e) {
-    //   e.preventDefault()
-    // var value = ""
-    // var input = $('.input').val()
-    // if (input === value) {
-    //   alert('빈칸이 있습니다.')
-    // } else if (input !== value) {
-    //   alert('메일이 전송되었습니다.')
-    //   input.val("")
-    // }
-    // })
   })
 
 
