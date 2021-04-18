@@ -147,7 +147,6 @@ $(document).ready(function () {
     const vhHeight = $('.page1').outerHeight()
     const pageHeight = vhHeight * 0.8 //1064 반응형
     const page2Height = $('.page2 ').position().top - 56
-    console.log(page2Height)
 
 
     //header 애니메이션
@@ -171,25 +170,30 @@ $(document).ready(function () {
     }
 
     //scroll header_mv
-    if (900 > scroll) {
+    const headerGnb = $('.header').outerHeight(true)
+    const aboutSection = $('.page2 ').offset().top - headerGnb;
+    const portpoliosSection = $('.page3').offset().top - headerGnb;
+    const footerSection = $('.footer').offset().top;
+
+    if (aboutSection > scroll) {
       $('.header_wrap a.now').removeClass('now')
       $('.m_header_wrap .center a.now').removeClass('now')
 
       $('.header_wrap a').eq(0).addClass('now')
       $('.m_header_wrap .center a').eq(0).addClass('now')
-    } else if (900 <= scroll && scroll < 1858) {
+    } else if (aboutSection <= scroll && scroll < portpoliosSection) {
       $('.header_wrap a.now').removeClass('now')
       $('.m_header_wrap .center a.now').removeClass('now')
 
       $('.header_wrap a').eq(1).addClass('now')
       $('.m_header_wrap .center a').eq(1).addClass('now')
-    } else if (1858 <= scroll && scroll < 2824) {
+    } else if (portpoliosSection <= scroll && scroll < footerSection) {
       $('.header_wrap a.now').removeClass('now')
       $('.m_header_wrap .center a.now').removeClass('now')
 
       $('.header_wrap a').eq(2).addClass('now')
       $('.m_header_wrap .center a').eq(2).addClass('now')
-    } else if (2824 <= scroll) {
+    } else if (footerSection <= scroll) {
       $('.header_wrap a.now').removeClass('now')
       $('.m_header_wrap .center a.now').removeClass('now')
 
