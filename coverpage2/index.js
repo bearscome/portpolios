@@ -1,15 +1,4 @@
 $(document).ready(function () {
-  var mv_ul = $('.main_text')
-  var mv_li = $('.main_text  li')
-  var mv_li_1 = $('.main_text .main_text_li_1')
-  var mv_li_2 = $('.main_text .main_text_li_2')
-  var mv_li_3 = $('.main_text .main_text_li_3')
-  var page3_img = $('.page3 .page_site .info_img')
-  var page_3 = $('.page3 .page_site .info_text .info')
-  var sid;
-  i = 0;
-
-
 
   //날씨
   let weatherIcon = {
@@ -37,6 +26,7 @@ $(document).ready(function () {
       $('.city').append($city);
     }
   })
+
   //눈 
   var sf = new Snowflakes({
     color: "#ffffff",
@@ -61,7 +51,8 @@ $(document).ready(function () {
     $(this).css('display', 'none')
   })
 
-  // main
+  // 텍스트 애니메이션 함수
+  i = 0;
   function moving() {
     $('.main_text li').removeClass('on')
     i++;
@@ -72,10 +63,13 @@ $(document).ready(function () {
   }
   setInterval(moving, 2500);
 
-  // page_3
+  // 페이지 소개 버튼 함수
   var prev = $('.prev')
   var next = $('.next')
   var num = 0;
+
+  var page_3 = $('.page3 .page_site .info_text .info')
+
 
   prev.on('click', function (e) {
     e.preventDefault();
@@ -102,45 +96,31 @@ $(document).ready(function () {
   })
 
   //header click
-  const test = $('.header_wrap a').not(':last')
-  const m_test = $('.m_header_wrap .center a').not(':last')
-  const Contect_Me = $('.header_wrap a').eq(3)
-  const m_Contect_Me = $('.m_header_wrap .center a').eq(3)
+  const test = $('.header_wrap a')
+  const m_test = $('.m_header_wrap .center a')
 
-  test.on('click', function (e) {
-    e.preventDefault();
-    const index = $(this).index()
+  moveToSection = (index) => {
     const offset = $('.wrap section:eq(' + index + ') ').offset().top;
     $('html').animate({
-      scrollTop: offset - 30
+      scrollTop: offset
     }, 600)
+  }
+
+  test.on('click', function (e) {
+    const index = $(this).index()
+    e.preventDefault();
+    moveToSection(index)
   })
 
   m_test.on('click', function (e) {
-    e.preventDefault();
     const index = $(this).index()
-    const offset = $('.wrap section:eq(' + index + ') ').offset().top;
-    $('html').animate({
-      scrollTop: offset - 30
-    }, 600)
+    e.preventDefault();
+    moveToSection(index)
   })
 
-  Contect_Me.on('click', function (e) {
-    e.preventDefault();
-    $('html').animate({
-      scrollTop: 2829
-    }, 600)
-  })
 
-  m_Contect_Me.on('click', function (e) {
-    e.preventDefault();
-    $('html').animate({
-      scrollTop: 2829
-    }, 600)
-  })
 
   //scroll
-
   $(window).scroll(function () {
     let scroll = $(document).scrollTop()
     let mv_scroll = scroll / 4
@@ -173,7 +153,7 @@ $(document).ready(function () {
     const headerGnb = $('.header').outerHeight(true)
     const aboutSection = $('.page2 ').offset().top - headerGnb;
     const portpoliosSection = $('.page3').offset().top - headerGnb;
-    const footerSection = $('.footer').offset().top;
+    const sendEmail = $('.page4').offset().top;
 
     if (aboutSection > scroll) {
       $('.header_wrap a.now').removeClass('now')
@@ -187,13 +167,13 @@ $(document).ready(function () {
 
       $('.header_wrap a').eq(1).addClass('now')
       $('.m_header_wrap .center a').eq(1).addClass('now')
-    } else if (portpoliosSection <= scroll && scroll < footerSection) {
+    } else if (portpoliosSection <= scroll && scroll < sendEmail) {
       $('.header_wrap a.now').removeClass('now')
       $('.m_header_wrap .center a.now').removeClass('now')
 
       $('.header_wrap a').eq(2).addClass('now')
       $('.m_header_wrap .center a').eq(2).addClass('now')
-    } else if (footerSection <= scroll) {
+    } else if (sendEmail <= scroll) {
       $('.header_wrap a.now').removeClass('now')
       $('.m_header_wrap .center a.now').removeClass('now')
 
