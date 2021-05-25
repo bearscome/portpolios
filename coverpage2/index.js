@@ -52,8 +52,8 @@ $(document).ready(function () {
   })
 
   // 텍스트 애니메이션 함수
+  i = 0;
   function moving() {
-    i = 0;
     $('.main_text li').removeClass('on')
     i++;
     if (i > 2) {
