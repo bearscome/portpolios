@@ -52,8 +52,8 @@ $(document).ready(function () {
   })
 
   // 텍스트 애니메이션 함수
-  i = 0;
   function moving() {
+    i = 0;
     $('.main_text li').removeClass('on')
     i++;
     if (i > 2) {
@@ -67,32 +67,32 @@ $(document).ready(function () {
   var prev = $('.prev')
   var next = $('.next')
   var num = 0;
-
   var page_3 = $('.page3 .page_site .info_text .info')
 
+  const changeToInfo = (num) => {
+    $('.page_site').removeClass('active')
+    page_3.removeClass('block')
+
+    $('.page_site').eq(num).addClass('active')
+    page_3.eq(num).addClass('block')
+  }
 
   prev.on('click', function (e) {
     e.preventDefault();
-    $('.page_site').removeClass('active')
-    page_3.removeClass('block')
     num--
     if (num < 0) {
       num = 5
     }
-    $('.page_site').eq(num).addClass('active')
-    page_3.eq(num).addClass('block')
+    changeToInfo(num)
   })
 
   next.on('click', function (e) {
     e.preventDefault();
-    $('.page_site').removeClass('active')
-    page_3.removeClass('block')
     num++
     if (num > 5) {
       num = 0
     }
-    $('.page_site').eq(num).addClass('active')
-    page_3.eq(num).addClass('block')
+    changeToInfo(num)
   })
 
   //header click
@@ -129,7 +129,7 @@ $(document).ready(function () {
     const page2Height = $('.page2 ').position().top - 56
 
 
-    //header 애니메이션
+    //goToSection  
     if (pageHeight > scroll) {
       $('.header').removeClass('on')
       $('.header').css({
@@ -149,36 +149,28 @@ $(document).ready(function () {
       page_3.removeClass('block')
     }
 
-    //scroll header_mv
+    //change to color for Gnb
     const headerGnb = $('.header').outerHeight(true)
     const aboutSection = $('.page2 ').offset().top - headerGnb;
     const portpoliosSection = $('.page3').offset().top - headerGnb;
     const sendEmail = $('.page4').offset().top;
 
+    const changeColorToGnb = (idx) => {
+      $('.header_wrap a.now').removeClass('now')
+      $('.m_header_wrap .center a.now').removeClass('now')
+
+      $('.header_wrap a').eq(idx).addClass('now')
+      $('.m_header_wrap .center a').eq(idx).addClass('now')
+    }
+
     if (aboutSection > scroll) {
-      $('.header_wrap a.now').removeClass('now')
-      $('.m_header_wrap .center a.now').removeClass('now')
-
-      $('.header_wrap a').eq(0).addClass('now')
-      $('.m_header_wrap .center a').eq(0).addClass('now')
+      changeColorToGnb(0)
     } else if (aboutSection <= scroll && scroll < portpoliosSection) {
-      $('.header_wrap a.now').removeClass('now')
-      $('.m_header_wrap .center a.now').removeClass('now')
-
-      $('.header_wrap a').eq(1).addClass('now')
-      $('.m_header_wrap .center a').eq(1).addClass('now')
+      changeColorToGnb(1)
     } else if (portpoliosSection <= scroll && scroll < sendEmail) {
-      $('.header_wrap a.now').removeClass('now')
-      $('.m_header_wrap .center a.now').removeClass('now')
-
-      $('.header_wrap a').eq(2).addClass('now')
-      $('.m_header_wrap .center a').eq(2).addClass('now')
+      changeColorToGnb(2)
     } else if (sendEmail <= scroll) {
-      $('.header_wrap a.now').removeClass('now')
-      $('.m_header_wrap .center a.now').removeClass('now')
-
-      $('.header_wrap a').eq(3).addClass('now')
-      $('.m_header_wrap .center a').eq(3).addClass('now')
+      changeColorToGnb(3)
     }
   })
 
